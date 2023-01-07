@@ -1,45 +1,81 @@
 class Solution {
 public:
     
-        int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+    
+     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
             int n = cost.size();
-            vector<int> v(n);
-            for(int i = 0; i < n; i++)
-            {
-                v[i] = gas[i] - cost[i];
-            }
             
             int idx = -1;
             int sum = 0;
             for(int i = 0; i < n; i++)
             {
-                // sum--;
-                if(idx == -1 && v[i] >= 0)
+                if(idx == -1 && gas[i] - cost[i] >= 0)
                 {
                     idx = i;
                     sum = 0;
                 }
-                sum += v[i];
+                sum += gas[i] - cost[i];
                 if(sum < 0)
                 {
                     idx = -1;
                 }
             }
             
-            // cout << idx << endl;
             for(int i = 0; i <= idx; i++)
             {
-                // sum--;
                 if(sum < 0)
                 {
-                    // cout << i << endl;
                     return -1;
                 }
-                sum += v[i];
+                sum += gas[i] - cost[i];
             }
             return idx;
         }
 };
+    
+//     Runtime: 105 ms, faster than 61.62% of C++ online submissions for Gas Station.
+// Memory Usage: 70.9 MB, less than 6.83% of C++ online submissions for Gas Station.
+    
+    
+//         int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+//             int n = cost.size();
+//             vector<int> v(n);
+//             for(int i = 0; i < n; i++)
+//             {
+//                 v[i] = gas[i] - cost[i];
+//             }
+            
+//             int idx = -1;
+//             int sum = 0;
+//             for(int i = 0; i < n; i++)
+//             {
+//                 // sum--;
+//                 if(idx == -1 && v[i] >= 0)
+//                 {
+//                     idx = i;
+//                     sum = 0;
+//                 }
+//                 sum += v[i];
+//                 if(sum < 0)
+//                 {
+//                     idx = -1;
+//                 }
+//             }
+            
+//             // cout << idx << endl;
+//             for(int i = 0; i <= idx; i++)
+//             {
+//                 // sum--;
+//                 if(sum < 0)
+//                 {
+//                     // cout << i << endl;
+//                     return -1;
+//                 }
+//                 sum += v[i];
+//             }
+//             return idx;
+//         }
+// };
     
     
 //         int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
