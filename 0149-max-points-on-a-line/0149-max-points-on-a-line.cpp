@@ -43,6 +43,13 @@ public:
 // [[-6,-1],[3,1],[12,3]] // with this last testcase
     
     
+//     Runtime: 242 ms, faster than 19.16% of C++ online submissions for Max Points on a Line.
+// Memory Usage: 12.5 MB, less than 70.78% of C++ online submissions for Max Points on a Line.
+    
+    
+    
+    // used set precision of 1e-6 in comparing y and mx + c
+    
     
    int maxPoints(vector<vector<int>> &points){
         int n = points.size();
@@ -95,7 +102,8 @@ public:
                     }
                 }
                 // else if(y == (m*x + c))
-                else if(abs(y - (m*x + c)) <= 1e-6)
+                // else if(abs(y - (m*x + c)) <= 1e-6)
+                else if(abs(y - (m*x + c)) <= 1e-9)
                 {
                     count++;
                 }
@@ -105,6 +113,87 @@ public:
     return ans;
     }
 };
+
+
+        // Not Working
+
+
+//  int maxPoints(vector<vector<int>> &points){
+//         int n = points.size();
+        
+//         set<pair<double,double>> st;
+        
+//         for(int i = 0; i < n; i++)
+//         {
+//             for(int j = i+1; j < n; j++)
+//             {
+//                 double x1 = (double)points[i][0];
+//                 double y1 = (double)points[i][1];
+//                 double x2 = (double)points[j][0];
+//                 double y2 = (double)points[j][1];
+                
+//                 double m;
+//                 if(x2 - x1 == 0)
+//                 {
+//                     m = 1e9;
+//                 }
+//                 else
+//                 {
+//                     m = (double(y2 - y1)) / (x2-x1);
+//                 }
+//                 double c = double(y1) - (m*x1); 
+//                 // double c = (x2 * y1 - x1 * y2)/(x2 - y1);
+//                 if(m == 1e9)
+//                 {
+//                     c = x1;
+//                 }
+//                 st.insert({m, c});
+//             }
+//         }
+        
+//         int ans = 1;
+//         cout << endl;
+//         for(auto i : st)
+//         {
+//             cout << i.first << " " << i.second << endl;
+//             int count = 0;
+//             for(int j = 0; j < n; j++)
+//             {
+//                 double x = (double)points[j][0];
+//                 double y = (double)points[j][1];
+//                 double m = i.first;
+//                 double c = i.second;
+//                 if(m == 1e9)
+//                 {
+//                     if(x == c)
+//                     {
+//                         count++;
+//                     }
+//                 }
+                
+//                 // cout << y << " " << m * x + c << endl;
+                
+//                 double a = (double)y;
+//                 double b = (double)m * (double)x + (double)c;
+
+//                 if(a == b)
+//                 // if(abs(a - b) <= 1e-6)
+//                 {
+//                     cout << a << " and " << b << " are equal" << endl;
+//                     count++;
+//                 }
+//                 else
+//                 {
+//                     cout << a << " and " << b << " are not equal" << endl; 
+//                 }
+//             }
+//             ans = max(ans, count);
+//         }
+//     return ans;
+//     }
+// };
+
+
     
     
     
