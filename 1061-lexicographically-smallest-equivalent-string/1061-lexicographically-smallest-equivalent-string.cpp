@@ -21,7 +21,14 @@ public:
 // };
     
     
+    
+    
+    
     // Just Copy paste in exams
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Lexicographically Smallest Equivalent String.
+// Memory Usage: 6.8 MB, less than 20.18% of C++ online submissions for Lexicographically Smallest Equivalent String.
+
     
     
       void DFS(int src, array<array<int, 26>, 26>& adjMatrix, array<int, 26>& visited, vector<int>& component, int& minChar) {
