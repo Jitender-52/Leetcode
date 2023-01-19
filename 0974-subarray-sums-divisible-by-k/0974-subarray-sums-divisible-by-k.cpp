@@ -1,6 +1,14 @@
 class Solution {
 public:
     
+//     Just copy paste for the streak
+    
+    
+//     Runtime: 45 ms, faster than 93.71% of C++ online submissions for Subarray Sums Divisible by K.
+// Memory Usage: 30.1 MB, less than 94.47% of C++ online submissions for Subarray Sums Divisible by K.
+
+    
+    
        int subarraysDivByK(vector<int>& nums, int k) {
         int n = nums.size();
         int prefixMod = 0, result = 0;
