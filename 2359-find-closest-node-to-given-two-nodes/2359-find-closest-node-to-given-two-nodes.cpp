@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 153 ms, faster than 98.89% of C++ online submissions for Find Closest Node to Given Two Nodes.
+// Memory Usage: 97.9 MB, less than 69.53% of C++ online submissions for Find Closest Node to Given Two Nodes.   
+    
+    
     void dfs(int node, vector<int>& edges, vector<int>& dist, vector<bool>& visit) {
         visit[node] = true;
         int neighbor = edges[node];
