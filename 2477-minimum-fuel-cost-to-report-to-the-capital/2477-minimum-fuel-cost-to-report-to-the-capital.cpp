@@ -1,14 +1,18 @@
 class Solution {
 public:
+    
+//     Runtime: 945 ms, faster than 25.03% of C++ online submissions for Minimum Fuel Cost to Report to the Capital.
+// Memory Usage: 249 MB, less than 8.60% of C++ online submissions for Minimum Fuel Cost to Report to the Capital.
         
         int dfs(int i, long long &ans, vector<int> &vis, map<int,list<int>> &adj, int &seats)
         {
             int count = 1;
-            vis[i] = 1;
-            for(auto j : adj[i])
+            // vis[i] = 1;
+            for(auto &j : adj[i])
             {
                 if(!vis[j])
                 {
+                    vis[j] = 1;
                     count += dfs(j, ans, vis, adj, seats);
                 }
             }
@@ -33,7 +37,7 @@ public:
             }
             
             long long ans = 0;
-            
+            vis[0] = 1;
             dfs(0, ans, vis, adj, seats);
             return ans;
         }
