@@ -1,19 +1,14 @@
 class Solution {
 public:
     
-//     Runtime: 945 ms, faster than 25.03% of C++ online submissions for Minimum Fuel Cost to Report to the Capital.
-// Memory Usage: 249 MB, less than 8.60% of C++ online submissions for Minimum Fuel Cost to Report to the Capital.
-        
-        int dfs(int i, long long &ans, vector<int> &vis, map<int,list<int>> &adj, int &seats)
+     int dfs(int i, long long &ans, int parent, map<int,list<int>> &adj, int &seats)
         {
             int count = 1;
-            // vis[i] = 1;
             for(auto &j : adj[i])
             {
-                if(!vis[j])
+                if(j != parent)
                 {
-                    vis[j] = 1;
-                    count += dfs(j, ans, vis, adj, seats);
+                    count += dfs(j, ans, i, adj, seats);
                 }
             }
             
@@ -29,7 +24,6 @@ public:
             
             map<int,list<int>> adj;
             
-            vector<int> vis(n+2, 0);
             for(int i = 0; i < n; i++)
             {
                 adj[roads[i][0]].push_back(roads[i][1]);
@@ -37,11 +31,54 @@ public:
             }
             
             long long ans = 0;
-            vis[0] = 1;
-            dfs(0, ans, vis, adj, seats);
+            dfs(0, ans, -1, adj, seats);
             return ans;
         }
 };
+    
+    
+    
+//     Runtime: 945 ms, faster than 25.03% of C++ online submissions for Minimum Fuel Cost to Report to the Capital.
+// Memory Usage: 249 MB, less than 8.60% of C++ online submissions for Minimum Fuel Cost to Report to the Capital.
+        
+//         int dfs(int i, long long &ans, vector<int> &vis, map<int,list<int>> &adj, int &seats)
+//         {
+//             int count = 1;
+//             // vis[i] = 1;
+//             for(auto &j : adj[i])
+//             {
+//                 if(!vis[j])
+//                 {
+//                     vis[j] = 1;
+//                     count += dfs(j, ans, vis, adj, seats);
+//                 }
+//             }
+            
+//             if(i != 0)
+//             {
+//                 ans += ceil(double(count) / seats);
+//             }
+//             return count;
+//         }
+    
+//         long long minimumFuelCost(vector<vector<int>>& roads, int seats) {
+//             int n = roads.size();
+            
+//             map<int,list<int>> adj;
+            
+//             vector<int> vis(n+2, 0);
+//             for(int i = 0; i < n; i++)
+//             {
+//                 adj[roads[i][0]].push_back(roads[i][1]);
+//                 adj[roads[i][1]].push_back(roads[i][0]);
+//             }
+            
+//             long long ans = 0;
+//             vis[0] = 1;
+//             dfs(0, ans, vis, adj, seats);
+//             return ans;
+//         }
+// };
     
     
 //     int dfs(int i, map<int, list<int>> &adj, vector<int> &vis)
