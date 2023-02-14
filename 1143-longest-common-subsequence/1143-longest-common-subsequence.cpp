@@ -1,31 +1,63 @@
 class Solution {
 public:
     
-    int longestCommonSubsequence(string text1, string text2) {
-        
-        int n = text1.length();
-        int m = text2.length();
-        
-        vector<vector<int>> dp(n+1, vector<int> (m+1, 0));
-        
-        for(int i = n-1; i >= 0; i--)
-        {
-            for(int j = m-1; j >= 0; j--)
+    
+        int longestCommonSubsequence(string text1, string text2) {
+            int n = text1.length();
+            int m = text2.length();
+            
+            vector<int> curr(m+1, 0);
+            vector<int> prev(m+1, 0);
+            
+            for(int i = n-1; i >= 0; i--)
             {
-                if(text1[i] == text2[j])
+                for(int j = m-1; j >= 0; j--)
                 {
-                    dp[i][j] = max(dp[i+1][j+1] + 1, dp[i][j]);
+                    if(text1[i] == text2[j])
+                    {
+                        curr[j] = max(curr[j], 1 + prev[j+1]);
+                    }
+                    else
+                    {
+                        curr[j] = max(curr[j], prev[j+1]);
+                        curr[j] = max(curr[j], curr[j+1]);
+                    }
                 }
-                else
-                {
-                    dp[i][j] = max(dp[i][j], dp[i+1][j]);
-                    dp[i][j] = max(dp[i][j], dp[i][j+1]);
-                }
+                prev = curr;
             }
+            return curr[0];
         }
-        return dp[0][0];
-    }
 };
+    
+    
+//     Runtime: 65 ms, faster than 9.32% of C++ online submissions for Longest Common Subsequence.
+// Memory Usage: 18.6 MB, less than 26.34% of C++ online submissions for Longest Common Subsequence.
+    
+//     int longestCommonSubsequence(string text1, string text2) {
+        
+//         int n = text1.length();
+//         int m = text2.length();
+        
+//         vector<vector<int>> dp(n+1, vector<int> (m+1, 0));
+        
+//         for(int i = n-1; i >= 0; i--)
+//         {
+//             for(int j = m-1; j >= 0; j--)
+//             {
+//                 if(text1[i] == text2[j])
+//                 {
+//                     dp[i][j] = max(dp[i+1][j+1] + 1, dp[i][j]);
+//                 }
+//                 else
+//                 {
+//                     dp[i][j] = max(dp[i][j], dp[i+1][j]);
+//                     dp[i][j] = max(dp[i][j], dp[i][j+1]);
+//                 }
+//             }
+//         }
+//         return dp[0][0];
+//     }
+// };
     
     
 //     Runtime: 107 ms, faster than 5.09% of C++ online submissions for Longest Common Subsequence.
