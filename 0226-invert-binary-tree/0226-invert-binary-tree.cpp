@@ -11,8 +11,11 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 3 ms, faster than 62.83% of C++ online submissions for Invert Binary Tree.
+// Memory Usage: 9.8 MB, less than 46.85% of C++ online submissions for Invert Binary Tree.
         
-        void dfs(TreeNode* &root)
+        void dfs(TreeNode* root)
         {
             if(!root)
                 return;
