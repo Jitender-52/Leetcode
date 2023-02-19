@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+    
+//     Runtime: 11 ms, faster than 99.74% of C++ online submissions for Course Schedule II.
+// Memory Usage: 14 MB, less than 47.55% of C++ online submissions for Course Schedule II.
+    
     bool isCycle(int src, vector<int> &vis, vector<int> &dfs, vector<vector<int>> &adj)
     {
         vis[src] = 1;
@@ -20,34 +24,30 @@ public:
         return false;
     }
     
-    // void topologicalSort(int src, vector<int> &vis, vector<vector<int>> adj, stack<int> &st)
-    // {
-    //     vis[src] = 1;
-    //     for(auto i : adj[src])
-    //     {
-    //         if(!vis[i])
-    //         {
-    //             topologicalSort(src, vis, adj, st);
-    //         }
-    //     }
-    //     st.push(src);
-    // }
-    
-    
-void topologicalSort(int src, vector<int> &vis, vector<vector<int>> &adj, stack<int> &st)
-{
-    // int n = adj->size();
-    // if (vis[src])
-    //     return;
-
-    vis[src] = true;
-    for (auto i : adj[src])
+    void topologicalSort(int src, vector<int> &vis, vector<vector<int>> &adj, stack<int> &st)
     {
-        if (!vis[i])
-            topologicalSort(i, vis, adj, st);
+        vis[src] = true;
+        for(auto i : adj[src])
+        {
+            if(!vis[i])
+            {
+                topologicalSort(i, vis, adj, st);
+            }
+        }
+        st.push(src);
     }
-    st.push(src);
-}
+    
+    
+// void topologicalSort(int src, vector<int> &vis, vector<vector<int>> &adj, stack<int> &st)
+// {
+//     vis[src] = true;
+//     for (auto i : adj[src])
+//     {
+//         if (!vis[i])
+//             topologicalSort(i, vis, adj, st);
+//     }
+//     st.push(src);
+// }
     
     vector<int> findOrder(int n, vector<vector<int>>& p) {
         
@@ -55,7 +55,8 @@ void topologicalSort(int src, vector<int> &vis, vector<vector<int>> &adj, stack<
         vector<vector<int>> adj(n);
         for(int i = 0; i < m; i++)
         {
-            adj[p[i][0]].push_back(p[i][1]);
+            // adj[p[i][0]].push_back(p[i][1]);
+            adj[p[i][1]].push_back(p[i][0]);
         }
         
         vector<int> v;
@@ -89,7 +90,7 @@ void topologicalSort(int src, vector<int> &vis, vector<vector<int>> &adj, stack<
             v.push_back(st.top());
             st.pop();
         }
-        reverse(v.begin(), v.end());
+        // reverse(v.begin(), v.end());
         return v;
     }
 };
