@@ -1,5 +1,11 @@
 class Solution {
 public:
+    
+//     Runtime: 205 ms, faster than 95.93% of C++ online submissions for IPO.
+// Memory Usage: 82.1 MB, less than 53.52% of C++ online submissions for IPO.
+    
+    
+    
     int findMaximizedCapital(int k, int w, vector<int>& profits, vector<int>& capital) {
         int n = profits.size();
         
