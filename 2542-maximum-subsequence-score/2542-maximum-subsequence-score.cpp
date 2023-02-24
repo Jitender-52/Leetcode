@@ -1,8 +1,7 @@
 class Solution {
 public:
     
-    
-    long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
+     long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
             int n = nums1.size();
             vector<pair<int,int>> v;
             for(int i = 0; i < n; i++)
@@ -14,24 +13,71 @@ public:
             
             long long sum = 0;
             priority_queue<int, vector<int>, greater<int>> pq;
-            for(int i = 0; i < k; i++)
-            {
-                sum += v[i].second;
-                pq.push(v[i].second);
-            }
+            // for(int i = 0; i < k; i++)
+            // {
+            //     sum += v[i].second;
+            //     pq.push(v[i].second);
+            // }
             
-            long long ans = sum * v[k-1].first;
-            for(int i = k; i < n; i++)
+            long long ans = 0;
+            int l = 0;
+            for(int i = 0; i < n; i++)
             {
-                sum -= pq.top();
-                pq.pop();
                 sum += v[i].second;
                 pq.push(v[i].second);
-                ans = max(ans, sum * v[i].first);
+                l++;
+                
+                if(l > k)
+                {
+                    sum -= pq.top();
+                    pq.pop();
+                    l--;
+                }
+                if(l == k)
+                {
+                    ans = max(ans, sum * v[i].first);
+                }
             }
             return ans;
         }
 };
+    
+    
+    
+    
+//     Runtime: 296 ms, faster than 72.02% of C++ online submissions for Maximum Subsequence Score.
+// Memory Usage: 92.1 MB, less than 48.24% of C++ online submissions for Maximum Subsequence Score.
+    
+//     long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
+//             int n = nums1.size();
+//             vector<pair<int,int>> v;
+//             for(int i = 0; i < n; i++)
+//             {
+//                 v.push_back({nums2[i], nums1[i]});
+//             }
+            
+//             sort(v.rbegin(), v.rend());
+            
+//             long long sum = 0;
+//             priority_queue<int, vector<int>, greater<int>> pq;
+//             for(int i = 0; i < k; i++)
+//             {
+//                 sum += v[i].second;
+//                 pq.push(v[i].second);
+//             }
+            
+//             long long ans = sum * v[k-1].first;
+//             for(int i = k; i < n; i++)
+//             {
+//                 sum -= pq.top();
+//                 pq.pop();
+//                 sum += v[i].second;
+//                 pq.push(v[i].second);
+//                 ans = max(ans, sum * v[i].first);
+//             }
+//             return ans;
+//         }
+// };
     
     
     
