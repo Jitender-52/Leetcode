@@ -1,9 +1,16 @@
 class Solution {
 public:
+    
+//     Runtime: 591 ms, faster than 46.61% of C++ online submissions for Minimize Deviation in Array.
+// Memory Usage: 56.7 MB, less than 88.98% of C++ online submissions for Minimize Deviation in Array.
+
+    
+    
     int minimumDeviation(vector<int>& nums) {
         int n = nums.size();
         
-        priority_queue<int, vector<int>> pq;
+        // priority_queue<int, vector<int>> pq;
+        priority_queue<int> pq;
         
         int mini = INT_MAX;
         for(int i = 0; i < n; i++)
