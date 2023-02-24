@@ -1,7 +1,8 @@
 class Solution {
 public:
     
-        long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
+    
+    long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
             int n = nums1.size();
             vector<pair<int,int>> v;
             for(int i = 0; i < n; i++)
@@ -12,28 +13,67 @@ public:
             sort(v.rbegin(), v.rend());
             
             long long sum = 0;
-            int mini = INT_MAX;
             priority_queue<int, vector<int>, greater<int>> pq;
             for(int i = 0; i < k; i++)
             {
                 sum += v[i].second;
                 pq.push(v[i].second);
-                mini = min(mini, v[i].first);
             }
             
-            long long ans = sum * mini;
+            long long ans = sum * v[k-1].first;
             for(int i = k; i < n; i++)
             {
                 sum -= pq.top();
                 pq.pop();
                 sum += v[i].second;
-                mini = min(mini, v[i].first);
                 pq.push(v[i].second);
-                ans = max(ans, sum * mini);
+                ans = max(ans, sum * v[i].first);
             }
             return ans;
         }
 };
+    
+    
+    
+    
+//     Runtime: 273 ms, faster than 82.89% of C++ online submissions for Maximum Subsequence Score.
+// Memory Usage: 92 MB, less than 48.24% of C++ online submissions for Maximum Subsequence Score.
+// Next challenges:
+    
+    
+//         long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
+//             int n = nums1.size();
+//             vector<pair<int,int>> v;
+//             for(int i = 0; i < n; i++)
+//             {
+//                 v.push_back({nums2[i], nums1[i]});
+//             }
+            
+//             sort(v.rbegin(), v.rend());
+            
+//             long long sum = 0;
+//             int mini = INT_MAX;
+//             priority_queue<int, vector<int>, greater<int>> pq;
+//             for(int i = 0; i < k; i++)
+//             {
+//                 sum += v[i].second;
+//                 pq.push(v[i].second);
+//                 mini = min(mini, v[i].first);
+//             }
+            
+//             long long ans = sum * mini;
+//             for(int i = k; i < n; i++)
+//             {
+//                 sum -= pq.top();
+//                 pq.pop();
+//                 sum += v[i].second;
+//                 mini = min(mini, v[i].first);
+//                 pq.push(v[i].second);
+//                 ans = max(ans, sum * mini);
+//             }
+//             return ans;
+//         }
+// };
     
     
     
