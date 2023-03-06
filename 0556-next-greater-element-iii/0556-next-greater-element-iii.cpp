@@ -1,9 +1,13 @@
 class Solution {
 public:
     
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Next Greater Element III.
+// Memory Usage: 6 MB, less than 75.17% of C++ online submissions for Next Greater Element III.
+    
         int nextGreaterElement(int n) {
             auto s = to_string(n);
-            next_permutation(begin(s), end(s));
+            // next_permutation(begin(s), end(s));
+            next_permutation(s.begin(), s.end()); // both methods work same
             auto ans = stoll(s);
             return (ans > INT_MAX || ans <= n) ? -1 : ans;
         }
