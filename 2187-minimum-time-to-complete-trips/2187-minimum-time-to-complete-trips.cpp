@@ -1,6 +1,8 @@
 class Solution {
 public:
     
+//     Runtime: 420 ms, faster than 52.91% of C++ online submissions for Minimum Time to Complete Trips.
+// Memory Usage: 94.4 MB, less than 76.55% of C++ online submissions for Minimum Time to Complete Trips.
     
     bool isFeasible(vector<int> &time, long long t, long long maxi)
     {
@@ -16,8 +18,13 @@ public:
     long long minimumTime(vector<int>& time, int totalTrips) {
         int n = time.size();
         
-        long long mini = 1;
-        long long maxi = *max_element(time.begin(), time.end()) * 1LL * totalTrips;
+        // This will run much better in time complexity
+        
+        long long mini = totalTrips / (*min_element(time.begin(), time.end()) * n);
+        long long maxi = *min_element(time.begin(), time.end()) * 1LL * totalTrips;
+        
+        // long long mini = 1;
+//         long long maxi = *max_element(time.begin(), time.end()) * 1LL * totalTrips;
         
         long long ans = maxi;
         
