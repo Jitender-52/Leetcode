@@ -10,29 +10,47 @@ class Solution {
 public:
     
        ListNode *detectCycle(ListNode *head) {
-        if(!head)
-            return NULL;
-        ListNode *slow = head;
-        ListNode *fast = head;
-        
-        while(fast != NULL && fast->next != NULL)
-        {
-            fast = fast->next->next;
-            slow = slow->next;
-            if(fast == slow)
+            set<ListNode *> st;
+            while(head != NULL)
             {
-                fast = head;
-                while(fast != slow)
-                {
-                    slow = slow->next;
-                    fast = fast->next;
-                }
-                return slow;
+                if(st.find(head) != st.end())
+                    return head;
+                st.insert(head);
+                head = head->next;
             }
-        }
-        return NULL;
-    }
+           return NULL;
+       }
 };
+    
+    
+    
+//     Runtime: 5 ms, faster than 90.93% of C++ online submissions for Linked List Cycle II.
+// Memory Usage: 7.5 MB, less than 84.91% of C++ online submissions for Linked List Cycle II.
+    
+//        ListNode *detectCycle(ListNode *head) {
+//         if(!head)
+//             return NULL;
+//         ListNode *slow = head;
+//         ListNode *fast = head;
+        
+//         while(fast != NULL && fast->next != NULL)
+//         {
+//             fast = fast->next->next;
+//             slow = slow->next;
+//             if(fast == slow)
+//             {
+//                 fast = head;
+//                 while(fast != slow)
+//                 {
+//                     slow = slow->next;
+//                     fast = fast->next;
+//                 }
+//                 return slow;
+//             }
+//         }
+//         return NULL;
+//     }
+// };
     
     
     
