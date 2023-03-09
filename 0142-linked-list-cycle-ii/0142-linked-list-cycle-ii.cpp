@@ -8,36 +8,68 @@
  */
 class Solution {
 public:
-    ListNode *detectCycle(ListNode *head) {
-        
+    
+       ListNode *detectCycle(ListNode *head) {
         if(!head)
             return NULL;
-        
         ListNode *slow = head;
         ListNode *fast = head;
         
         while(fast != NULL && fast->next != NULL)
         {
-            // cout << fast->val << " " << slow->val << endl;
             fast = fast->next->next;
             slow = slow->next;
             if(fast == slow)
             {
-                break;
+                fast = head;
+                while(fast != slow)
+                {
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+                return slow;
             }
         }
-        
-        if(fast == NULL || fast->next == NULL || fast->next->next == NULL)
-            return NULL;
-        
-        // cout << fast->val << " " << slow->val << endl;
-        
-        fast = head;
-        while(fast != slow)
-        {
-            fast = fast->next;
-            slow = slow->next;
-        }
-        return slow;
+        return NULL;
     }
 };
+    
+    
+    
+    
+//     Runtime: 8 ms, faster than 76.50% of C++ online submissions for Linked List Cycle II.
+// Memory Usage: 7.7 MB, less than 68.59% of C++ online submissions for Linked List Cycle II.
+    
+//     ListNode *detectCycle(ListNode *head) {
+        
+//         if(!head)
+//             return NULL;
+        
+//         ListNode *slow = head;
+//         ListNode *fast = head;
+        
+//         while(fast != NULL && fast->next != NULL)
+//         {
+//             // cout << fast->val << " " << slow->val << endl;
+//             fast = fast->next->next;
+//             slow = slow->next;
+//             if(fast == slow)
+//             {
+//                 break;
+//             }
+//         }
+        
+//         if(fast == NULL || fast->next == NULL || fast->next->next == NULL)
+//             return NULL;
+        
+//         // cout << fast->val << " " << slow->val << endl;
+        
+//         fast = head;
+//         while(fast != slow)
+//         {
+//             fast = fast->next;
+//             slow = slow->next;
+//         }
+//         return slow;
+//     }
+// };
