@@ -22,26 +22,56 @@
 class Solution {
 public:
     
-    TreeNode *bst(vector<int> &v, int left, int right)
+    TreeNode *bst(ListNode *left, ListNode *right)
     {
-        if(left > right)
+        if(left == right)
             return NULL;
-        int mid = (left + right) / 2;
-        TreeNode *root = new TreeNode(v[mid]);
-        root->left = bst(v, left, mid-1);
-        root->right = bst(v, mid+1, right);
+        
+        ListNode *slow = left;
+        ListNode *fast = left;
+        while(fast != right && fast->next != right)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        
+        TreeNode *root = new TreeNode(slow->val);
+        root->left = bst(left, slow);
+        root->right = bst(slow->next, right);
         return root;
     }
     
     TreeNode* sortedListToBST(ListNode* head) {
-        vector<int> v;
-        ListNode *temp = head;
-        while(temp)
-        {
-            v.push_back(temp->val);
-            temp = temp->next;
-        }
-        
-        return bst(v, 0, v.size() - 1);
+        return bst(head, NULL);
     }
 };
+    
+    
+    
+//     Runtime: 23 ms, faster than 89.37% of C++ online submissions for Convert Sorted List to Binary Search Tree.
+// Memory Usage: 28.6 MB, less than 41.04% of C++ online submissions for Convert Sorted List to Binary Search Tree.
+    
+    
+//     TreeNode *bst(vector<int> &v, int left, int right)
+//     {
+//         if(left > right)
+//             return NULL;
+//         int mid = (left + right) / 2;
+//         TreeNode *root = new TreeNode(v[mid]);
+//         root->left = bst(v, left, mid-1);
+//         root->right = bst(v, mid+1, right);
+//         return root;
+//     }
+    
+//     TreeNode* sortedListToBST(ListNode* head) {
+//         vector<int> v;
+//         ListNode *temp = head;
+//         while(temp)
+//         {
+//             v.push_back(temp->val);
+//             temp = temp->next;
+//         }
+        
+//         return bst(v, 0, v.size() - 1);
+//     }
+// };
