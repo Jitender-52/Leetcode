@@ -1,10 +1,13 @@
 class Solution {
 public:
     
+//     Runtime: 1257 ms, faster than 100.00% of C++ online submissions for Minimum Time to Complete All Tasks.
+// Memory Usage: 40.9 MB, less than 100.00% of C++ online submissions for Minimum Time to Complete All Tasks.
+    
     static bool comp(const vector<int> &a, const vector<int> &b)
     {
-        if(a[1] == b[1])
-            return a[0] < b[0];
+        // if(a[1] == b[1])
+        //     return a[0] < b[0];
         return a[1] < b[1];
     }
         
