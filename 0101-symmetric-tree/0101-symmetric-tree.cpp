@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 7 ms, faster than 53.98% of C++ online submissions for Symmetric Tree.
+// Memory Usage: 16.5 MB, less than 25.75% of C++ online submissions for Symmetric Tree.
+    
     bool check(TreeNode *root1, TreeNode *root2)
     {
         if(!root1 && !root2)
