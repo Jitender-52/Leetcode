@@ -1,44 +1,99 @@
 class Solution {
 public:
     
-    void dfs(int src, vector<int> &vis, vector<vector<int>> &adj)
+    
+    // Also solve using uinon find
+    
+    
+    void bfs(int src, vector<vector<int>> &adj, vector<int> &vis)
     {
+        queue<int> q;
+        q.push(src);
         vis[src] = 1;
-        for(auto i : adj[src])
+        while(!q.empty())
         {
-            if(!vis[i])
+            auto src = q.front();
+            q.pop();
+            for(auto i : adj[src])
             {
-                dfs(i, vis, adj);
+                if(!vis[i])
+                {
+                    q.push(i);
+                    vis[i] = 1;
+                }
             }
         }
     }
     
-    int makeConnected(int n, vector<vector<int>>& connections) {
-        int m = connections.size();
-        
-        if(m < n-1)
-            return -1;
-        
-        vector<vector<int>> adj(n+1);
-        for(int i = 0; i < m; i++)
-        {
-            adj[connections[i][0]].push_back(connections[i][1]);
-            adj[connections[i][1]].push_back(connections[i][0]);
-        }
-        
-        int ans = 0;
-        vector<int> vis(n, 0);
-        for(int i = 0; i < n; i++)
-        {
-            if(!vis[i])
+    
+        int makeConnected(int n, vector<vector<int>>& connections) {
+            int m = connections.size();
+            if(m < n-1)
+                return -1;
+
+            vector<vector<int>> adj(n+1);
+            for(int i = 0; i < m; i++)
             {
-                ans++;
-                dfs(i, vis, adj);
+                adj[connections[i][0]].push_back(connections[i][1]);
+                adj[connections[i][1]].push_back(connections[i][0]);
             }
+            
+            int ans = 0;
+            vector<int> vis(n, 0);
+            for(int i = 0; i < n; i++)
+            {
+                if(!vis[i])
+                {
+                    bfs(i, adj, vis);
+                    ans++;
+                }
+            }
+            return ans - 1;
         }
-        return ans-1;
-    }
 };
+    
+    
+//     Runtime: 133 ms, faster than 70.50% of C++ online submissions for Number of Operations to Make Network Connected.
+// Memory Usage: 52.1 MB, less than 33.75% of C++ online submissions for Number of Operations to Make Network Connected.
+    
+//     void dfs(int src, vector<int> &vis, vector<vector<int>> &adj)
+//     {
+//         vis[src] = 1;
+//         for(auto i : adj[src])
+//         {
+//             if(!vis[i])
+//             {
+//                 dfs(i, vis, adj);
+//             }
+//         }
+//     }
+    
+//     int makeConnected(int n, vector<vector<int>>& connections) {
+//         int m = connections.size();
+        
+//         if(m < n-1)
+//             return -1;
+        
+//         vector<vector<int>> adj(n+1);
+//         for(int i = 0; i < m; i++)
+//         {
+//             adj[connections[i][0]].push_back(connections[i][1]);
+//             adj[connections[i][1]].push_back(connections[i][0]);
+//         }
+        
+//         int ans = 0;
+//         vector<int> vis(n, 0);
+//         for(int i = 0; i < n; i++)
+//         {
+//             if(!vis[i])
+//             {
+//                 ans++;
+//                 dfs(i, vis, adj);
+//             }
+//         }
+//         return ans-1;
+//     }
+// };
     
 //     Runtime: 136 ms, faster than 65.83% of C++ online submissions for Number of Operations to Make Network Connected.
 // Memory Usage: 52 MB, less than 34.51% of C++ online submissions for Number of Operations to Make Network Connected.
