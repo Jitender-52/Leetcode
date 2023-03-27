@@ -1,9 +1,12 @@
 class Solution {
 public:
     
+    
+//     Runtime: 252 ms, faster than 84.10% of C++ online submissions for The Number of Beautiful Subsets.
+// Memory Usage: 32.4 MB, less than 83.39% of C++ online submissions for The Number of Beautiful Subsets.
 
     
-        int subsets(int i, vector<int> &nums, int k, int v[])
+        int subsets(int i, vector<int> &nums, int k, vector<int> &v)
     {
         int n = nums.size();
         if(i == n)
@@ -34,8 +37,8 @@ public:
         int n = nums.size();
         sort(nums.begin(), nums.end());
 
-        // vector<int> v(1002,0); 
-        int v[1002];
+        vector<int> v(1002,0); 
+        // int v[1002];
         // memset(v, 0, sizeof(v));
         for(int i = 0; i < 1002; i++)
         {
