@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 7 ms, faster than 35.49% of C++ online submissions for Minimum Cost For Tickets.
+// Memory Usage: 9.4 MB, less than 91.47% of C++ online submissions for Minimum Cost For Tickets.
+    
      int mincostTickets(vector<int>& days, vector<int>& costs) {
         unordered_map<int,int> tickets;
         tickets[1] = costs[0];
