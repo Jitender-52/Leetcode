@@ -1,6 +1,20 @@
 class Solution {
 public:
     
+    // Solve Usign Tabulation method also
+    
+//     int maxSatisfaction(vector<int>& satisfaction) {
+//         int n = satisfaction.size();
+//         sort(satisfaction.begin(), satisfaction.end());
+//         vector<vector<int>> dp(n+1, vector<int> (n+1, 0));
+        
+//     }
+// };
+    
+    
+//     Runtime: 60 ms, faster than 17.33% of C++ online submissions for Reducing Dishes.
+// Memory Usage: 20.9 MB, less than 49.34% of C++ online submissions for Reducing Dishes.
+    
     int satisfy(int i, int count, vector<int> &satisfaction, vector<vector<int>> &dp)
     {
         int n = satisfaction.size();
