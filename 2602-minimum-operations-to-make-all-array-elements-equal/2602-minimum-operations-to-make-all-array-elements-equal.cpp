@@ -3,41 +3,66 @@ public:
     
         vector<long long> minOperations(vector<int>& nums, vector<int>& queries) {
             int n = nums.size();
-            sort(nums.begin(), nums.end());
-            map<long long,pair<long long,long long>> mp1;
-            long long sum = 0;
-            mp1[0] = {0, 0};
+            sort(nums.begin(), nums.end()); // Forget to sort the nums
+            vector<long long> v(n+1, 0);
             for(int i = 0; i < n; i++)
             {
-                sum += nums[i];
-                mp1[nums[i]] = {sum, i+1};
+                v[i+1] = v[i] + nums[i];
             }
             
-            map<long long, pair<long long,long long>> mp2;
-            mp2[INT_MAX] = {0, 0};
-            sum = 0;
-            int j = 1;
-            for(int i = n-1; i >= 0; i--)
-            {
-                sum += nums[i];
-                mp2[nums[i]] = {sum, j};
-                j++;
-            }
-            
-            vector<long long> v;
+            vector<long long> ans;
             for(auto x : queries)
             {
-                auto l = mp1.lower_bound(x);
-                l--;
-                auto u = mp2.upper_bound(x);
-                long long count = u->second.first - (u->second.second * x) + (x * l->second.second) - l->second.first; 
-                // cout << l->second.first << " " << l->second.second << endl;
-                // cout << u->second.first << " " << u->second.second << endl;
-                v.push_back(count);
+                long long i = lower_bound(nums.begin(), nums.end(), x) - nums.begin();
+                long long count = (i * x - v[i]) + ((v[n] - v[i]) - (n-i) * x);
+                ans.push_back(count);
             }
-            return v;
+            return ans;
         }
 };
+    
+    
+//     Runtime: 650 ms, faster than 5.06% of C++ online submissions for Minimum Operations to Make All Array Elements Equal.
+// Memory Usage: 127 MB, less than 5.17% of C++ online submissions for Minimum Operations to Make All Array Elements Equal.
+    
+    
+//         vector<long long> minOperations(vector<int>& nums, vector<int>& queries) {
+//             int n = nums.size();
+//             sort(nums.begin(), nums.end());
+//             map<long long,pair<long long,long long>> mp1;
+//             long long sum = 0;
+//             mp1[0] = {0, 0};
+//             for(int i = 0; i < n; i++)
+//             {
+//                 sum += nums[i];
+//                 mp1[nums[i]] = {sum, i+1};
+//             }
+            
+//             map<long long, pair<long long,long long>> mp2;
+//             mp2[INT_MAX] = {0, 0};
+//             sum = 0;
+//             int j = 1;
+//             for(int i = n-1; i >= 0; i--)
+//             {
+//                 sum += nums[i];
+//                 mp2[nums[i]] = {sum, j};
+//                 j++;
+//             }
+            
+//             vector<long long> v;
+//             for(auto x : queries)
+//             {
+//                 auto l = mp1.lower_bound(x);
+//                 l--;
+//                 auto u = mp2.upper_bound(x);
+//                 long long count = u->second.first - (u->second.second * x) + (x * l->second.second) - l->second.first; 
+//                 // cout << l->second.first << " " << l->second.second << endl;
+//                 // cout << u->second.first << " " << u->second.second << endl;
+//                 v.push_back(count);
+//             }
+//             return v;
+//         }
+// };
     
     
     
