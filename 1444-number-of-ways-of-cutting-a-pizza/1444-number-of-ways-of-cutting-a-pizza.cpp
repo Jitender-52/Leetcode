@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 34 ms, faster than 57.33% of C++ online submissions for Number of Ways of Cutting a Pizza.
+// Memory Usage: 8.2 MB, less than 64.92% of C++ online submissions for Number of Ways of Cutting a Pizza.
+    
      int ways(vector<string>& pizza, int k) {
         int rows = pizza.size(), cols = pizza[0].size();
         vector apples(rows + 1, vector<int>(cols + 1));
