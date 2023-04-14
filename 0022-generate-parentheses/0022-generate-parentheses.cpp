@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    void generate(int open, int close, string &s, vector<string> &ans, int max)
+     void generate(int open, int close, string &s, vector<string> &ans, int max)
     {
         if(s.length() == 2 * max)
         {
@@ -9,16 +9,13 @@ public:
             return;
         }
         
-        if(close > open)
-            return;
-        
         if(open < max)
         {
             s += '(';
             generate(open+1, close, s, ans, max);
             s.pop_back();
         }
-        if(close < max)
+        if(close < open)
         {
             s += ')';
             generate(open, close+1, s, ans, max);
@@ -33,6 +30,42 @@ public:
         return ans;
     }
 };
+    
+//     Runtime: 6 ms, faster than 42.25% of C++ online submissions for Generate Parentheses.
+// Memory Usage: 11.4 MB, less than 85.54% of C++ online submissions for Generate Parentheses.
+    
+//     void generate(int open, int close, string &s, vector<string> &ans, int max)
+//     {
+//         if(s.length() == 2 * max)
+//         {
+//             ans.push_back(s);
+//             return;
+//         }
+        
+//         if(close > open)
+//             return;
+        
+//         if(open < max)
+//         {
+//             s += '(';
+//             generate(open+1, close, s, ans, max);
+//             s.pop_back();
+//         }
+//         if(close < max)
+//         {
+//             s += ')';
+//             generate(open, close+1, s, ans, max);
+//             s.pop_back();
+//         }
+//     }
+    
+//     vector<string> generateParenthesis(int n) {
+//         string s = "";
+//         vector<string> ans;
+//         generate(0, 0, s, ans, n);
+//         return ans;
+//     }
+// };
     
     
     
