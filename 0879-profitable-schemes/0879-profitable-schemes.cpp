@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+    
+//     Runtime: 168 ms, faster than 62.74% of C++ online submissions for Profitable Schemes.
+// Memory Usage: 12.8 MB, less than 66.51% of C++ online submissions for Profitable Schemes.
+    
     // Just copy and paste due to fever and cold
     
     
