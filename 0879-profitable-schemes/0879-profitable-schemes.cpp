@@ -1,16 +1,12 @@
 class Solution {
 public:
     
-// 1
-// 1
-// [2,2,2,2,2]
-// [1,2,1,1,0]
+    // Solve Using Tabulation method also
     
-        int mod = 1e9 + 7;
+    int mod = 1e9 + 7;
     
         int schemes(int i, int n, int minProfit, vector<int> &group, vector<int> &profit, vector<vector<vector<int>>> &dp)
         {
-            // cout << minProfit << endl;
             int m = group.size();
             if(n < 0)
                 return 0;
@@ -27,11 +23,8 @@ public:
             {
                 return (dp[i][n][0] = schemes(i+1, n, minProfit, group, profit, dp) + schemes(i+1, n - group[i], minProfit - profit[i], group, profit, dp)) %= mod;
             }
-            
-            // if(minProfit >= 0)
-            // {
-                return (dp[i][n][minProfit] = schemes(i+1, n, minProfit, group, profit, dp) + schemes(i+1, n - group[i], minProfit - profit[i], group, profit, dp)) %= mod;
-            // }
+ 
+            return (dp[i][n][minProfit] = schemes(i+1, n, minProfit, group, profit, dp) + schemes(i+1, n - group[i], minProfit - profit[i], group, profit, dp)) %= mod;
     }
         
     
@@ -40,7 +33,52 @@ public:
             vector<vector<vector<int>>> dp(m+1, vector<vector<int>> (n+1, vector<int> (minProfit + 1, -1)));
             return schemes(0, n, minProfit, group, profit, dp);
         }
-};
+};    
+    
+    
+// 1
+// 1
+// [2,2,2,2,2]
+// [1,2,1,1,0]
+    
+//     Runtime: 296 ms, faster than 27.77% of C++ online submissions for Profitable Schemes.
+// Memory Usage: 53.9 MB, less than 15.04% of C++ online submissions for Profitable Schemes.
+    
+//         int mod = 1e9 + 7;
+    
+//         int schemes(int i, int n, int minProfit, vector<int> &group, vector<int> &profit, vector<vector<vector<int>>> &dp)
+//         {
+//             // cout << minProfit << endl;
+//             int m = group.size();
+//             if(n < 0)
+//                 return 0;
+//             if(i >= m)
+//                 return minProfit <= 0;
+            
+//             if(minProfit <= 0 && dp[i][n][0] != -1)
+//                 return dp[i][n][0];
+                
+//             if(minProfit > 0 && dp[i][n][minProfit] != -1)
+//                 return dp[i][n][minProfit];
+            
+//             if(minProfit <= 0)
+//             {
+//                 return (dp[i][n][0] = schemes(i+1, n, minProfit, group, profit, dp) + schemes(i+1, n - group[i], minProfit - profit[i], group, profit, dp)) %= mod;
+//             }
+            
+//             // if(minProfit >= 0)
+//             // {
+//                 return (dp[i][n][minProfit] = schemes(i+1, n, minProfit, group, profit, dp) + schemes(i+1, n - group[i], minProfit - profit[i], group, profit, dp)) %= mod;
+//             // }
+//     }
+        
+    
+//         int profitableSchemes(int n, int minProfit, vector<int>& group, vector<int>& profit) {
+//             int m = group.size();
+//             vector<vector<vector<int>>> dp(m+1, vector<vector<int>> (n+1, vector<int> (minProfit + 1, -1)));
+//             return schemes(0, n, minProfit, group, profit, dp);
+//         }
+// };
     
     
     
