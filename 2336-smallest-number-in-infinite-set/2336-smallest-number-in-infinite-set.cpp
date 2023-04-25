@@ -1,6 +1,9 @@
 class SmallestInfiniteSet {
 public:
     
+//     Runtime: 132 ms, faster than 24.45% of C++ online submissions for Smallest Number in Infinite Set.
+// Memory Usage: 46.3 MB, less than 14.20% of C++ online submissions for Smallest Number in Infinite Set.
+    
     set<int> st;
     
     SmallestInfiniteSet() {
