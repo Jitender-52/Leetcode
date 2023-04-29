@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 79 ms, faster than 6.48% of C++ online submissions for Minimum Number of Flips to Convert Binary Matrix to Zero Matrix.
+// Memory Usage: 13.6 MB, less than 21.76% of C++ online submissions for Minimum Number of Flips to Convert Binary Matrix to Zero Matrix.
+    
     int n, m;
     
     vector<int> dx = {1, -1, 0, 0, 0};
@@ -50,9 +53,10 @@ public:
                         v[x][y] ^= 1;
                     }
                 }
-                // mp[v] = min(ans, 1 + dfs(v, mp));
-                int a = 1 + dfs(v, mp);
-                ans = min(ans, a);
+                // // mp[v] = min(ans, 1 + dfs(v, mp));
+                // int a = 1 + dfs(v, mp);
+                // ans = min(ans, a);
+                ans = min(ans, 1 + dfs(v, mp));
             }
         }
         return mp[mat] = ans;
