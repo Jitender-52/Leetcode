@@ -1,3 +1,8 @@
+// Runtime: 567 ms, faster than 68.12% of C++ online submissions for Remove Max Number of Edges to Keep Graph Fully Traversable.
+// Memory Usage: 142.6 MB, less than 48.55% of C++ online submissions for Remove Max Number of Edges to Keep Graph Fully Traversable.
+
+
+
 class UnionFind {
     vector<int> representative;
     vector<int> componentSize;
