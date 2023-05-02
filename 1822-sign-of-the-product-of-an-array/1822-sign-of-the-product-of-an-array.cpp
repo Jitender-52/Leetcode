@@ -1,9 +1,12 @@
 class Solution {
 public:
     
+//     Runtime: 8 ms, faster than 27.40% of C++ online submissions for Sign of the Product of an Array.
+// Memory Usage: 10.2 MB, less than 45.94% of C++ online submissions for Sign of the Product of an Array.
+    
         int arraySign(vector<int>& nums) {
             int ans = 1;
-            for(auto i : nums)
+            for(auto &i : nums)
             {
                 if(i == 0)
                     return 0;
