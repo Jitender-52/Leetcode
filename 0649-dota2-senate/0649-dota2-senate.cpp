@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 234 ms, faster than 5.34% of C++ online submissions for Dota2 Senate.
+// Memory Usage: 6.8 MB, less than 88.93% of C++ online submissions for Dota2 Senate
+    
     string predictPartyVictory(string senate) {
 
     // Count of Each Type of Senator to check for Winner
