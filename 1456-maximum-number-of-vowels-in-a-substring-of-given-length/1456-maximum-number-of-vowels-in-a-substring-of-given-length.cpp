@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 24 ms, faster than 43.90% of C++ online submissions for Maximum Number of Vowels in a Substring of Given Length.
+// Memory Usage: 10.1 MB, less than 29.12% of C++ online submissions for Maximum Number of Vowels in a Substring of Given Length.
+
+    
     bool isVowel(char c)
     {
         return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
