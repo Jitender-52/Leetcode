@@ -1,20 +1,41 @@
 class Solution {
 public:
     
-        long long mostPoints(vector<vector<int>>& questions) {
-            int n = questions.size();
-            vector<long long> dp(n+1, 0);
-            
-            for(int i = n-1; i >= 0; i--)
-            {
-                if(i + 1 + questions[i][1] >= n)
-                    dp[i] = max(dp[i+1], (long long)questions[i][0]);
-                else
-                    dp[i] = max(dp[i+1], (long long)questions[i][0] + dp[i+1+questions[i][1]]);
-            }
-            return dp[0];
+    long long mostPoints(vector<vector<int>>& questions) {
+        int n = questions.size();
+        vector<long long> dp(n+1, 0);
+
+        for(int i = n-1; i >= 0; i--)
+        {
+            dp[i] = max(dp[i+1], i+1+questions[i][1] >= n ? questions[i][0] : questions[i][0] + dp[i+1+questions[i][1]]);
+            // if(i + 1 + questions[i][1] >= n)
+            //     dp[i] = max(dp[i+1], (long long)questions[i][0]);
+            // else
+            //     dp[i] = max(dp[i+1], (long long)questions[i][0] + dp[i+1+questions[i][1]]);
         }
+        return dp[0];
+    }
 };
+    
+    
+    
+//     Runtime: 375 ms, faster than 63.82% of C++ online submissions for Solving Questions With Brainpower.
+// Memory Usage: 115.1 MB, less than 93.26% of C++ online submissions for Solving Questions With Brainpower.
+    
+//         long long mostPoints(vector<vector<int>>& questions) {
+//             int n = questions.size();
+//             vector<long long> dp(n+1, 0);
+            
+//             for(int i = n-1; i >= 0; i--)
+//             {
+//                 if(i + 1 + questions[i][1] >= n)
+//                     dp[i] = max(dp[i+1], (long long)questions[i][0]);
+//                 else
+//                     dp[i] = max(dp[i+1], (long long)questions[i][0] + dp[i+1+questions[i][1]]);
+//             }
+//             return dp[0];
+//         }
+// };
     
     
 //     Runtime: 403 ms, faster than 21.35% of C++ online submissions for Solving Questions With Brainpower.
