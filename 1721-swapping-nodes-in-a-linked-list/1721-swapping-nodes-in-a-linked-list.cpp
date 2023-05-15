@@ -10,6 +10,11 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 705 ms, faster than 28.82% of C++ online submissions for Swapping Nodes in a Linked List.
+// Memory Usage: 180.1 MB, less than 87.37% of C++ online submissions for Swapping Nodes in a Linked List.
+
+    
     ListNode* swapNodes(ListNode* head, int k) {
         
         
@@ -26,7 +31,7 @@ public:
         {
             first = first->next;
         }
-        if (count >= k)
+        else if (count >= k)
         {
             second = second->next;
         }
