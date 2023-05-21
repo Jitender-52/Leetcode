@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 57 ms, faster than 51.79% of C++ online submissions for Shortest Bridge.
+// Memory Usage: 18.8 MB, less than 88.20% of C++ online submissions for Shortest Bridge.
+    
     vector<int> dx = {1, -1, 0, 0};
     vector<int> dy = {0, 0, 1, -1};
     
@@ -10,7 +13,8 @@ public:
             
             queue<pair<int,int>> q1, q;
             
-            auto isValid = [=](int i, int j)
+            // auto isValid = [=](int i, int j)
+            auto isValid = [&](int i, int j)
             {
               return (i >= 0 && i < n && j >= 0 && j < m);  
             };
