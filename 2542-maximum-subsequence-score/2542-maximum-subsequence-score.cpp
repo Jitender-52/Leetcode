@@ -1,46 +1,86 @@
 class Solution {
 public:
     
+    
      long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
-            int n = nums1.size();
-            vector<pair<int,int>> v;
-            for(int i = 0; i < n; i++)
-            {
-                v.push_back({nums2[i], nums1[i]});
-            }
-            
-            sort(v.rbegin(), v.rend());
-            
-            long long sum = 0;
-            priority_queue<int, vector<int>, greater<int>> pq;
-            // for(int i = 0; i < k; i++)
-            // {
-            //     sum += v[i].second;
-            //     pq.push(v[i].second);
-            // }
-            
-            long long ans = 0;
-            int l = 0;
-            for(int i = 0; i < n; i++)
-            {
-                sum += v[i].second;
-                pq.push(v[i].second);
-                l++;
-                
-                if(l > k)
-                {
-                    sum -= pq.top();
-                    pq.pop();
-                    l--;
-                }
-                if(l == k)
-                {
-                    ans = max(ans, sum * v[i].first);
-                }
-            }
-            return ans;
-        }
+         int n = nums1.size();
+         vector<pair<int,int>> v;
+         for(int i = 0; i < n; i++)
+             v.push_back({nums2[i], nums1[i]});
+         
+         sort(v.rbegin(), v.rend());
+         
+         priority_queue<int, vector<int>, greater<int>> pq;
+         
+         long long sum = 0;
+         long long ans = 0;
+         int count = 0;
+         
+         for(int i = 0; i < n; i++)
+         {
+             pq.push(v[i].second);
+             sum += v[i].second;
+             count++;
+             
+             if(count > k)
+             {
+                 sum -= pq.top();
+                 pq.pop();
+                 count--;
+             }
+             if(count == k)
+             {
+                 ans = max(ans, sum * v[i].first);
+             }
+         }
+         return ans;
+     }
 };
+    
+    
+//     Runtime: 292 ms, faster than 73.72% of C++ online submissions for Maximum Subsequence Score.
+// Memory Usage: 91.9 MB, less than 65.97% of C++ online submissions for Maximum Subsequence Score.
+    
+//      long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
+//             int n = nums1.size();
+//             vector<pair<int,int>> v;
+//             for(int i = 0; i < n; i++)
+//             {
+//                 v.push_back({nums2[i], nums1[i]});
+//             }
+            
+//             sort(v.rbegin(), v.rend());
+            
+//             long long sum = 0;
+//             priority_queue<int, vector<int>, greater<int>> pq;
+//             // for(int i = 0; i < k; i++)
+//             // {
+//             //     sum += v[i].second;
+//             //     pq.push(v[i].second);
+//             // }
+            
+//             long long ans = 0;
+//             int l = 0;
+//             for(int i = 0; i < n; i++)
+//             {
+//                 sum += v[i].second;
+//                 pq.push(v[i].second);
+//                 l++;
+                
+//                 if(l > k)
+//                 {
+//                     sum -= pq.top();
+//                     pq.pop();
+//                     l--;
+//                 }
+//                 if(l == k)
+//                 {
+//                     ans = max(ans, sum * v[i].first);
+//                 }
+//             }
+//             return ans;
+//         }
+// };
     
     
     
