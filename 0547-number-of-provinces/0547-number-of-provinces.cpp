@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 28 ms, faster than 49.66% of C++ online submissions for Number of Provinces.
+// Memory Usage: 13.8 MB, less than 72.35% of C++ online submissions for Number of Provinces.
+
+    
     void dfs(int src, vector<vector<int>> &adj, vector<int> &vis)
     {
         int n = adj.size();
