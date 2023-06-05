@@ -1,5 +1,10 @@
 class Solution {
 public:
+    
+//     Runtime: 8 ms, faster than 73.14% of C++ online submissions for Check If It Is a Straight Line.
+// Memory Usage: 10.1 MB, less than 63.27% of C++ online submissions for Check If It Is a Straight Line.
+
+    
     bool checkStraightLine(vector<vector<int>>& coordinates) {
         int n = coordinates.size();
         double x = coordinates[1][0] - coordinates[0][0];
