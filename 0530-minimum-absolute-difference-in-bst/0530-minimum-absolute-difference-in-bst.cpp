@@ -12,6 +12,10 @@
 class Solution {
 public:
     
+//     Runtime: 26 ms, faster than 24.75% of C++ online submissions for Minimum Absolute Difference in BST.
+// Memory Usage: 25.2 MB, less than 56.92% of C++ online submissions for Minimum Absolute Difference in BST.
+
+    
         int dfs(TreeNode *root, TreeNode *&prev)
         {
             if(!root)
@@ -19,7 +23,8 @@ public:
             int ans = dfs(root->left, prev);
             
             if(prev)
-                ans = min(ans, abs(root->val - prev->val));
+                ans = min(ans, abs(root->val - prev->val)); // can be used without abs beacuse of inorder traversal
+                // ans = min(ans, abs(root->val - prev->val));
             
             prev = root;
             ans = min(ans, dfs(root->right, prev));
