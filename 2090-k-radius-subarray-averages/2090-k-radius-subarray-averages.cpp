@@ -1,5 +1,10 @@
 class Solution {
 public:
+    
+    
+//     Runtime: 258 ms, faster than 58.32% of C++ online submissions for K Radius Subarray Averages.
+// Memory Usage: 136.5 MB, less than 45.01% of C++ online submissions for K Radius Subarray Averages.
+    
     vector<int> getAverages(vector<int>& nums, int k) {
  // When a single element is considered then its averafge will be the number itself only.
         if (k == 0) {
