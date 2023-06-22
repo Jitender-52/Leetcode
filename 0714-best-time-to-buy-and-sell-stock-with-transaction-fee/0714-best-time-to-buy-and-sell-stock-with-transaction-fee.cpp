@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 129 ms, faster than 73.78% of C++ online submissions for Best Time to Buy and Sell Stock with Transaction Fee.
+// Memory Usage: 59.7 MB, less than 68.68% of C++ online submissions for Best Time to Buy and Sell Stock with Transaction Fee.
+
+    
      int maxProfit(vector<int>& prices, int fee) {
         int n = prices.size();
         vector<int> free(n, 0), hold(n, 0);
