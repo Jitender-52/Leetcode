@@ -50,67 +50,67 @@ public:
         // }
         
         // 2nd method
+//         while(k--)
+//         {
+//             if((!pq1.empty() || pq2.empty()) && (pq1.top() <= pq2.top()))
+//             {
+//                 ans += pq1.top();
+//                 pq1.pop();
+//                 if(i <= j)
+//                 {
+//                     pq1.push(costs[i]);
+//                     i++;
+//                 }
+//             }
+//             else
+//             {
+//                 ans += pq2.top();
+//                 pq2.pop();
+//                 if(i <= j)
+//                 {
+//                     pq2.push(costs[j]);
+//                     j--;
+//                 }
+//             }
+//         }
+        
+        // 3rd method
         while(k--)
         {
-            if((!pq1.empty() || pq2.empty()) && (pq1.top() <= pq2.top()))
+            if(!pq1.empty() && !pq2.empty())
+            {
+                if(pq1.top() <= pq2.top())
+                {
+                    ans += pq1.top();
+                    pq1.pop();
+                    if(i <= j)
+                    {
+                        pq1.push(costs[i]);
+                        i++;
+                    }
+                }
+                else
+                {
+                    ans += pq2.top();
+                    pq2.pop();
+                    if(i <= j)
+                    {
+                        pq2.push(costs[j]);
+                        j--;
+                    }
+                }
+            }
+            else if(!pq1.empty())
             {
                 ans += pq1.top();
                 pq1.pop();
-                if(i <= j)
-                {
-                    pq1.push(costs[i]);
-                    i++;
-                }
             }
             else
             {
                 ans += pq2.top();
                 pq2.pop();
-                if(i <= j)
-                {
-                    pq2.push(costs[j]);
-                    j--;
-                }
             }
         }
-        
-        // 3rd method
-        // while(k--)
-        // {
-        //     if(!pq1.empty() && !pq2.empty())
-        //     {
-        //         if(pq1.top() <= pq2.top())
-        //         {
-        //             ans += pq1.top();
-        //             pq1.pop();
-        //             if(i <= j)
-        //             {
-        //                 pq1.push(costs[i]);
-        //                 i++;
-        //             }
-        //         }
-        //         else
-        //         {
-        //             ans += pq2.top();
-        //             pq2.pop();
-        //             if(i <= j)
-        //             {
-        //                 pq2.push(costs[j]);
-        //                 j--;
-        //             }
-        //         }
-        //     }
-        //     else if(!pq1.empty())
-        //     {
-        //         ans += pq1.top();
-        //         pq1.pop();
-        //     }
-        //     else
-        //     {
-        //         ans += pq2.top();
-        //         pq2.pop();
-        //     }
-        // }
         return ans;
     }
 };
