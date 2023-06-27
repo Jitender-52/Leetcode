@@ -1,5 +1,10 @@
 class Solution {
 public:
+    
+//     Runtime: 306 ms, faster than 68.62% of C++ online submissions for Find K Pairs with Smallest Sums.
+// Memory Usage: 114 MB, less than 56.37% of C++ online submissions for Find K Pairs with Smallest Sums.
+    
+    
     vector<vector<int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k) {
         int n = nums1.size();
         int m = nums2.size();
