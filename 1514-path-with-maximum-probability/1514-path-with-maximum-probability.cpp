@@ -3,6 +3,9 @@ public:
     
     // Try again Just copy paste
     
+//     Runtime: 204 ms, faster than 82.18% of C++ online submissions for Path with Maximum Probability.
+// Memory Usage: 64.9 MB, less than 86.47% of C++ online submissions for Path with Maximum Probability.
+    
     double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start, int end) {
         vector<double> prob(n, 0);
         vector<pair<int, double>> adj[n];
