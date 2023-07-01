@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 1508 ms, faster than 56.35% of C++ online submissions for Fair Distribution of Cookies.
+// Memory Usage: 6.9 MB, less than 62.54% of C++ online submissions for Fair Distribution of Cookies.
+    
     int dfs(int i, vector<int> &cookies, vector<int> &v, int k)
     {
         int n = cookies.size();
