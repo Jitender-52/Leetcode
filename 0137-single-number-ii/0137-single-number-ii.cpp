@@ -1,7 +1,12 @@
 class Solution {
 public:
+    
+//     Runtime: 15 ms, faster than 16.54% of C++ online submissions for Single Number II.
+// Memory Usage: 10 MB, less than 20.94% of C++ online submissions for Single Number II.
+// Next challenges:
+    
     int singleNumber(vector<int>& nums) {
-        unordered_map<int, int> mp;
+        map<int, int> mp;
         for(int i = 0; i < nums.size(); i++)
         {
             mp[nums[i]]++;
