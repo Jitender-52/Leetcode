@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 49 ms, faster than 26.47% of C++ online submissions for Minimum Size Subarray Sum.
+// Memory Usage: 28.1 MB, less than 99.58% of C++ online submissions for Minimum Size Subarray Sum.
+
     int minSubArrayLen(int target, vector<int>& nums) {
      
          int n = nums.size();
