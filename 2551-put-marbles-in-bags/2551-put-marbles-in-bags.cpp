@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 214 ms, faster than 55.33% of C++ online submissions for Put Marbles in Bags.
+// Memory Usage: 69.2 MB, less than 21.99% of C++ online submissions for Put Marbles in Bags.
+    
     long long putMarbles(vector<int>& weights, int k) {
         int n = weights.size();
         if(k == n || k == 1)
