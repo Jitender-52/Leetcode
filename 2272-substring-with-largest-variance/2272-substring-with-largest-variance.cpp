@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+// Runtime: 210 ms, faster than 64.78% of C++ online submissions for Substring With Largest Variance.
+// Memory Usage: 6.8 MB, less than 62.26% of C++ online submissions for Substring With Largest Variance.
+    
    int largestVariance(string s) {
         vector<int> counter(26, 0);
         for (char ch : s) {
