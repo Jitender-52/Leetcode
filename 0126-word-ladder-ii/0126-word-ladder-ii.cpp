@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 43 ms, faster than 25.16% of C++ online submissions for Word Ladder II.
+// Memory Usage: 9.1 MB, less than 68.00% of C++ online submissions for Word Ladder II.
+    
     map<string, int> mp;
     vector<vector<string>> ans;
     string b;
@@ -8,8 +11,8 @@ public:
     void dfs(string word, vector<string> &v)
     {
         // cout << word << endl;
-        // if(mp[word] == 1)
-        if(word == b)
+        if(mp[word] == 1)
+        // if(word == b)
         {
             reverse(v.begin(), v.end());
             ans.push_back(v);
