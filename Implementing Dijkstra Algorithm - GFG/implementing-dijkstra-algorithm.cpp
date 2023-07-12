@@ -34,7 +34,8 @@ class Solution
                 int nnode = i[0];
                 if (wt + d < dist[nnode])
                 {
-                    st.erase({dist[nnode], nnode});
+                    if (dist[nnode] != 1e9)
+                        st.erase({dist[nnode], nnode});
                     dist[nnode] = wt + d;
                     st.insert({wt + d, nnode});
                 }
