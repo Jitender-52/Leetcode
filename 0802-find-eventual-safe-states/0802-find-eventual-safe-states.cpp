@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 165 ms, faster than 81.35% of C++ online submissions for Find Eventual Safe States.
+// Memory Usage: 47.8 MB, less than 79.00% of C++ online submissions for Find Eventual Safe States.
+    
         bool cycle(int src, vector<int> &vis, vector<int> &dfsVis, vector<vector<int>> &graph)
         {
             dfsVis[src] = 1;
