@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 190 ms, faster than 45.64% of C++ online submissions for Path With Minimum Effort.
+// Memory Usage: 37.2 MB, less than 17.95% of C++ online submissions for Path With Minimum Effort.
+    
     int minimumEffortPath(vector<vector<int>>& heights) {
         int n = heights.size();
         int m = heights[0].size();
@@ -23,6 +27,11 @@ public:
             int r = it.second.first;
             int c = it.second.second;
             int d = it.first; 
+            
+            // New part added i.e. return if answer is found i.e. n-1, m-1 is reached. Let's check it works or not;
+            if(r == n-1 && c == m-1)
+                return d;
+            
             for(int i = 0; i < 4; i++)
             {
                 // cout << r << " " << c << endl;
