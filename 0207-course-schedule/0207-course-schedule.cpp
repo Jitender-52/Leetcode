@@ -2,14 +2,13 @@ class Solution {
 public:
     
     bool canFinish(int n, vector<vector<int>>& prerequisites) {
-        vector<int> indegree(n+1);
         int m = prerequisites.size();
-        
+        vector<int> indegree(n+1, 0);
         vector<vector<int>> adj(n);
-        for(int i = 0; i < m; i++)
+        for(auto i : prerequisites)
         {
-            indegree[prerequisites[i][0]]++;
-            adj[prerequisites[i][1]].push_back(prerequisites[i][0]);
+            indegree[i[0]]++;
+            adj[i[1]].push_back(i[0]);
         }
         
         queue<int> q;
@@ -19,8 +18,6 @@ public:
                 q.push(i);
         }
         
-
-        
         int count = 0;
         while(!q.empty())
         {
@@ -29,15 +26,57 @@ public:
             for(auto i : adj[node])
             {
                 indegree[i]--;
-                if(indegree[i] == 0)
+                if(!indegree[i])
                     q.push(i);
             }
             count++;
         }
-        // cout << count << endl;
-        return (count == n);
+        return count == n;
     }
 };
+    
+    
+    
+//     Runtime: 25 ms, faster than 60.97% of C++ online submissions for Course Schedule.
+// Memory Usage: 13.2 MB, less than 84.80% of C++ online submissions for Course Schedule.
+    
+//     bool canFinish(int n, vector<vector<int>>& prerequisites) {
+//         vector<int> indegree(n+1);
+//         int m = prerequisites.size();
+        
+//         vector<vector<int>> adj(n);
+//         for(int i = 0; i < m; i++)
+//         {
+//             indegree[prerequisites[i][0]]++;
+//             adj[prerequisites[i][1]].push_back(prerequisites[i][0]);
+//         }
+        
+//         queue<int> q;
+//         for(int i = 0; i < n; i++)
+//         {
+//             if(!indegree[i])
+//                 q.push(i);
+//         }
+        
+
+        
+//         int count = 0;
+//         while(!q.empty())
+//         {
+//             int node = q.front();
+//             q.pop();
+//             for(auto i : adj[node])
+//             {
+//                 indegree[i]--;
+//                 if(indegree[i] == 0)
+//                     q.push(i);
+//             }
+//             count++;
+//         }
+//         // cout << count << endl;
+//         return (count == n);
+//     }
+// };
     
     
 //     Runtime: 17 ms, faster than 94.40% of C++ online submissions for Course Schedule.
