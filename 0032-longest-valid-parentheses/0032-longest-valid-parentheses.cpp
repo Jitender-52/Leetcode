@@ -1,27 +1,52 @@
 class Solution {
 public:
-
-        int longestValidParentheses(string s) {
+    
+    int longestValidParentheses(string s) {
             int n = s.length();
-            stack<pair<char,int>> st;
-            st.push({'*', -1});
+            stack<int> st;
+            st.push(-1);
             
             int ans = 0;
             for(int i = 0; i < n; i++)
             {
-                if(st.top().first == '(' && s[i] == ')')
+                if(st.top() != -1 && s[st.top()] == '(' && s[i] == ')')
                 {
-                    st.pop();
-                    ans = max(ans, i - st.top().second);
+                   st.pop();
+                   ans = max(ans, i - st.top());
                 }
                 else
                 {
-                    st.push({s[i], i});
-                }
+                   st.push(i);
+                }   
             }
             return ans;
         }
 };
+    
+//     Runtime: 7 ms, faster than 34.93% of C++ online submissions for Longest Valid Parentheses.
+// Memory Usage: 7.7 MB, less than 10.11% of C++ online submissions for Longest Valid Parentheses.
+
+//         int longestValidParentheses(string s) {
+//             int n = s.length();
+//             stack<pair<char,int>> st;
+//             st.push({'*', -1});
+            
+//             int ans = 0;
+//             for(int i = 0; i < n; i++)
+//             {
+//                 if(st.top().first == '(' && s[i] == ')')
+//                 {
+//                     st.pop();
+//                     ans = max(ans, i - st.top().second);
+//                 }
+//                 else
+//                 {
+//                     st.push({s[i], i});
+//                 }
+//             }
+//             return ans;
+//         }
+// };
 
 
     
