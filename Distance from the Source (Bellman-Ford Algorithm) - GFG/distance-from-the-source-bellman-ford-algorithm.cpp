@@ -30,7 +30,7 @@ class Solution {
         for(auto i : edges)
         {
             int node = i[0], nnode = i[1], wt = i[2];
-                if(dist[node] != 1e8 && dist[node] + wt < dist[nnode])
+                if(dist[node] + wt < dist[nnode])
                     return {-1};
         }
         return dist;
