@@ -11,6 +11,9 @@
 class Solution {
 public:
     
+//     Runtime: 45 ms, faster than 35.96% of C++ online submissions for Add Two Numbers II.
+// Memory Usage: 73.7 MB, less than 22.79% of C++ online submissions for Add Two Numbers II.
+    
         ListNode* addTwoNumbers(ListNode* head1, ListNode* head2) {
             stack<int> st1, st2;
             while(head1)
