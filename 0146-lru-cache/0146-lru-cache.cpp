@@ -1,6 +1,10 @@
 class LRUCache {
 public:
     
+//     Runtime: 488 ms, faster than 73.50% of C++ online submissions for LRU Cache.
+// Memory Usage: 165.1 MB, less than 75.82% of C++ online submissions for LRU Cache.
+    
+    
     list<pair<int,int>> l;
         unordered_map<int,list<pair<int, int>>::iterator> m;
         int size;
