@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 145 ms, faster than 15.50% of C++ online submissions for Longest Increasing Path in a Matrix.
+// Memory Usage: 28.6 MB, less than 14.32% of C++ online submissions for Longest Increasing Path in a Matrix.
+    
+    
     int dfs(int i, int j, int last, vector<vector<int>> &matrix, vector<vector<int>> &dp)
     {
         // cout << "HII" << endl;
