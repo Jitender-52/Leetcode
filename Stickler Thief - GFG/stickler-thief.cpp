@@ -21,17 +21,24 @@ class Solution
     int FindMaxSum(int arr[], int n)
     {
         // Your code here
-        vector<int> dp(n, 0);
+        vector<int> dp(n+2, 0);
         // return solve(0, arr, n, dp);
-        for(int i = 0; i < n; i++)
+        
+        // for(int i = 0; i < n; i++)
+        // {
+        //     dp[i] = arr[i];
+        //     if(i - 1 >= 0)
+        //         dp[i] = max(dp[i], dp[i-1]);
+        //     if(i - 2 >= 0)
+        //         dp[i] = max(dp[i], arr[i] + dp[i-2]);
+        // }
+        // return dp[n-1];
+        
+        for(int i = n-1; i >= 0; i--)
         {
-            dp[i] = arr[i];
-            if(i - 1 >= 0)
-                dp[i] = max(dp[i], dp[i-1]);
-            if(i - 2 >= 0)
-                dp[i] = max(dp[i], arr[i] + dp[i-2]);
+            dp[i] = max(dp[i+1], arr[i] + dp[i+2]);
         }
-        return dp[n-1];
+        return dp[0];
     }
 };
 
