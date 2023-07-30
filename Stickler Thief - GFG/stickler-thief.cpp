@@ -34,11 +34,20 @@ class Solution
         // }
         // return dp[n-1];
         
+        // for(int i = n-1; i >= 0; i--)
+        // {
+        //     dp[i] = max(dp[i+1], arr[i] + dp[i+2]);
+        // }
+        // return dp[0];
+        
+        int next = 0, nnext = 0, curr = 0;
         for(int i = n-1; i >= 0; i--)
         {
-            dp[i] = max(dp[i+1], arr[i] + dp[i+2]);
+            curr = max(next, nnext + arr[i]);
+            nnext = next;
+            next = curr;
         }
-        return dp[0];
+        return next;
     }
 };
 
