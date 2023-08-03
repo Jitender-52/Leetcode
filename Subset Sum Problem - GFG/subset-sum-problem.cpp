@@ -39,19 +39,28 @@ public:
             dp[i][0] = 1;
         if(arr[0] <= target)
             dp[0][arr[0]] = 1;
-        
+       
         for(int i = 1; i < n; i++)
         {
             for(int j = 0; j <= target; j++)
             {
-                bool take = false;
-                if(arr[i] <= j)
-                    take = dp[i-1][j - arr[i]];
-                bool notTake = dp[i-1][j];
-                dp[i][j] = take | notTake;
+               dp[i][j] = (dp[i-1][j]) | ((arr[i] <= j) ? dp[i-1][j-arr[i]] : false);
             }
         }
         return dp[n-1][target];
+        
+        // for(int i = 1; i < n; i++)
+        // {
+        //     for(int j = 0; j <= target; j++)
+        //     {
+        //         bool take = false;
+        //         if(arr[i] <= j)
+        //             take = dp[i-1][j - arr[i]];
+        //         bool notTake = dp[i-1][j];
+        //         dp[i][j] = take || notTake;
+        //     }
+        // }
+        // return dp[n-1][target];
     }
 };
 
