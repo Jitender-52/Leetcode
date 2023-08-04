@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 4 ms, faster than 84.76% of C++ online submissions for Word Break.
+// Memory Usage: 7.7 MB, less than 85.40% of C++ online submissions for Word Break.
+    
 //     bool dfs(int i, int j, string &s, vector<string> &word, vector<vector<int>> &dp)
 //     {
 //         int n = s.length();
