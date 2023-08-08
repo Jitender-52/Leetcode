@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 3 ms, faster than 79.95% of C++ online submissions for Search in Rotated Sorted Array.
+// Memory Usage: 11 MB, less than 97.49% of C++ online submissions for Search in Rotated Sorted Array.
+    
     int search(vector<int>& nums, int target) {
         int n = nums.size();
         int pivot = 0;
@@ -15,6 +19,7 @@ public:
         if(nums[n-1] < nums[0])
             pivot = n-1;
         
+        // used this conecpt of finding the pivot point from the question of finding the minimum nums from 
         while(left <= right)
         {
             int mid = (left + right) / 2;
