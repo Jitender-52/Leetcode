@@ -3,26 +3,51 @@ public:
     
     int change(int amount, vector<int>& coins) {
         int n = coins.size();
-        vector<vector<int>> dp(n+1, vector<int> (amount+1, 0));
-        
-        for(int i = 0; i < n; i++)
-        {
-            dp[i][0] = 1;
-        }
-        
+        vector<int> prev(amount + 1, 0);
         for(int i = n-1; i >= 0; i--)
         {
+            vector<int> curr(amount + 1, 0);
+            curr[0] = 1;
             for(int j = 1; j <= amount; j++)
             {
-                 if(j >= coins[i])
-                     dp[i][j] = dp[i+1][j] + dp[i][j-coins[i]]; // Good Condition need to take care of this condition
+                if(j - coins[i] >= 0)
+                    curr[j] = prev[j] + curr[j-coins[i]];
                 else
-                    dp[i][j] = dp[i+1][j];
+                    curr[j] = prev[j];
             }
+            prev = curr;
         }
-        return dp[0][amount];
+        return prev[amount];
     }
 };
+    
+    
+    
+//     Runtime: 44 ms, faster than 37.91% of C++ online submissions for Coin Change II.
+// Memory Usage: 18.5 MB, less than 37.65% of C++ online submissions for Coin Change II.
+    
+//     int change(int amount, vector<int>& coins) {
+//         int n = coins.size();
+//         vector<vector<int>> dp(n+1, vector<int> (amount+1, 0));
+        
+//         for(int i = 0; i < n; i++)
+//         {
+//             dp[i][0] = 1;
+//         }
+        
+//         for(int i = n-1; i >= 0; i--)
+//         {
+//             for(int j = 1; j <= amount; j++)
+//             {
+//                  if(j >= coins[i])
+//                      dp[i][j] = dp[i+1][j] + dp[i][j-coins[i]]; // Good Condition need to take care of this condition
+//                 else
+//                     dp[i][j] = dp[i+1][j];
+//             }
+//         }
+//         return dp[0][amount];
+//     }
+// };
     
     
     
