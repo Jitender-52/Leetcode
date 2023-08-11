@@ -1,13 +1,16 @@
 class Solution {
 public:
     
+//     Runtime: 29 ms, faster than 53.87% of C++ online submissions for Coin Change II.
+// Memory Usage: 18.2 MB, less than 65.51% of C++ online submissions for Coin Change II.
+    
     int change(int amount, vector<int>& coins) {
         int n = coins.size();
         vector<int> prev(amount + 1, 0);
         for(int i = n-1; i >= 0; i--)
         {
-            vector<int> curr(amount + 1, 0);
-            curr[0] = 1;
+            vector<int> curr(amount + 1, 1);
+            // curr[0] = 1; // Lets check with intializing all with 1 in curr 
             for(int j = 1; j <= amount; j++)
             {
                 if(j - coins[i] >= 0)
