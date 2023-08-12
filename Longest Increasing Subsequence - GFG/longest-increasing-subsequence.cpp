@@ -14,8 +14,7 @@ class Solution
     int longestSubsequence(int n, int a[])
     {
         vector<int> temp;
-        temp.push_back(a[0]);
-        for(int i = 1; i < n; i++)
+        for(int i = 0; i < n; i++)
         {
             auto idx = lower_bound(temp.begin(), temp.end(), a[i]) - temp.begin();
             if(idx >= temp.size())
