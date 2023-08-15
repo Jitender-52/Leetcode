@@ -11,6 +11,9 @@
 class Solution {
 public:
     
+//     Runtime: 4 ms, faster than 78.23% of C++ online submissions for Partition List.
+// Memory Usage: 10.2 MB, less than 48.14% of C++ online submissions for Partition List.
+    
     
     ListNode* partition(ListNode* ghead, int x) {
         
