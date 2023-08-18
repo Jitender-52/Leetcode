@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 68 ms, faster than 86.14% of C++ online submissions for Maximal Network Rank.
+// Memory Usage: 32.9 MB, less than 63.45% of C++ online submissions for Maximal Network Rank
+    
     int maximalNetworkRank(int n, vector<vector<int>>& roads) {
         vector<int> indegree(n, 0);
         
@@ -15,6 +19,7 @@ public:
         // can be reduced to low time complexity but here constraints are less
         
         
+        // ********************* Accepted *********************
         int ans = 0;
         for(int i = 0; i < n; i++)
         {
@@ -28,6 +33,10 @@ public:
         }
         return ans;
         
+         // ********************* Reduce the time complexity using map in case of high constraints *********************
+        
+        
+        // ********************* will not be accepted because we can also find any other pair with no direct road and having same indegrees *********************
         // vector<pair<int,int>> v;
         // for(int i = 0; i < n; i++)
         // {
