@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    // Tabulation Method
+    // Space Optimization
     
     bool canPartition(vector<int>& nums) 
     {
@@ -13,20 +13,55 @@ public:
             return false;
         
         sum /= 2;
-        vector<vector<int>> dp(n+1, vector<int> (sum+1, 0));
-        dp[n][sum] = 1;
+        vector<int> prev(sum+1, 0);
+        prev[sum] = 1;
         for(int i = n-1; i >= 0; i--)
         {
+            vector<int> curr(sum+1, 0);
             for(int j = 0; j <= sum; j++)
             {
-                dp[i][j] |= dp[i+1][j];
-                if(nums[i] + j <= sum)
-                    dp[i][j] |= dp[i+1][j+nums[i]];
+                curr[j] = prev[j];
+                if(j + nums[i] <= sum)
+                    curr[j] |= prev[j+nums[i]];
             }
+            prev = curr;
         }
-        return dp[0][0];
+        return prev[0];
     }
 };
+
+    
+    
+    
+//     Runtime: 419 ms, faster than 30.70% of C++ online submissions for Partition Equal Subset Sum.
+// Memory Usage: 95.8 MB, less than 18.61% of C++ online submissions for Partition Equal Subset Sum.
+    
+    // Tabulation Method
+    
+//     bool canPartition(vector<int>& nums) 
+//     {
+//         int n = nums.size();
+//         int sum = 0;
+//         for(auto i : nums)
+//             sum += i;
+//         if(sum % 2)
+//             return false;
+        
+//         sum /= 2;
+//         vector<vector<int>> dp(n+1, vector<int> (sum+1, 0));
+//         dp[n][sum] = 1;
+//         for(int i = n-1; i >= 0; i--)
+//         {
+//             for(int j = 0; j <= sum; j++)
+//             {
+//                 dp[i][j] |= dp[i+1][j];
+//                 if(nums[i] + j <= sum)
+//                     dp[i][j] |= dp[i+1][j+nums[i]];
+//             }
+//         }
+//         return dp[0][0];
+//     }
+// };
 
     
     
