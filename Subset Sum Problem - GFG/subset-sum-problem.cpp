@@ -10,57 +10,23 @@ using namespace std;
 class Solution{   
 public:
 
-    bool subset(int i, int sum, vector<int> &arr, vector<vector<int>> &dp)
+    bool subset(int i, vector<int> arr, int sum, vector<vector<int>> &dp)
     {
         int n = arr.size();
         if(sum == 0)
-            return true;
-        if(sum <  0)
-            return false;
+            return 1;
         if(i >= n)
-            return false;
-            
+            return 0;
         if(dp[i][sum] != -1)
             return dp[i][sum];
-            
-        if(subset(i+1, sum - arr[i], arr, dp) || subset(i+1, sum, arr, dp))
-            return true;
-        // return false;
-        return dp[i][sum] = false;
+        return dp[i][sum] = subset(i+1, arr, sum, dp) | subset(i+1, arr, sum-arr[i], dp);
     }
 
-    bool isSubsetSum(vector<int>arr, int target){
+    bool isSubsetSum(vector<int>arr, int sum){
         // code here 
         int n = arr.size();
-        vector<vector<int>> dp(n, vector<int> (target+1, 0));
-        // return subset(0, target, arr, dp);
-        
-        for(int i = 0; i < n; i++)
-            dp[i][0] = 1;
-        if(arr[0] <= target)
-            dp[0][arr[0]] = 1;
-       
-        for(int i = 1; i < n; i++)
-        {
-            for(int j = 0; j <= target; j++)
-            {
-               dp[i][j] = (dp[i-1][j]) | ((arr[i] <= j) ? dp[i-1][j-arr[i]] : false);
-            }
-        }
-        return dp[n-1][target];
-        
-        // for(int i = 1; i < n; i++)
-        // {
-        //     for(int j = 0; j <= target; j++)
-        //     {
-        //         bool take = false;
-        //         if(arr[i] <= j)
-        //             take = dp[i-1][j - arr[i]];
-        //         bool notTake = dp[i-1][j];
-        //         dp[i][j] = take || notTake;
-        //     }
-        // }
-        // return dp[n-1][target];
+        vector<vector<int>> dp(n, vector<int> (sum+1, -1));
+        return subset(0, arr, sum, dp);
     }
 };
 
