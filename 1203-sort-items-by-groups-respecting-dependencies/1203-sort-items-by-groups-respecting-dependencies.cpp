@@ -1,6 +1,8 @@
 class Solution {
 public:
     
+//     Runtime: 156 ms, faster than 39.24% of C++ online submissions for Sort Items by Groups Respecting Dependencies.
+// Memory Usage: 75.1 MB, less than 26.45% of C++ online submissions for Sort Items by Groups Respecting Dependencies.
     
    bool topSort(vector<unordered_set<int>>& al, int i, vector<int>& res, vector<int>& stat) {
     if (stat[i] != 0) return stat[i] == 2;
