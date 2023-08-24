@@ -1,5 +1,10 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Text Justification.
+// Memory Usage: 7.3 MB, less than 69.74% of C++ online submissions for Text Justification.
+// Next challenges:
+    
     vector<string> fullJustify(vector<string>& words, int L) {
         vector<string> res;
         for(int i = 0, k, l; i < words.size(); i += k) {
