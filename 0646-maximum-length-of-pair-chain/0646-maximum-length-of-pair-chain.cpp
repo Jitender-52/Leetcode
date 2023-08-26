@@ -1,25 +1,51 @@
 class Solution {
 public:
     
+    
     int findLongestChain(vector<vector<int>>& pairs) {
-        sort(pairs.begin(), pairs.end(), [&](vector<int> &a, vector<int> &b)         {
-            if(a[1] == b[1])
-                return a[0] < b[0];
-            return a[1] < b[1];
+        int n = pairs.size();
+        sort(pairs.begin(), pairs.end(), [&](vector<int> &a, vector<int> &b)            {
+            if(a[0] == b[0])
+                return a[1] > b[1];
+            return a[0] < b[0];
         });
         
-        int last = INT_MIN, ans = 0;
-        for(auto &v : pairs)
+        int last = INT_MAX, ans = 0;    
+        for(int i = n-1; i >= 0; i--)
         {
-            if(v[0] > last)
+            if(pairs[i][1] < last)
             {
                 ans++;
-                last = v[1];
+                last = pairs[i][0];
             }
         }
         return ans;
     }
 };
+    
+    
+//     Runtime: 53 ms, faster than 91.50% of C++ online submissions for Maximum Length of Pair Chain.
+// Memory Usage: 22.5 MB, less than 86.44% of C++ online submissions for Maximum Length of Pair Chain.
+    
+//     int findLongestChain(vector<vector<int>>& pairs) {
+//         sort(pairs.begin(), pairs.end(), [&](vector<int> &a, vector<int> &b)            {
+//             if(a[1] == b[1])
+//                 return a[0] < b[0];
+//             return a[1] < b[1];
+//         });
+        
+//         int last = INT_MIN, ans = 0;
+//         for(auto &v : pairs)
+//         {
+//             if(v[0] > last)
+//             {
+//                 ans++;
+//                 last = v[1];
+//             }
+//         }
+//         return ans;
+//     }
+// };
     
     
     
