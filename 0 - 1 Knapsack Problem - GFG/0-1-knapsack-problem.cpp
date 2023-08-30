@@ -29,8 +29,36 @@ class Solution
     { 
        // Your code here
        
-       vector<vector<int>> dp(n, vector<int> (w+1, -1));
+    //   vector<vector<int>> dp(n, vector<int> (w+1, -1));
     //   return solve(n-1, w, wt, val, n, dp);
+    
+        vector<vector<int>> dp(n+1, vector<int> (w+1, 0));
+        
+        // for(int i = 0; i < n; i++)
+        // {
+        //     if(wt[i] <= w)
+        //         dp[0][wt[i]] = val[0];
+        // }
+        
+        for(int i = wt[0]; i <= w; i++)
+            dp[0][i] = val[0];
+        
+        for(int i = 1; i < n; i++)
+        {
+            for(int j = 0; j <= w; j++)
+            {
+                dp[i][j] = dp[i-1][j];
+                if(j-wt[i] >= 0)
+                    dp[i][j] = max(dp[i][j], val[i] + dp[i-1][j-wt[i]]);
+            }
+        }
+        return dp[n-1][w];
+        int ans = 0;
+        // for(int i = 0; i <= w; i++)
+        // {
+        //     ans = max(ans, dp[n-1][w]);
+        // }
+        // return ans;
     }
 };
 
