@@ -11,6 +11,9 @@
 class Solution {
 public:
     
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Reverse Linked List II.
+// Memory Usage: 7.5 MB, less than 46.43% of C++ online submissions for Reverse Linked List II.
+    
     void reverse(ListNode *head, ListNode *&l, ListNode *r, int left, int &right)
     {
         if(!head)
