@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 21 ms, faster than 37.33% of C++ online submissions for Candy.
+// Memory Usage: 17.4 MB, less than 82.81% of C++ online submissions for Candy.
+
+    
     int candy(vector<int>& ratings) {
         int n = ratings.size();
         int candy = n, i=1;
