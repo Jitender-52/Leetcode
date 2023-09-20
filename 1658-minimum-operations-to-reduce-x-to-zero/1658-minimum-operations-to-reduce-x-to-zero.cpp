@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 126 ms, faster than 58.88% of C++ online submissions for Minimum Operations to Reduce X to Zero.
+// Memory Usage: 98.9 MB, less than 35.28% of C++ online submissions for Minimum Operations to Reduce X to Zero.
+    
     int minOperations(vector<int>& nums, int x) {
         int n = nums.size();
         int sum = 0;
