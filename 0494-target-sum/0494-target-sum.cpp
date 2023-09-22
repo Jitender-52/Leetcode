@@ -11,32 +11,67 @@ public:
             return 0;
         sum /= 2;
         
-        vector<vector<int>> dp(n, vector<int> (sum + 1, 0));
-        dp[0][0] = 1;
+        vector<int> prev(sum + 1, 0);
+        prev[0] = 1;
         if(nums[0] <= sum)
-            dp[0][nums[0]] += 1;
-        // cout << sum << endl;
+            prev[nums[0]] += 1;
         for(int i = 1; i < n; i++)
         {
+            vector<int> curr(sum + 1, 0);
             for(int j = 0; j <= sum; j++)
             {
-                dp[i][j] = dp[i-1][j];
+                curr[j] = prev[j];
                 if(j - nums[i] >= 0)
-                {
-                    dp[i][j] += dp[i-1][j - nums[i]];
-                }
+                    curr[j] += prev[j - nums[i]];
             }
+            prev = curr;
         }
-        // cout << endl;
-        // for(auto v : dp)
-        // {
-        //     for(auto i : v)
-        //         cout << i << " ";
-        //     cout << endl;
-        // }
-        return dp[n-1][sum];
+        return prev[sum];
     }
 };
+    
+    
+    
+    
+//     Runtime: 12 ms, faster than 72.35% of C++ online submissions for Target Sum.
+// Memory Usage: 12.4 MB, less than 42.90% of C++ online submissions for Target Sum.
+    
+//     int findTargetSumWays(vector<int>& nums, int target) {
+//         int n = nums.size();
+//         int sum = 0;
+//         for(auto i : nums)
+//             sum += i;
+//         sum -= target;
+//         if(sum % 2 == 1 || sum < 0)
+//             return 0;
+//         sum /= 2;
+        
+//         vector<vector<int>> dp(n, vector<int> (sum + 1, 0));
+//         dp[0][0] = 1;
+//         if(nums[0] <= sum)
+//             dp[0][nums[0]] += 1;
+//         // cout << sum << endl;
+//         for(int i = 1; i < n; i++)
+//         {
+//             for(int j = 0; j <= sum; j++)
+//             {
+//                 dp[i][j] = dp[i-1][j];
+//                 if(j - nums[i] >= 0)
+//                 {
+//                     dp[i][j] += dp[i-1][j - nums[i]];
+//                 }
+//             }
+//         }
+//         // cout << endl;
+//         // for(auto v : dp)
+//         // {
+//         //     for(auto i : v)
+//         //         cout << i << " ";
+//         //     cout << endl;
+//         // }
+//         return dp[n-1][sum];
+//     }
+// };
     
     
     
