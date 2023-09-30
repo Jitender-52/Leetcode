@@ -16,7 +16,8 @@ public:
             if(it != mp.begin())
             {
                 it--;
-                if(mini < nums[i] && nums[i] > mp.begin()->first && it->first > mini)
+                // if(mini < nums[i] && nums[i] > mp.begin()->first && it->first > mini)
+                if(mini < it->first && it->first < nums[i])
                     return true;
             }            
             // if(mini < nums[i] && nums[i] > mp.begin()->first)
