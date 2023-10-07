@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 213 ms, faster than 19.36% of C++ online submissions for Build Array Where You Can Find The Maximum Exactly K Comparisons.
+// Memory Usage: 10.6 MB, less than 16.13% of C++ online submissions for Build Array Where You Can Find The Maximum Exactly K Comparisons.
+    
     int mod = 1e9+7;
     int helper(int i, int n, int m, int k,vector<vector<vector<int>>> &dp){
         if(n<=0){
