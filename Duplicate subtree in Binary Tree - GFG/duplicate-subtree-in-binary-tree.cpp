@@ -93,32 +93,6 @@ class Solution {
     /*This function returns true if the tree contains 
     a duplicate subtree of size 2 or more else returns false*/
     
-//     map<string, int> mp;
-    
-//     string solve(Node *root)
-//     {
-//         if(!root)
-//             return "N";
-//         if(!root->left && !root->right)
-//             return to_string(root->data);
-//         string s = to_string(root->data) + ',' + solve(root->left) + ',' + solve(root->right);
-//         mp[s]++;
-//         return s;
-//     }
-    
-//     int dupSub(Node *root) {
-//         solve(root);
-//         int ans = 0;
-//         for(auto i : mp)
-//         {
-//             if(i.second > 1)
-//                 return 1;
-//         }
-//         return 0;
-//     }
-// };
-    
-    
     map<vector<int>, int> mp;
     
     void subtree(Node *root, vector<int> &v)
@@ -168,6 +142,82 @@ class Solution {
         return 0;
     }
 };
+    
+//     map<string, int> mp;
+    
+//     string solve(Node *root)
+//     {
+//         if(!root)
+//             return "N";
+//         if(!root->left && !root->right)
+//             return to_string(root->data);
+//         string s = to_string(root->data) + ',' + solve(root->left) + ',' + solve(root->right);
+//         mp[s]++;
+//         return s;
+//     }
+    
+//     int dupSub(Node *root) {
+//         solve(root);
+//         int ans = 0;
+//         for(auto i : mp)
+//         {
+//             if(i.second > 1)
+//                 return 1;
+//         }
+//         return 0;
+//     }
+// };
+    
+    
+//     map<vector<int>, int> mp;
+    
+//     void subtree(Node *root, vector<int> &v)
+//     {
+//         // if(root && !root->left && !root->right)
+//         // {
+//         //     v.push_back(root->data);
+//         //     if(v.size() > 1)
+//         //         mp[v]++;
+//         //     return;
+//         // }
+//         if(!root)
+//             return;
+//         v.push_back(root->data);
+//         subtree(root->left, v);
+//         subtree(root->right, v);
+//     }
+    
+//     void dfs(Node *root)
+//     {
+//         if(!root)
+//             return;
+//         vector<int> v;
+//         subtree(root, v);
+//         if(v.size() > 1)
+//             mp[v]++;
+//         dfs(root->left);
+//         dfs(root->right);
+//     }
+    
+//     int dupSub(Node *root) {
+//          // code here
+         
+//         dfs(root);
+//         int ans = 0;
+//         for(auto i : mp)
+//         {
+//             if(i.second > 1)
+//                 return 1;
+//             // for(auto j : i.first)
+//             // {
+//             //     cout << j << " ";
+//             // }
+//             // cout << "-> " << i.second;
+//             // cout << endl;
+//         }
+//         return 0;
+//     }
+// };
 
 //{ Driver Code Starts.
 
