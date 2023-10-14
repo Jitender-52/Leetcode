@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 233 ms, faster than 76.30% of C++ online submissions for Painting the Walls.
+// Memory Usage: 115.8 MB, less than 33.79% of C++ online submissions for Painting the Walls.
+    
     int paint(int i, int t, vector<int> &cost, vector<int> &time, vector<vector<int>> &dp)
     {
         int n = cost.size();
