@@ -35,9 +35,9 @@ class Solution{
     {
         if(!root)
             return;
-        v.push_back(root->data);
         dfs(root->left, v);
         dfs(root->right, v);
+        v.push_back(root->data);
     }
     
     Node *build(int l, int r, vector<int> v)
