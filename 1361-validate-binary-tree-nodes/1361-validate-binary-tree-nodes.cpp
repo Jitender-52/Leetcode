@@ -1,6 +1,9 @@
 class Solution {
 public:
   
+//     Runtime: 40 ms, faster than 57.45% of C++ online submissions for Validate Binary Tree Nodes.
+// Memory Usage: 33 MB, less than 66.72% of C++ online submissions for Validate Binary Tree Nodes.
+    
     bool validateBinaryTreeNodes(int n, std::vector<int>& leftChild, std::vector<int>& rightChild) {
         std::vector<int> indegree(n, 0);
         for (int i = 0; i < n; ++i) {
