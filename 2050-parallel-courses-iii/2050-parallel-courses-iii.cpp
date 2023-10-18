@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 377 ms, faster than 25.00% of C++ online submissions for Parallel Courses III.
+// Memory Usage: 147.2 MB, less than 22.84% of C++ online submissions for Parallel Courses III.
+    
     int minimumTime(int n, vector<vector<int>>& relations, vector<int>& time) {
         vector<int> indegree(n+1, 0);
         vector<vector<int>> adj(n+1);
