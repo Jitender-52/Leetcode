@@ -2,49 +2,74 @@ class Solution {
 public:
     
     const int mod = 1e9 + 7;
-    
-    int trees(int root, vector<int> &arr, map<int,int> &mp)
-    {
-        int n = arr.size();
-        long long ans = 1;
-        for(int i = 0; i < n && arr[i] * 1LL * arr[i] <= root; i++)
-        {
-            if(root % arr[i] == 0)
-            {
-                if(root / arr[i] == arr[i])
-                {
-                    (ans += 1LL * mp[arr[i]] * mp[arr[i]]) %= mod;
-                }
-                else
-                {
-                    (ans += 2LL * mp[arr[i]] * mp[root / arr[i]]) %= mod;
-                }
-            }
-        }
-        return ans;
-    }
-    
+  
     int numFactoredBinaryTrees(vector<int>& arr) {
         int n = arr.size();
         
         sort(arr.begin(), arr.end());
-        
-        map<int,int> mp;
-        for(int i = 0; i < n; i++)
-        {
-            mp[arr[i]]++;
-        }
-        
+        map<int, long long> dp;
         long long ans = 0;
         for(int i = 0; i < n; i++)
         {
-            int a = trees(arr[i], arr, mp);
-            (ans += a) %= mod;
-            mp[arr[i]] = a;
+            dp[arr[i]] = 1;
+            for(int j = 0; j < i; j++)
+            {
+                if(arr[i] % arr[j] == 0)
+                    (dp[arr[i]] += dp[arr[j]] * dp[arr[i] / arr[j]]) %= mod;
+            }
+            (ans += dp[arr[i]]) %= mod;
         }
         return ans;
     }
 };
+    
+//     Runtime: 64 ms, faster than 37.01% of C++ online submissions for Binary Trees With Factors.
+// Memory Usage: 16.7 MB, less than 20.08% of C++ online submissions for Binary Trees With Factors.
+    
+//     const int mod = 1e9 + 7;
+    
+//     int trees(int root, vector<int> &arr, map<int,int> &mp)
+//     {
+//         int n = arr.size();
+//         long long ans = 1;
+//         for(int i = 0; i < n && arr[i] * 1LL * arr[i] <= root; i++)
+//         {
+//             if(root % arr[i] == 0)
+//             {
+//                 if(root / arr[i] == arr[i])
+//                 {
+//                     (ans += 1LL * mp[arr[i]] * mp[arr[i]]) %= mod;
+//                 }
+//                 else
+//                 {
+//                     (ans += 2LL * mp[arr[i]] * mp[root / arr[i]]) %= mod;
+//                 }
+//             }
+//         }
+//         return ans;
+//     }
+    
+//     int numFactoredBinaryTrees(vector<int>& arr) {
+//         int n = arr.size();
+        
+//         sort(arr.begin(), arr.end());
+        
+//         map<int,int> mp;
+//         for(int i = 0; i < n; i++)
+//         {
+//             mp[arr[i]]++;
+//         }
+        
+//         long long ans = 0;
+//         for(int i = 0; i < n; i++)
+//         {
+//             int a = trees(arr[i], arr, mp);
+//             (ans += a) %= mod;
+//             mp[arr[i]] = a;
+//         }
+//         return ans;
+//     }
+// };
 
 
 // const int mod = 1e9 + 7;
