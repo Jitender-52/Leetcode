@@ -12,8 +12,11 @@
 class Solution {
 public:
     
-    map<int,int> mp;
+//     Runtime: 18 ms, faster than 46.52% of C++ online submissions for Find Mode in Binary Search Tree.
+// Memory Usage: 26.1 MB, less than 15.27% of C++ online submissions for Find Mode in Binary Search Tree.
+
     
+    map<int,int> mp;
     void dfs(TreeNode *root)
     {
         if(!root)
