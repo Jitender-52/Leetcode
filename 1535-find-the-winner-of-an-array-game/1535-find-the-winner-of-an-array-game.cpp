@@ -1,9 +1,11 @@
 class Solution {
 public:
+    
+//     Runtime: 97 ms, faster than 28.24% of C++ online submissions for Find the Winner of an Array Game.
+// Memory Usage: 68.9 MB, less than 14.35% of C++ online submissions for Find the Winner of an Array Game.
+    
     int getWinner(vector<int>& arr, int k) {
         int n = arr.size();
-        if(k == 1)
-            return max(arr[0], arr[1]);
         if(k >= n)
             return *max_element(arr.begin(), arr.end());
         queue<int> q;
