@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 630 ms, faster than 33.79% of C++ online submissions for Unique Length-3 Palindromic Subsequences.
+// Memory Usage: 13.6 MB, less than 52.05% of C++ online submissions for Unique Length-3 Palindromic Subsequences.
+    
     int countPalindromicSubsequence(string s) {
         int n = s.length();
         int ans = 0;
