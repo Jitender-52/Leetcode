@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 117 ms, faster than 21.77% of C++ online submissions for Count Nice Pairs in an Array.
+// Memory Usage: 57.4 MB, less than 35.81% of C++ online submissions for Count Nice Pairs in an Array.
+    
     const int mod = 1e9 + 7;
     
     int countNicePairs(vector<int>& nums) {
