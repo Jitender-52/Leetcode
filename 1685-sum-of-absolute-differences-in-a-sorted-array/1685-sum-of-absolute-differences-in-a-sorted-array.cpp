@@ -1,5 +1,10 @@
 class Solution {
 public:
+    
+//     Runtime: 98 ms, faster than 35.41% of C++ online submissions for Sum of Absolute Differences in a Sorted Array.
+// Memory Usage: 83.8 MB, less than 60.81% of C++ online submissions for Sum of Absolute Differences in a Sorted Array.
+
+    
     vector<int> getSumAbsoluteDifferences(vector<int>& nums) {
         int n = nums.size();
         int sum = 0;
