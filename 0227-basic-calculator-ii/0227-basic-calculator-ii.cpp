@@ -3,47 +3,83 @@ public:
     
     int calculate(string s) {
         int n = s.length();
-        stack<int> st;
-        int num = 0;
+        int last = 0, num = 0, ans = 0;
         char operand = '+';
         for(int i = 0; i < n; i++)
         {
-            char c = s[i];
-            if(isdigit(c))
+            if(isdigit(s[i]))
             {
-                num = num * 10 + (c - '0');
+                num = num * 10 + (s[i] - '0');
             }
-            if(i == n-1 || (!isdigit(c) && c != ' '))
+            if((!isdigit(s[i]) && !iswspace(s[i])) || i == n-1)
             {
-                if(operand == '+')
-                    st.push(num);
-                else if(operand == '-')
-                    st.push(-num);
+                if(operand == '+' || operand == '-')
+                {
+                    ans += last;
+                    if(operand == '+')
+                        last = num;
+                    else
+                        last = -num;
+                }
                 else if(operand == '*')
-                {
-                    int a = st.top();
-                    st.pop();
-                    st.push(a * num);
-                }
+                    last *= num;
                 else
-                {
-                    int a = st.top();
-                    st.pop();
-                    st.push(a / num);
-                }
-                operand = c;
+                    last /= num;
+                operand = s[i];
                 num = 0;
             }
         }
-        int ans = 0;
-        while(!st.empty())
-        {
-            ans += st.top();
-            st.pop();
-        }
+        ans += last;
         return ans;
     }
 };
+    
+//     Runtime: 14 ms, faster than 86.01% of C++ online submissions for Basic Calculator II.
+// Memory Usage: 11.9 MB, less than 29.52% of C++ online submissions for Basic Calculator II.
+    
+//     int calculate(string s) {
+//         int n = s.length();
+//         stack<int> st;
+//         int num = 0;
+//         char operand = '+';
+//         for(int i = 0; i < n; i++)
+//         {
+//             char c = s[i];
+//             if(isdigit(c))
+//             {
+//                 num = num * 10 + (c - '0');
+//             }
+//             if(i == n-1 || (!isdigit(c) && c != ' '))
+//             {
+//                 if(operand == '+')
+//                     st.push(num);
+//                 else if(operand == '-')
+//                     st.push(-num);
+//                 else if(operand == '*')
+//                 {
+//                     int a = st.top();
+//                     st.pop();
+//                     st.push(a * num);
+//                 }
+//                 else
+//                 {
+//                     int a = st.top();
+//                     st.pop();
+//                     st.push(a / num);
+//                 }
+//                 operand = c;
+//                 num = 0;
+//             }
+//         }
+//         int ans = 0;
+//         while(!st.empty())
+//         {
+//             ans += st.top();
+//             st.pop();
+//         }
+//         return ans;
+//     }
+// };
     
 //     Runtime: 43 ms, faster than 13.02% of C++ online submissions for Basic Calculator II.
 // Memory Usage: 16.2 MB, less than 6.87% of C++ online submissions for Basic Calculator II.
