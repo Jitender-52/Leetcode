@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 8 ms, faster than 89.55% of C++ online submissions for Construct String from Binary Tree.
+// Memory Usage: 23.9 MB, less than 70.39% of C++ online submissions for Construct String from Binary Tree.
+    
     void check(TreeNode* root, string &str) 
     {
         if (root == NULL) 
