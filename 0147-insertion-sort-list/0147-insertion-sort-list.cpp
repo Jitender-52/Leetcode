@@ -10,38 +10,63 @@
  */
 class Solution {
 public:
+    
     ListNode* insertionSortList(ListNode* head) {
-        ListNode *ans = new ListNode(-5001);
-        ans->next = head;
-        ListNode *temp = head->next;
-        ListNode *prev = head;
-        while(temp != NULL)
+        ListNode *temp = head;
+        while(temp)
         {
-            ListNode *curr = ans;
-            ListNode *nxtptr;
-            while(curr && curr->next != temp)
+            ListNode *temp2 = head;
+            while(temp2 != temp)
             {
-                nxtptr = curr->next;
-                if(nxtptr && temp->val >= curr->val && temp->val <= nxtptr->val)
+                if(temp2->val >= temp->val)
                 {
-                    prev->next = temp->next;
-                    curr->next = temp;
-                    temp->next = nxtptr;
-                    temp = prev;
-                    break;
+                    swap(temp2->val, temp->val);
                 }
-                curr = curr->next;
+                temp2 = temp2->next;
             }
-            ListNode *check = ans;
-            // while(check)
-            // {
-            //     cout << check->val << " ";
-            //     check = check->next;
-            // }
-            // cout << endl;
-            prev = temp;
+            
             temp = temp->next;
         }
-        return ans->next;
+        return head;
     }
 };
+    
+    
+//     Runtime: 33 ms, faster than 44.59% of C++ online submissions for Insertion Sort List.
+// Memory Usage: 10 MB, less than 51.38% of C++ online submissions for Insertion Sort List.
+    
+//     ListNode* insertionSortList(ListNode* head) {
+//         ListNode *ans = new ListNode(-5001);
+//         ans->next = head;
+//         ListNode *temp = head->next;
+//         ListNode *prev = head;
+//         while(temp != NULL)
+//         {
+//             ListNode *curr = ans;
+//             ListNode *nxtptr;
+//             while(curr && curr->next != temp)
+//             {
+//                 nxtptr = curr->next;
+//                 if(nxtptr && temp->val >= curr->val && temp->val <= nxtptr->val)
+//                 {
+//                     prev->next = temp->next;
+//                     curr->next = temp;
+//                     temp->next = nxtptr;
+//                     temp = prev;
+//                     break;
+//                 }
+//                 curr = curr->next;
+//             }
+//             ListNode *check = ans;
+//             // while(check)
+//             // {
+//             //     cout << check->val << " ";
+//             //     check = check->next;
+//             // }
+//             // cout << endl;
+//             prev = temp;
+//             temp = temp->next;
+//         }
+//         return ans->next;
+//     }
+// };
