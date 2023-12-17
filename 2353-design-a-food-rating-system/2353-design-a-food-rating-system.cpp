@@ -1,6 +1,9 @@
 class FoodRatings {
 public:
     
+//     Runtime: 566 ms, faster than 6.70% of C++ online submissions for Design a Food Rating System.
+// Memory Usage: 178.2 MB, less than 18.18% of C++ online submissions for Design a Food Rating System.
+    
     map<string, pair<string, int>> foodToCuisineAndRating;
     map<string, map<int, set<string>>> cuisineToRatingAndFoods;
     
