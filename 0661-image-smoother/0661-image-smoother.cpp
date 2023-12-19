@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 45 ms, faster than 47.08% of C++ online submissions for Image Smoother.
+// Memory Usage: 22 MB, less than 59.38% of C++ online submissions for Image Smoother.
+    
     vector<vector<int>> imageSmoother(vector<vector<int>>& img) {
         int n = img.size();
         int m = img[0].size();
