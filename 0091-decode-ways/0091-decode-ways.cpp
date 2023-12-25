@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 5 ms, faster than 14.96% of C++ online submissions for Decode Ways.
+// Memory Usage: 8.1 MB, less than 10.79% of C++ online submissions for Decode Ways
+    
     int Decodings(int i, string s, vector<int> &v)
     {
         int n = s.length();
