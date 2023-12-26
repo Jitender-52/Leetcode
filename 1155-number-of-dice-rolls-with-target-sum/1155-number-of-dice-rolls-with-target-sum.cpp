@@ -1,6 +1,12 @@
 class Solution {
 public:
+    
+//     Runtime: 60 ms, faster than 14.22% of C++ online submissions for Number of Dice Rolls With Target Sum.
+// Memory Usage: 10.8 MB, less than 17.27% of C++ online submissions for Number of Dice Rolls With Target Sum.
   
+// Time complexity - O(N*K*Target);
+// Space complexity - O(N*Target);
+    
     const int mod = 1e9 + 7;
     
     int numRollsToTarget(int n, int k, int target) {
@@ -24,6 +30,8 @@ public:
 //     Runtime: 23 ms, faster than 69.34% of C++ online submissions for Number of Dice Rolls With Target Sum.
 // Memory Usage: 8.7 MB, less than 65.29% of C++ online submissions for Number of Dice Rolls With Target Sum.
 
+// Time complexity - O(N*Target*K);
+// Space complexity - O(N*Target) + O(N*Target);
     
 //     const int mod = 1e9 + 7;
 //     vector<vector<int>> dp;
