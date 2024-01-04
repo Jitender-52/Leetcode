@@ -1,23 +1,20 @@
 class Solution {
 public:
-    
-//     Runtime: 15 ms, faster than 16.54% of C++ online submissions for Single Number II.
-// Memory Usage: 10 MB, less than 20.94% of C++ online submissions for Single Number II.
-// Next challenges:
-    
     int singleNumber(vector<int>& nums) {
-        map<int, int> mp;
-        for(int i = 0; i < nums.size(); i++)
+        int n = nums.size();
+        int ans = 0;
+        for(int i = 0; i < 32; i++)
         {
-            mp[nums[i]]++;
-        }
-        for(auto i : mp)
-        {
-            if(i.second == 1)
+            int setBit = 0;
+            for(int j = 0; j < n; j++)
             {
-                return i.first;
+                if((nums[j] & (1 << i)) != 0)
+                    setBit++;
             }
+            // this means all the setbits at that position get three and +1 more time because of that single nums which(this setbit of that nums is 1 so adding it).
+            if(setBit % 3 == 1) 
+                ans = ans | (1 << i);
         }
-        return nums[0];
+        return ans;
     }
 };
