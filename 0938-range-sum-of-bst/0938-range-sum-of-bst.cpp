@@ -11,6 +11,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 102 ms, faster than 42.94% of C++ online submissions for Range Sum of BST.
+// Memory Usage: 65 MB, less than 25.88% of C++ online submissions for Range Sum of BST.
+    
     int rangeSumBST(TreeNode* root, int low, int high) {
         if(!root)
             return 0;
