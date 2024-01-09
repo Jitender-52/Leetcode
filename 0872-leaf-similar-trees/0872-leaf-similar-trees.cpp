@@ -11,6 +11,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Leaf-Similar Trees.
+// Memory Usage: 13.3 MB, less than 30.37% of C++ online submissions for Leaf-Similar Trees.
+    
     void dfs(TreeNode *root, vector<int> &v)
     {
         if(!root)
