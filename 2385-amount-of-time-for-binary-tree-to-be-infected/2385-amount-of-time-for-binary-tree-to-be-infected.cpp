@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 435 ms, faster than 47.63% of C++ online submissions for Amount of Time for Binary Tree to Be Infected.
+// Memory Usage: 341.8 MB, less than 5.09% of C++ online submissions for Amount of Time for Binary Tree to Be Infected.
+    
     vector<vector<int>> adj;
     
     void dfs(TreeNode *root)
