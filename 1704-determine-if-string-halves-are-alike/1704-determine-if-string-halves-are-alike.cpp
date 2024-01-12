@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 3 ms, faster than 52.79% of C++ online submissions for Determine if String Halves Are Alike.
+// Memory Usage: 7 MB, less than 46.92% of C++ online submissions for Determine if String Halves Are Alike.
+    
     bool isVowel(char c)
     {
         string s = "aeiouAEIOU";
