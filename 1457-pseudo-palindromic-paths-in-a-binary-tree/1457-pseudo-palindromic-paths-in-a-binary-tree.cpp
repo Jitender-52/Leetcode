@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 225 ms, faster than 98.12% of C++ online submissions for Pseudo-Palindromic Paths in a Binary Tree.
+// Memory Usage: 177.7 MB, less than 98.93% of C++ online submissions for Pseudo-Palindromic Paths in a Binary Tree.
+    
     vector<int> v;
     int ans = 0;
     
