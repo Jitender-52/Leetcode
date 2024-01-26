@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 10 ms, faster than 42.77% of C++ online submissions for Out of Boundary Paths.
+// Memory Usage: 7.9 MB, less than 57.23% of C++ online submissions for Out of Boundary Paths.
+    
     const int mod = 1e9 + 7;
     int dp[51][51][51];
     int x, y, z;
@@ -17,22 +20,16 @@ public:
             return dp[i][j][k];
         dp[i][j][k] = 0;
         for(int a = 0; a < 4; a++)
-        {
             (dp[i][j][k] += solve(i + dx[a], j + dy[a], k-1)) %= mod;
-        }
         return dp[i][j][k];
     }
     
     int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
         x = m, y = n, z = maxMove;
         for(int i = 0; i < 51; i++)
-        {
             for(int j = 0; j < 51; j++)
-            {
                 for(int k = 0; k < 51; k++)
                     dp[i][j][k] = -1;
-            }
-        }
         return solve(startRow, startColumn, maxMove);
     }
 };
