@@ -1,6 +1,9 @@
 class MyQueue {
 public:
     
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Implement Queue using Stacks.
+// Memory Usage: 8.4 MB, less than 5.23% of C++ online submissions for Implement Queue using Stacks.
+    
     stack<int> st1;
     stack<int> st2;
     MyQueue() {
