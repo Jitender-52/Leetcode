@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 129 ms, faster than 80.09% of C++ online submissions for Daily Temperatures.
+// Memory Usage: 105.3 MB, less than 28.03% of C++ online submissions for Daily Temperatures.
+    
     vector<int> dailyTemperatures(vector<int>& temperatures) {
        int n = temperatures.size();
         stack<int> st;
