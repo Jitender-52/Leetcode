@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 152 ms, faster than 77.17% of C++ online submissions for Divide Array Into Arrays With Max Difference.
+// Memory Usage: 119.7 MB, less than 38.96% of C++ online submissions for Divide Array Into Arrays With Max Difference.
+    
 //     Runtime: 169 ms, faster than 44.86% of C++ online submissions for Divide Array Into Arrays With Max Difference.
 // Memory Usage: 115.4 MB, less than 61.98% of C++ online submissions for Divide Array Into Arrays With Max Difference.
     
