@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 169 ms, faster than 44.86% of C++ online submissions for Divide Array Into Arrays With Max Difference.
+// Memory Usage: 115.4 MB, less than 61.98% of C++ online submissions for Divide Array Into Arrays With Max Difference.
+    
     vector<vector<int>> divideArray(vector<int>& nums, int k) {
         int n = nums.size();
         vector<vector<int>> ans;
