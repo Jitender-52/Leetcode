@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 3 ms, faster than 17.15% of C++ online submissions for Sequential Digits.
+// Memory Usage: 7.5 MB, less than 8.37% of C++ online submissions for Sequential Digits.
+    
     vector<int> ans;
     int l, r;
     void solve(int i, int num)
