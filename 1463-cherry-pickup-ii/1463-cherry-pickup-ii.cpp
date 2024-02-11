@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 36 ms, faster than 94.30% of C++ online submissions for Cherry Pickup II.
+// Memory Usage: 19.4 MB, less than 11.09% of C++ online submissions for Cherry Pickup II.
+    
     bool isValid(int i, int j, int n, int m)
     {
         return (i >= 0 && j >= 0 && i < n && j < m);
