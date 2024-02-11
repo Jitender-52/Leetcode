@@ -1,6 +1,5 @@
 class Solution {
 public:
-    
     bool isValid(int i, int j, int n, int m)
     {
         return (i >= 0 && j >= 0 && i < n && j < m);
@@ -22,20 +21,14 @@ public:
 
         int ans = 0;
         if (c1 == c2)
-        {
             ans += grid[r][c1];
-        }
         else
-        {
             ans += grid[r][c1] + grid[r][c2];
-        }
         int count = 0;
         for (int i = -1; i <= 1; i++)
         {
             for (int j = -1; j <= 1; j++)
-            {
                 count = max(count, cherryRecursive(r + 1, c1 + i, c2 + j, grid, dp));
-            }
         }
         ans += count;
         return dp[r][c1][c2] = ans;
