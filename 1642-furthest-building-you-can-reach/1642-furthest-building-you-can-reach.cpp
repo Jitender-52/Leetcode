@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 84 ms, faster than 38.71% of C++ online submissions for Furthest Building You Can Reach.
+// Memory Usage: 57.2 MB, less than 40.68% of C++ online submissions for Furthest Building You Can Reach.
+    
     int furthestBuilding(vector<int>& heights, int bricks, int ladders) {
         priority_queue<int, vector<int>, greater<int>> pq;
         
