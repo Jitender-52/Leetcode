@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 143 ms, faster than 53.30% of C++ online submissions for Find the Town Judge.
+// Memory Usage: 65.7 MB, less than 50.28% of C++ online submissions for Find the Town Judge.
+    
     int findJudge(int m, vector<vector<int>>& trust) {
         
         int n = trust.size();
