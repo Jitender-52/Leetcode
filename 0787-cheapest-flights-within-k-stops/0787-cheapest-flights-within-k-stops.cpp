@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
+        int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
         vector<vector<vector<int>>> adj(n);
         for(auto i : flights)
         {
@@ -37,82 +37,48 @@ public:
     }
 };
     
+//     Need to check why its giving wrong answer
     
-    // Wrong Answer
-    
-//         int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
-//             vector<vector<vector<int>>> adj(n);
-//             for(auto i : flights)
+//     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
+//         vector<vector<vector<int>>> adj(n);
+//         for(auto i : flights)
+//             adj[i[0]].push_back({i[1], i[2]});
+//         queue<pair<int, int>> q;
+//         vector<int> dist(n, 1e9);
+//         q.push({0, src});
+//         dist[src] = 0;
+//         k++;
+//         while(q.size() && k--)
+//         {
+//             int sz = q.size();
+//             for(int j = 0; j < sz; j++)
 //             {
-//                 adj[i[0]].push_back({i[1], i[2]});
-//             }
-            
-//             vector<int> cost(n, 1e9);
-//             set<pair<int,pair<int,int>>> st;
-//             cost[src] = 0;
-//             st.insert({0, {0, src}});
-            
-//             while(!st.empty())
-//             {
-//                 auto it = *st.begin();
-//                 st.erase(st.begin());
-//                 int c = it.first;
-//                 int stops = it.second.first;
-//                 int node = it.second.second;
-//                 for(auto i : adj[node])
+//                 auto p = q.front();
+//                 // if(p.first != dist[p.second])
+//                 // {
+//                 //     cout << p.second << endl;
+//                 //     cout << "HII" << endl;
+//                 // }
+//                 q.pop();
+//                 // cout << p.second << " " << p.first << " -> " << endl;
+//                 for(auto i : adj[p.second])
 //                 {
-//                     int nnode = i[0];
-//                     int wt = i[1];
-//                     if(stops <= k && c + wt < cost[nnode])
+//                     if(dist[p.second] + i[1] < dist[i[0]])
 //                     {
-//                         cost[nnode] = c + wt;
-//                         st.insert({c + wt, {stops + 1, nnode}});
+//                         dist[i[0]] = dist[p.second] + i[1];
+//                         q.push({dist[i[0]], i[0]});
+//                         // cout << i[0] << " " << dist[i[0]] << endl;
 //                     }
 //                 }
 //             }
-            
-//             // for(int i = 0; i < n; i++)
-//             // {
-//             //     cout << cost[i] << " ";
-//             // }
-//             // cout << endl;
-            
-//             if(cost[dst] == 1e9)
-//                 return -1;
-//             return cost[dst];
+//             cout << endl;
 //         }
-// };
-    
-    
-//     Runtime: 32 ms, faster than 59.58% of C++ online submissions for Cheapest Flights Within K Stops.
-// Memory Usage: 13.1 MB, less than 85.13% of C++ online submissions for Cheapest Flights Within K Stops
-    
-    
-//     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
-//         vector<vector<pair<int, int>>> adj(n);
-//         for (auto& e : flights) {
-//             adj[e[0]].push_back({e[1], e[2]});
-//         }
-//         vector<int> dist(n, numeric_limits<int>::max());
-//         queue<pair<int, int>> q;
-//         q.push({src, 0});
-//         int stops = 0;
-
-//         while (stops <= k && !q.empty()) {
-//             int sz = q.size();
-//             // Iterate on current level.
-//             while (sz--) {
-//                 auto [node, distance] = q.front();
-//                 q.pop();
-//                 // Iterate over neighbors of popped node.
-//                 for (auto& [neighbour, price] : adj[node]) {
-//                     if (price + distance >= dist[neighbour]) continue;
-//                     dist[neighbour] = price + distance;
-//                     q.push({neighbour, dist[neighbour]});
-//                 }
-//             }
-//             stops++;
-//         }
-//         return dist[dst] == numeric_limits<int>::max() ? -1 : dist[dst];
+//         for(auto i : dist)
+//             // cout << i << " ";
+//         cout << endl;
+//         return dist[dst] == 1e9 ? -1 : dist[dst];
 //     }
 // };
+
+   // 3<-2<-0
+   //    | 1<-|
