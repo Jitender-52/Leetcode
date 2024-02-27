@@ -13,18 +13,18 @@ class Solution {
 public:
     
     int ans = 0;
-    int diameter(TreeNode *root)
+    int solve(TreeNode *root)
     {
         if(!root)
             return 0;
-        int l = diameter(root->left);
-        int r = diameter(root->right);
-        ans =  max(ans, (l + r + 1));
-        return max(l, r) + 1;
+        int l = solve(root->left);
+        int r = solve(root->right);
+        ans = max(ans, l + r + 1);
+        return 1 + max(l, r);
     }
     
     int diameterOfBinaryTree(TreeNode* root) {
-        diameter(root);
-        return ans - 1; // Here ans is the number of nodes so diameter will be ans - 1;
+        solve(root);
+        return ans - 1; // because answer is the number of node in the longest path so diameter will be ans-1;   
     }
 };
