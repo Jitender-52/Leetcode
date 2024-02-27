@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 3 ms, faster than 95.23% of C++ online submissions for Diameter of Binary Tree.
+// Memory Usage: 18.8 MB, less than 90.86% of C++ online submissions for Diameter of Binary Tree.
+    
     int ans = 0;
     int solve(TreeNode *root)
     {
