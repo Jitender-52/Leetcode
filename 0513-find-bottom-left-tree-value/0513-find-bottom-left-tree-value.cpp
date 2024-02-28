@@ -11,6 +11,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 7 ms, faster than 79.35% of C++ online submissions for Find Bottom Left Tree Value.
+// Memory Usage: 20.3 MB, less than 63.53% of C++ online submissions for Find Bottom Left Tree Value.
+    
     int findBottomLeftValue(TreeNode* root) {
         queue<TreeNode*> q;
         q.push(root);
