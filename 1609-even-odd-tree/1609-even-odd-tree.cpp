@@ -11,6 +11,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 190 ms, faster than 85.12% of C++ online submissions for Even Odd Tree.
+// Memory Usage: 149.2 MB, less than 76.25% of C++ online submissions for Even Odd Tree.
+    
     bool isEvenOddTree(TreeNode* root) {
         queue<TreeNode *> q;
         q.push(root);
