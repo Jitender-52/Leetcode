@@ -8,6 +8,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 8 ms, faster than 59.69% of C++ online submissions for Linked List Cycle.
+// Memory Usage: 10.6 MB, less than 53.92% of C++ online submissions for Linked List Cycle.
+    
     bool hasCycle(ListNode *head) {
         if(!head)
             return false;
