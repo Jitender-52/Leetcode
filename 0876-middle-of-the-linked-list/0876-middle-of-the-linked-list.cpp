@@ -10,6 +10,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 3 ms, faster than 41.27% of C++ online submissions for Middle of the Linked List.
+// Memory Usage: 8.6 MB, less than 66.29% of C++ online submissions for Middle of the Linked List.
+    
     ListNode* middleNode(ListNode* head) {
             ListNode *slow = head;
             ListNode *fast = head;
