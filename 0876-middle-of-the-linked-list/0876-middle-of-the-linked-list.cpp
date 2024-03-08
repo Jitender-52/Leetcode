@@ -11,6 +11,9 @@
 class Solution {
 public:
     
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Middle of the Linked List.
+// Memory Usage: 8.6 MB, less than 38.53% of C++ online submissions for Middle of the Linked List.
+    
 //     Runtime: 3 ms, faster than 41.27% of C++ online submissions for Middle of the Linked List.
 // Memory Usage: 8.6 MB, less than 66.29% of C++ online submissions for Middle of the Linked List.
     
