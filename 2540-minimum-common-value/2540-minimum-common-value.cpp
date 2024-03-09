@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 199 ms, faster than 5.09% of C++ online submissions for Minimum Common Value.
+// Memory Usage: 84.7 MB, less than 5.15% of C++ online submissions for Minimum Common Value.
+    
     int getCommon(vector<int>& nums1, vector<int>& nums2) {
         int n = nums1.size();
         int m = nums2.size();
