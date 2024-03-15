@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 16 ms, faster than 59.62% of C++ online submissions for Product of Array Except Self.
+// Memory Usage: 27.5 MB, less than 13.83% of C++ online submissions for Product of Array Except Self.
+    
     vector<int> productExceptSelf(vector<int>& nums) {
         int n = nums.size();
         vector<int> prefix = nums, suffix = nums;
