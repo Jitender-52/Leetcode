@@ -12,38 +12,79 @@
 class Solution {
 public:
     
+    TreeNode* solve(int &i, int depth, string &traversal)
+    {
+        int n = traversal.size();
+        if(i >= n)
+            return NULL;
+        int count = 0;
+        while(i < n && traversal[i] == '-')
+        {
+            count++;
+            i++;
+        }
+        if(count != depth)
+        {
+            i -= count;
+            return NULL;
+        }
+        
+        string s = "";
+        while(i < n && traversal[i] >= '0' && traversal[i] <= '9')
+        {
+            s += traversal[i];
+            i++;
+        }
+        int x = stoi(s);
+        TreeNode *root = new TreeNode(x);
+        root->left = solve(i, depth+1, traversal);
+        root->right = solve(i, depth+1, traversal);
+        return root;
+    }
+    
     TreeNode* recoverFromPreorder(string traversal) {
         int n = traversal.size();
-        map<int, TreeNode*> mp;
         int i = 0;
-        while(i < n)
-        {
-            int count = 0;
-            while(i < n && traversal[i] == '-')
-            {
-                count++;
-                i++;
-            }
-            string s = "";
-            while(i < n && traversal[i] >= '0' && traversal[i] <= '9')
-            {
-                s += traversal[i];
-                i++;
-            }
-            int x = stoi(s);
-            TreeNode *root = new TreeNode(x);
-            if(count > 0)
-            {
-                if(!mp[count-1]->left)
-                    mp[count-1]->left = root;
-                else
-                    mp[count-1]->right = root;
-            }
-            mp[count] = root;
-        }
-        return mp[0]; // i.e. root of the tree at zeroth level
+        return solve(i, 0, traversal);
     }
 };
+    
+    
+//     Runtime: 17 ms, faster than 44.30% of C++ online submissions for Recover a Tree From Preorder Traversal.
+// Memory Usage: 18.9 MB, less than 96.34% of C++ online submissions for Recover a Tree From Preorder Traversal.
+    
+//     TreeNode* recoverFromPreorder(string traversal) {
+//         int n = traversal.size();
+//         map<int, TreeNode*> mp;
+//         int i = 0;
+//         while(i < n)
+//         {
+//             int count = 0;
+//             while(i < n && traversal[i] == '-')
+//             {
+//                 count++;
+//                 i++;
+//             }
+//             string s = "";
+//             while(i < n && traversal[i] >= '0' && traversal[i] <= '9')
+//             {
+//                 s += traversal[i];
+//                 i++;
+//             }
+//             int x = stoi(s);
+//             TreeNode *root = new TreeNode(x);
+//             if(count > 0)
+//             {
+//                 if(!mp[count-1]->left)
+//                     mp[count-1]->left = root;
+//                 else
+//                     mp[count-1]->right = root;
+//             }
+//             mp[count] = root;
+//         }
+//         return mp[0]; // i.e. root of the tree at zeroth level
+//     }
+// };
 
     
 
