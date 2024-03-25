@@ -1,8 +1,17 @@
 class Solution {
 public:
     
-    // Was using the countRemovals function to remove TLE but I guess don't need this it was because of &. Let's check that.
+//****####**** Never Love Anyone in Your Life -> Enjoy Coding Alone ****####****
+    
         
+    // without &, Time and Space complexity = 2e25 * 25 ~ xe8 * 100; -- Giving MLE
+    // with & , Time and Space Complexity = 2e25 -- Accepted
+    
+//     Runtime: 271 ms, faster than 12.52% of C++ online submissions for Remove Invalid Parentheses.
+// Memory Usage: 14.9 MB, less than 61.21% of C++ online submissions for Remove Invalid Parentheses.        
+   
+    
+    // Was using the countRemovals function to remove TLE but I guess don't need this it was because of &. Let's check that.
         
     set<string> st;
     void solve(int i, int count, string &s, string &p)
