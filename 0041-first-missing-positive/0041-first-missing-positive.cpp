@@ -1,41 +1,30 @@
 class Solution {
 public:
-    
-        int firstMissingPositive(vector<int>& nums) {
-       int n = nums.size();
-        map<int,int> mp;
+    int firstMissingPositive(vector<int>& nums) {
+        int n = nums.size();
         for(int i = 0; i < n; i++)
         {
-            if(nums[i] >= 1 && nums[i] <= 1e5)
-                mp[nums[i]] = 1;
+            if(nums[i] <= 0 || nums[i] > n)
+                nums[i] = 1e8;
         }
-        int x = 1;
-        for(auto i : mp)
+        for(int i = 0; i < n; i++)
         {
-            if(i.first != x)
-                return x;
-            x++;
+            // cout << i << " " << nums[i] << endl;
+            if(abs(nums[i]) > n)
+                continue;
+            int idx = abs(nums[i]);
+            if(nums[idx-1] > 0)
+                nums[idx-1] *= -1;
         }
-        return x;
+        // cout << endl;
+        
+        for(int i = 0; i < n; i++)
+        {
+            // cout << nums[i] << " ";
+            if(nums[i] > 0)
+                return i+1;
+        }
+        // cout << endl;
+        return n+1;
     }
 };
-    
-//     Runtime: 164 ms, faster than 8.08% of C++ online submissions for First Missing Positive.
-// Memory Usage: 47.7 MB, less than 8.81% of C++ online submissions for First Missing Positive.
-    
-//     int firstMissingPositive(vector<int>& nums) {
-//        int n = nums.size();
-//         map<int,int> mp;
-//         for(int i = 0; i < n; i++)
-//         {
-//             if(nums[i] >= 1 && nums[i] <= 1e5)
-//                 mp[nums[i]] = 1;
-//         }
-//         for(int i = 1; i <= 1e5+1; i++)
-//         {
-//             if(mp.find(i) == mp.end())
-//                 return i;
-//         }
-//         return -1;
-//     }
-// };
