@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 122 ms, faster than 82.95% of C++ online submissions for Count Subarrays Where Max Element Appears at Least K Times.
+// Memory Usage: 120.1 MB, less than 62.40% of C++ online submissions for Count Subarrays Where Max Element Appears at Least K Times.
+    
     long long countSubarrays(vector<int>& nums, int k) {
         int n = nums.size();
         long long ans = 0;
