@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 188 ms, faster than 14.78% of C++ online submissions for Subarrays with K Different Integers.
+// Memory Usage: 58.4 MB, less than 7.24% of C++ online submissions for Subarrays with K Different Integers.
+    
     int solve(vector<int> &nums, int k)
     {
         int n = nums.size();
