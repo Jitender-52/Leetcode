@@ -2,27 +2,53 @@ class Solution
 {
 public:
     
+    
     int minimumDistance(vector<vector<int>> &points)
     {
         int n = points.size();
         multiset<int> st1, st2;
-        for(int i = 0; i < n; i++)
+        for(auto i : points)
         {
-            st1.insert(points[i][0] + points[i][1]);
-            st2.insert(points[i][0] - points[i][1]);
+            st1.insert(i[0] + i[1]);
+            st2.insert(i[0] - i[1]);
         }
         int ans = 1e9;
-        for(int i = 0; i < n; i++)
+        for(auto i : points)
         {
-            st1.erase(st1.find(points[i][0] + points[i][1]));
-            st2.erase(st2.find(points[i][0] - points[i][1]));
-            ans = min(ans, max(*prev(st1.end()) - *st1.begin(), *prev(st2.end()) - *st2.begin()));
-            st1.insert(points[i][0] + points[i][1]);
-            st2.insert(points[i][0] - points[i][1]);
+            st1.erase(st1.find(i[0] + i[1]));
+            st2.erase(st2.find(i[0] - i[1]));
+            ans = min(ans, max(*st1.rbegin() - *st1.begin(), *st2.rbegin() - *st2.begin()));
+            st1.insert(i[0] + i[1]);
+            st2.insert(i[0] - i[1]);
         }
         return ans;
     }
 };
+    
+//     Runtime: 1019 ms, faster than 16.67% of C++ online submissions for Minimize Manhattan Distances.
+// Memory Usage: 225.2 MB, less than 33.33% of C++ online submissions for Minimize Manhattan Distances.
+    
+//     int minimumDistance(vector<vector<int>> &points)
+//     {
+//         int n = points.size();
+//         multiset<int> st1, st2;
+//         for(int i = 0; i < n; i++)
+//         {
+//             st1.insert(points[i][0] + points[i][1]);
+//             st2.insert(points[i][0] - points[i][1]);
+//         }
+//         int ans = 1e9;
+//         for(int i = 0; i < n; i++)
+//         {
+//             st1.erase(st1.find(points[i][0] + points[i][1]));
+//             st2.erase(st2.find(points[i][0] - points[i][1]));
+//             ans = min(ans, max(*prev(st1.end()) - *st1.begin(), *prev(st2.end()) - *st2.begin()));
+//             st1.insert(points[i][0] + points[i][1]);
+//             st2.insert(points[i][0] - points[i][1]);
+//         }
+//         return ans;
+//     }
+// };
     
     
 //     Runtime: 1044 ms, faster than 16.67% of C++ online submissions for Minimize Manhattan Distances.
