@@ -12,7 +12,6 @@
 class Solution {
 public:
     
-    // map<TreeNode*, int> mp;
     set<TreeNode *> st;
     int ans = 0;
     
@@ -20,10 +19,9 @@ public:
     {
         if(!root)
             return;
-        if(!root->left && !root->right)
-            return;
         solve(root->left, root);
         solve(root->right, root);
+        
         if((!root->left || st.find(root->left) != st.end()) && (!root->right || st.find(root->right) != st.end()))
             return;
         else
@@ -39,10 +37,46 @@ public:
     }
     
     int minCameraCover(TreeNode* root) {
-        solve(root, root);
+        st.insert(NULL);
+        solve(root, NULL);
         return ans + (st.find(root) == st.end());
     }
 };
+    
+//     Runtime: 15 ms, faster than 12.99% of C++ online submissions for Binary Tree Cameras.
+// Memory Usage: 23.3 MB, less than 17.94% of C++ online submissions for Binary Tree Cameras.
+    
+//     // map<TreeNode*, int> mp;
+//     set<TreeNode *> st;
+//     int ans = 0;
+    
+//     void solve(TreeNode *root, TreeNode *parent)
+//     {
+//         if(!root)
+//             return;
+//         if(!root->left && !root->right)
+//             return;
+//         solve(root->left, root);
+//         solve(root->right, root);
+//         if((!root->left || st.find(root->left) != st.end()) && (!root->right || st.find(root->right) != st.end()))
+//             return;
+//         else
+//         {
+//             ans++;
+//             st.insert(root);
+//             if(root->left)
+//                 st.insert(root->left);
+//             if(root->right)
+//                 st.insert(root->right);
+//             st.insert(parent);
+//         }
+//     }
+    
+//     int minCameraCover(TreeNode* root) {
+//         solve(root, root);
+//         return ans + (st.find(root) == st.end());
+//     }
+// };
     
     
 //     Runtime: 7 ms, faster than 64.11% of C++ online submissions for Binary Tree Cameras.
