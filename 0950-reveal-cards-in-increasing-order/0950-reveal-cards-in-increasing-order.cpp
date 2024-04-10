@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 7 ms, faster than 18.53% of C++ online submissions for Reveal Cards In Increasing Order.
+// Memory Usage: 10.8 MB, less than 67.85% of C++ online submissions for Reveal Cards In Increasing Order.
+    
 vector<int> deckRevealedIncreasing(vector<int> &deck)
     {
         sort(deck.begin(), deck.end());
