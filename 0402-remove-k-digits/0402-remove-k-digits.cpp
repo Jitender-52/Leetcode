@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 7 ms, faster than 90.57% of C++ online submissions for Remove K Digits.
+// Memory Usage: 10.2 MB, less than 26.88% of C++ online submissions for Remove K Digits.
+    
      string removeKdigits(string num, int k) {
     if (num.length() == k)
       return "0";
