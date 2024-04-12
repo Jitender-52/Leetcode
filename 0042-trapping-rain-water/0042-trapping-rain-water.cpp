@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 18 ms, faster than 11.08% of C++ online submissions for Trapping Rain Water.
+// Memory Usage: 22.3 MB, less than 80.10% of C++ online submissions for Trapping Rain Water.
+    
     int trap(vector<int>& v) {
         int n = v.size();
         int l = 0, r = n-1, lh = 0, rh = 0, ans = 0;
