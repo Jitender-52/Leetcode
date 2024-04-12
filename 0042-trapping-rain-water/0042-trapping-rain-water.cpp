@@ -3,9 +3,7 @@ public:
     
     int trap(vector<int>& v) {
         int n = v.size();
-        int l = 0, r = n-1;
-        int lh = 0, rh = 0;
-        int ans = 0;
+        int l = 0, r = n-1, lh = 0, rh = 0, ans = 0;
         while(l <= r)
         {
             lh = max(lh, v[l]);
@@ -18,6 +16,29 @@ public:
         return ans;
     }
 };
+
+    
+//     Runtime: 34 ms, faster than 5.09% of C++ online submissions for Trapping Rain Water.
+// Memory Usage: 20 MB, less than 96.48% of C++ online submissions for Trapping Rain Water.
+    
+    
+//     int trap(vector<int>& v) {
+//         int n = v.size();
+//         int l = 0, r = n-1;
+//         int lh = 0, rh = 0;
+//         int ans = 0;
+//         while(l <= r)
+//         {
+//             lh = max(lh, v[l]);
+//             rh = max(rh, v[r]);
+//             if(lh < rh)
+//                 ans += lh - v[l++];
+//             else
+//                 ans += rh - v[r--];
+//         }
+//         return ans;
+//     }
+// };
     
 //     int trap(vector<int>& v) {
 //     int n = v.size();
