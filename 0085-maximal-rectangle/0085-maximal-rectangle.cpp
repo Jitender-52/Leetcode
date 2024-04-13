@@ -1,6 +1,12 @@
 class Solution {
 public:
     
+//     Time Complexity - O(MN); 
+//     Space Complexity - O(3 * M);
+    
+    // Runtime: 27 ms, faster than 92.29% of C++ online submissions for Maximal Rectangle.
+// Memory Usage: 12.3 MB, less than 97.19% of C++ online submissions for Maximal Rectangle.
+    
     int maximalRectangle(vector<vector<char>>& matrix) {
         int n = matrix.size();
         int m = matrix[0].size();
@@ -48,7 +54,7 @@ public:
     
     
 //     Time Complexity - O(MN * N); 
-//     Space Complexity - O(1);
+//     Space Complexity - O(MN);
     
 //     Runtime: 96 ms, faster than 6.70% of C++ online submissions for Maximal Rectangle.
 // Memory Usage: 13.3 MB, less than 88.70% of C++ online submissions for Maximal Rectangle.
