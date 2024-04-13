@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 146 ms, faster than 100.00% of C++ online submissions for Find the Number of Subarrays Where Boundary Elements Are Maximum.
+// Memory Usage: 110.8 MB, less than 100.00% of C++ online submissions for Find the Number of Subarrays Where Boundary Elements Are Maximum.
+    
     long long numberOfSubarrays(vector<int>& nums) {
         int n = nums.size();
         stack<pair<int,int>> st;
