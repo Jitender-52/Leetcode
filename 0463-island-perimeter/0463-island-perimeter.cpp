@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 96 ms, faster than 13.20% of C++ online submissions for Island Perimeter.
+// Memory Usage: 101.1 MB, less than 32.36% of C++ online submissions for Island Perimeter.
+    
     int islandPerimeter(vector<vector<int>>& grid) {
         int n = grid.size(), m = grid[0].size();
         vector<int> dx = {1, -1, 0, 0};
