@@ -13,27 +13,49 @@ class Solution {
 public:
     
     int value;
-    
-    bool solve(TreeNode *root)
+    bool solve(TreeNode *&root)
     {
         if(!root)
             return true;
         bool l = solve(root->left);
         bool r = solve(root->right);
-        if(l)
-            root->left = NULL;
-        if(r)
-            root->right = NULL;
         if(l && r && root->val == value)
-            return true;
-        return false;
+            root = NULL;
+        return root == NULL;
     }
     
     TreeNode* removeLeafNodes(TreeNode* root, int target) {
         value = target;
         solve(root);
-        if(!root->left && !root->right && root->val == value)
-            root = NULL;
         return root;
     }
 };
+    
+//     Runtime: 11 ms, faster than 64.27% of C++ online submissions for Delete Leaves With a Given Value.
+// Memory Usage: 21.1 MB, less than 98.11% of C++ online submissions for Delete Leaves With a Given Value.
+    
+//     int value;
+    
+//     bool solve(TreeNode *root)
+//     {
+//         if(!root)
+//             return true;
+//         bool l = solve(root->left);
+//         bool r = solve(root->right);
+//         if(l)
+//             root->left = NULL;
+//         if(r)
+//             root->right = NULL;
+//         if(l && r && root->val == value)
+//             return true;
+//         return false;
+//     }
+    
+//     TreeNode* removeLeafNodes(TreeNode* root, int target) {
+//         value = target;
+//         solve(root);
+//         if(!root->left && !root->right && root->val == value)
+//             root = NULL;
+//         return root;
+//     }
+// };
