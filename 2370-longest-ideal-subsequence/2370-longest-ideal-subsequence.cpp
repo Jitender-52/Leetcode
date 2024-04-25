@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 276 ms, faster than 43.28% of C++ online submissions for Longest Ideal Subsequence.
+// Memory Usage: 30.6 MB, less than 44.12% of C++ online submissions for Longest Ideal Subsequence.
+    
     int dp[100001][26];
     
     int solve(int i, int last, string &s, int k)
