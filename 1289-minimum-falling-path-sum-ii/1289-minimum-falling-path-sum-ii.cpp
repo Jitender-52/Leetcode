@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 247 ms, faster than 43.86% of C++ online submissions for Minimum Falling Path Sum II.
+// Memory Usage: 18.3 MB, less than 16.18% of C++ online submissions for Minimum Falling Path Sum II.
+
+    
 //     Try To Solve Tabulation method once again
 
     
