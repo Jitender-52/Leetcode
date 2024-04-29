@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 107 ms, faster than 68.06% of C++ online submissions for Minimum Number of Operations to Make Array XOR Equal to K.
+// Memory Usage: 91.5 MB, less than 25.13% of C++ online submissions for Minimum Number of Operations to Make Array XOR Equal to K.
+    
+    
         int minOperations(vector<int>& nums, int k) {
             int x = 0;
             for(auto i : nums)
