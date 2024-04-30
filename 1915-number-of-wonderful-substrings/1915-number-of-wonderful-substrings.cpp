@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 53 ms, faster than 68.86% of C++ online submissions for Number of Wonderful Substrings.
+// Memory Usage: 16.5 MB, less than 64.67% of C++ online submissions for Number of Wonderful Substrings.
+    
     long long wonderfulSubstrings(string word) {
         vector<long long> count(1024, 0); // 2^10 to store XOR values
         long long result = 0;
