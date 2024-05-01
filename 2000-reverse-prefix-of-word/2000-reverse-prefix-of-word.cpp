@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Reverse Prefix of Word.
+// Memory Usage: 7.5 MB, less than 26.16% of C++ online submissions for Reverse Prefix of Word.
+    
     string reversePrefix(string word, char ch) {
         int n = word.size();
         string ans = "";
