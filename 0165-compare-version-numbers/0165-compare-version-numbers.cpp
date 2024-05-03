@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Compare Version Numbers.
+// Memory Usage: 7.7 MB, less than 27.22% of C++ online submissions for Compare Version Numbers.
+    
     bool isRight(string &s, int index)
     {
         int n = s.length();
