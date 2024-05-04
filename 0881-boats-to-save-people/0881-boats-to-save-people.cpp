@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 59 ms, faster than 47.36% of C++ online submissions for Boats to Save People.
+// Memory Usage: 45.6 MB, less than 8.97% of C++ online submissions for Boats to Save People.
+    
     int numRescueBoats(vector<int>& people, int limit) {
         int n = people.size();
         int i = 0;
