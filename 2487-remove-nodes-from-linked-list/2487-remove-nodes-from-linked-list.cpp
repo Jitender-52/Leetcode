@@ -11,7 +11,8 @@
 class Solution {
 public:
     
-    
+//     Runtime: 254 ms, faster than 86.97% of C++ online submissions for Remove Nodes From Linked List.
+// Memory Usage: 185.1 MB, less than 5.47% of C++ online submissions for Remove Nodes From Linked List.
      
     void insert(ListNode** root, int item)
     {
