@@ -11,6 +11,9 @@
 class Solution {
 public:
     
+//     Runtime: 182 ms, faster than 46.24% of C++ online submissions for Double a Number Represented as a Linked List.
+// Memory Usage: 120.9 MB, less than 59.81% of C++ online submissions for Double a Number Represented as a Linked List.
+    
     void solve(ListNode *head, int &carry)
     {
         if(!head)
