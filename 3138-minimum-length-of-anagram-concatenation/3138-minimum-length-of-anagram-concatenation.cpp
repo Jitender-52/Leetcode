@@ -1,15 +1,11 @@
 class Solution {
 public:
     
+//     Runtime: 247 ms, faster than 20.43% of C++ online submissions for Minimum Length of Anagram Concatenation.
+// Memory Usage: 30.4 MB, less than 35.46% of C++ online submissions for Minimum Length of Anagram Concatenation.
+    
     int minAnagramLength(string s) {
         int n = s.length();
-        map<char, int> mp;
-        for(auto i : s)
-        {
-            mp[i]++;
-        }
-        
-        int ans = n;
         for(int i = 1; i <= n; i++)
         {
             if(n % i == 0)
@@ -31,7 +27,7 @@ public:
                     return i;
             }
         }
-        return ans;
+        return n;
     }
 };
     
