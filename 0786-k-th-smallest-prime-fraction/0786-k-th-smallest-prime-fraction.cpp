@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for K-th Smallest Prime Fraction.
+// Memory Usage: 10.4 MB, less than 100.00% of C++ online submissions for K-th Smallest Prime Fraction.
+    
     vector<int> kthSmallestPrimeFraction(vector<int>& arr, int k) {
         int n = arr.size();
         double left = 0, right = 1, mid;
