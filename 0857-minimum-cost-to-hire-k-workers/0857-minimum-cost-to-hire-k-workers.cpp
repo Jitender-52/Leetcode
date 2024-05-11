@@ -1,6 +1,9 @@
-class Solution
-{
+class Solution{
 public:
+    
+//     Runtime: 28 ms, faster than 51.96% of C++ online submissions for Minimum Cost to Hire K Workers.
+// Memory Usage: 26.4 MB, less than 51.68% of C++ online submissions for Minimum Cost to Hire K Workers.
+    
 	double mincostToHireWorkers(vector<int> &quality, vector<int> &wage, int k)
 	{
 		int n = quality.size();
