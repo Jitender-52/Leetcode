@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 5 ms, faster than 31.84% of C++ online submissions for Score After Flipping Matrix.
+// Memory Usage: 10.3 MB, less than 37.53% of C++ online submissions for Score After Flipping Matrix.
+    
     int matrixScore(vector<vector<int>>& grid) {
         int n = grid.size();
         int m = grid[0].size();
