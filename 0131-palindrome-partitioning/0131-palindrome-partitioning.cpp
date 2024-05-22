@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 163 ms, faster than 18.86% of C++ online submissions for Palindrome Partitioning.
+// Memory Usage: 144.1 MB, less than 18.10% of C++ online submissions for Palindrome Partitioning.
+    
     bool ispalindromic(string s)
     {
         for (int i = 0; i < (s.length() / 2) + 1; i++)
