@@ -1,7 +1,8 @@
 class Solution {
 public:
 
-    
+//     Runtime: 12 ms, faster than 51.65% of C++ online submissions for Maximum Score Words Formed by Letters.
+// Memory Usage: 17 MB, less than 71.26% of C++ online submissions for Maximum Score Words Formed by Letters.
     
     
 //     Runtime: 19 ms, faster than 64.71% of C++ online submissions for Maximum Score Words Formed by Letters.
