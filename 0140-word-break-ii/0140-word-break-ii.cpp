@@ -1,6 +1,9 @@
 class Solution {
 public:    
     
+//     Runtime: 3 ms, faster than 34.00% of C++ online submissions for Word Break II.
+// Memory Usage: 9.2 MB, less than 49.07% of C++ online submissions for Word Break II.
+    
     vector<string> results;
     unordered_set<string> dict;
 
