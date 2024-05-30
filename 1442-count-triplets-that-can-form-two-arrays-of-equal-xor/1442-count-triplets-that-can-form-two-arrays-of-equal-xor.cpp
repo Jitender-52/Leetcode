@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 18 ms, faster than 22.49% of C++ online submissions for Count Triplets That Can Form Two Arrays of Equal XOR.
+// Memory Usage: 9 MB, less than 86.41% of C++ online submissions for Count Triplets That Can Form Two Arrays of Equal XOR.
+    
     int countTriplets(vector<int>& arr) {
         int n = arr.size();
         int ans = 0;
