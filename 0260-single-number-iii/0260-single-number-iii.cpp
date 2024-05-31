@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 11 ms, faster than 21.13% of C++ online submissions for Single Number III.
+// Memory Usage: 12.3 MB, less than 87.16% of C++ online submissions for Single Number III.
+    
     void decToBinary(int n)
     {
         int binaryNum[32];
