@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 22 ms, faster than 12.42% of C++ online submissions for Find Common Characters.
+// Memory Usage: 15 MB, less than 15.01% of C++ online submissions for Find Common Characters.
+    
     vector<string> commonChars(vector<string>& words) {
         int n = words.size();
         vector<map<char, int>> v(n);
