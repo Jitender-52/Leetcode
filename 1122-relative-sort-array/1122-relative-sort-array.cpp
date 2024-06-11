@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 5 ms, faster than 34.15% of C++ online submissions for Relative Sort Array.
+// Memory Usage: 10.1 MB, less than 54.14% of C++ online submissions for Relative Sort Array.
+    
     vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
         map<int,int> mp;
         for(auto i : arr1)
