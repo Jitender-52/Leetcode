@@ -8,7 +8,6 @@ public:
     
     int findMaximizedCapital(int k, int w, vector<int>& profits, vector<int>& capital) {
         int n = profits.size();
-        
         vector<pair<int,int>> v;
         for(int i = 0; i < n; i++)
         {
