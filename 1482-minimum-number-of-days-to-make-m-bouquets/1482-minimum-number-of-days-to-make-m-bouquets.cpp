@@ -1,8 +1,13 @@
 class Solution {
 public:
+    
+//     Runtime: 128 ms, faster than 9.61% of C++ online submissions for Minimum Number of Days to Make m Bouquets.
+// Memory Usage: 68.9 MB, less than 65.37% of C++ online submissions for Minimum Number of Days to Make m Bouquets.
+    
     int minDays(vector<int>& bloomDay, int m, int k) {
         int n = bloomDay.size();
-        int low = 0, high = 1e9 + 2;
+        int maxi = *max_element(bloomDay.begin(), bloomDay.end());
+        int low = 0, high = maxi;
         while(low <= high)
         {
             int mid = (low + high) / 2;
@@ -24,7 +29,7 @@ public:
             else
                 low = mid + 1;
         }
-        if(high + 1 > 1e9)
+        if(high + 1 > maxi)
             return -1;
         return high + 1;
     }
