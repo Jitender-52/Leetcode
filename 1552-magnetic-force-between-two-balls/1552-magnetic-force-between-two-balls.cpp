@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 107 ms, faster than 95.68% of C++ online submissions for Magnetic Force Between Two Balls.
+// Memory Usage: 61.5 MB, less than 35.79% of C++ online submissions for Magnetic Force Between Two Balls.
+    
 //     Runtime: 137 ms, faster than 16.37% of C++ online submissions for Magnetic Force Between Two Balls.
 // Memory Usage: 61.4 MB, less than 35.79% of C++ online submissions for Magnetic Force Between Two Balls.
     
@@ -20,6 +23,8 @@ public:
                     count++;
                     last = position[i];
                 }
+                if(count >= m)
+                    break;
             }
             if(count >= m)
                 low = mid + 1;
