@@ -1,47 +1,47 @@
 class Solution {
 public:
     
-            // Time complexity O(N)
-            // Space complexity O(1)
-    
-            int numberOfSubarrays(vector<int>& nums, int k) {
-                int n = nums.size();
-                int ans = 0;
-                int index = -1;
-                int j = -1;
-                int count = 0;
-                for(int i = 0; i < n; i++)
+    // Time complexity O(N)
+    // Space complexity O(1)
+
+    int numberOfSubarrays(vector<int>& nums, int k) {
+        int n = nums.size();
+        int ans = 0;
+        int index = -1;
+        int j = -1;
+        int count = 0;
+        for(int i = 0; i < n; i++)
+        {
+            if(nums[i] % 2 == 1)
+            {
+                if(j == -1)
                 {
-                    if(nums[i] % 2 == 1)
-                    {
-                        if(j == -1)
-                        {
-                            j = i;
-                        }
-                        count++;
-                    }
-                    if(count == k)
-                    {
-                        ans += j - index;
-                    }
-                    
-                    if(count > k)
-                    {
-                        index = j;
-                        j++;
-                        while(j < n && nums[j] % 2 == 0)
-                        {
-                            j++;
-                        }
-                        count--;
-                        if(count == k)
-                        {
-                            ans += j - index;
-                        }
-                    }
+                    j = i;
                 }
-                return ans;
+                count++;
             }
+            if(count == k)
+            {
+                ans += j - index;
+            }
+
+            if(count > k)
+            {
+                index = j;
+                j++;
+                while(j < n && nums[j] % 2 == 0)
+                {
+                    j++;
+                }
+                count--;
+                if(count == k)
+                {
+                    ans += j - index;
+                }
+            }
+        }
+        return ans;
+    }
 };
 
 
@@ -125,3 +125,34 @@ public:
 //         return ans;
 //     }
 // };
+    
+    
+//     int numberOfSubarrays(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         int i = 0, j = 0, count = 0, ans = 0;
+//         int even = 0;
+//         for(int i = 0; i < n; i++)
+//         {
+//             count += nums[i] % 2;
+//             if(count == k)
+//                 ans += even;
+//             if(count > k)
+//             {
+//                 even = 0;
+//                 while(nums[j] % 2 == 0)
+//                 {
+//                     even++;
+//                     j++;
+//                 }
+//                 count--;
+//                 if(count == k)
+//                     ans += even;
+//             }
+//         }
+//         cout << even << endl;
+//         return ans;
+//     }
+// };
+    
+    
+    
