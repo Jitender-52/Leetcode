@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 4 ms, faster than 39.59% of C++ online submissions for Binary Search Tree to Greater Sum Tree.
+// Memory Usage: 8.5 MB, less than 73.60% of C++ online submissions for Binary Search Tree to Greater Sum Tree.
+    
      void convertTree(TreeNode* &root, int &sum) 
      {
         if (root == NULL) 
@@ -23,16 +26,16 @@ public:
         convertTree(root->right, sum);
     }
 
-    int getSum(TreeNode* root) 
+    int totalSum(TreeNode* root) 
     {
         if (root == NULL)
             return 0;
-        return getSum(root->left) + root->val + getSum(root->right);
+        return totalSum(root->left) + root->val + totalSum(root->right);
     }
 
 
     TreeNode* bstToGst(TreeNode* root) {
-        int nodeSum = getSum(root);
+        int nodeSum = totalSum(root);
         convertTree(root, nodeSum);
         return root;
     }
