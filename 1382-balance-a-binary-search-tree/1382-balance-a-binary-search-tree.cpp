@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 88 ms, faster than 64.41% of C++ online submissions for Balance a Binary Search Tree.
+// Memory Usage: 62.6 MB, less than 40.07% of C++ online submissions for Balance a Binary Search Tree.
+    
     void dfs(TreeNode *root, vector<int> &v)
     {
         if(!root)
