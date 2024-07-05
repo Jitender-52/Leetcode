@@ -10,6 +10,11 @@
  */
 class Solution {
 public:
+   
+//     Runtime: 170 ms, faster than 46.44% of C++ online submissions for Find the Minimum and Maximum Number of Nodes Between Critical Points.
+// Memory Usage: 115.7 MB, less than 79.68% of C++ online submissions for Find the Minimum and Maximum Number of Nodes Between Critical Points.
+
+    
     vector<int> nodesBetweenCriticalPoints(ListNode* head) {
         ListNode *temp = head;
         int last = -1e9;
