@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 514 ms, faster than 12.97% of C++ online submissions for Robot Collisions.
+// Memory Usage: 280.7 MB, less than 12.97% of C++ online submissions for Robot Collisions.
+    
     vector<int> survivedRobotsHealths(vector<int>& positions, vector<int>& healths, string directions) {
         int n = positions.size();
         vector<int> ans;
