@@ -1,6 +1,10 @@
 class Solution
 {
 public:
+ 
+//     Runtime: 3 ms, faster than 46.43% of C++ online submissions for Number of Atoms.
+// Memory Usage: 9.8 MB, less than 35.71% of C++ online submissions for Number of Atoms.
+    
     string countOfAtoms(string formula)
     {
         unordered_map<string, int> finalMap = parseFormula(formula);
