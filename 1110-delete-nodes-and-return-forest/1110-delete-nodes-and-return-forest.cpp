@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 16 ms, faster than 56.71% of C++ online submissions for Delete Nodes And Return Forest.
+// Memory Usage: 27.1 MB, less than 23.69% of C++ online submissions for Delete Nodes And Return Forest.
+    
     TreeNode *dfs(TreeNode *root, vector<int> &to_delete, vector<TreeNode *> &ans)
     {
         if(!root)
