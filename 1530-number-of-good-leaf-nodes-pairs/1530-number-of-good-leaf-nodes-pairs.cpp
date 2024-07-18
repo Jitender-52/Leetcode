@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 46 ms, faster than 64.13% of C++ online submissions for Number of Good Leaf Nodes Pairs.
+// Memory Usage: 35.5 MB, less than 43.81% of C++ online submissions for Number of Good Leaf Nodes Pairs.
+    
     int count = 0;
     const int MAX_DISTANCE = 10;
     vector<int> dfs(TreeNode* node, int distance) 
