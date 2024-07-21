@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 111 ms, faster than 36.62% of C++ online submissions for Build a Matrix With Conditions.
+// Memory Usage: 64.9 MB, less than 47.32% of C++ online submissions for Build a Matrix With Conditions.
+    
     vector<vector<int>> buildMatrix(int k, vector<vector<int>>& rowConditions,
                                     vector<vector<int>>& colConditions) 
     {
