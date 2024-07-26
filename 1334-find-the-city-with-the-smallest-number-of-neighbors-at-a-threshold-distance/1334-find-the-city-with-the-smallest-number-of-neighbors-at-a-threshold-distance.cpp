@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 24 ms, faster than 74.13% of C++ online submissions for Find the City With the Smallest Number of Neighbors at a Threshold Distance.
+// Memory Usage: 16.2 MB, less than 23.89% of C++ online submissions for Find the City With the Smallest Number of Neighbors at a Threshold Distance.
+    
     static bool comp(vector<int> &a, vector<int> &b)
     {
         if(a[0] == b[0])
