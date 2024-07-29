@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 90 ms, faster than 40.04% of C++ online submissions for Count Number of Teams.
+// Memory Usage: 11.7 MB, less than 40.04% of C++ online submissions for Count Number of Teams.
+
+    
     int dp[1001][3];
     
     int solve(int i, int j, vector<int> &rating)
