@@ -1,71 +1,39 @@
 class Solution {
 public:
-    vector<int> spiralOrder(vector<vector<int>> &v)
-    {
-        int m = v.size();
-        int n = v[0].size();
-
-        int is = -1;
-        int js = -1;
-        int ie = m;
-        int je = n;
-        int check = 0;
-
-        int i = 0;
-        int j = 0;
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int n = matrix.size();
+        int m = matrix[0].size();
+        int top = 0, down = n-1;
+        int left = 0, right = m-1;
+        int x = 0;
         vector<int> ans;
-        while (ans.size() != m * n)
+        while(left <= right && top <= down)
         {
-            // cout << i << " " << j << endl;
-            if (check == 0)
+            if(x == 0)
             {
-                ans.push_back(v[i][j]);
-                j++;
+                for(int i = left; i <= right; i++)
+                    ans.push_back(matrix[top][i]);
+                top = top + 1;
             }
-            else if (check == 1)
+            else if(x == 1)
             {
-                ans.push_back(v[i][j]);
-                i++;
+                for(int i = top; i <= down; i++)
+                    ans.push_back(matrix[i][right]);
+                right = right - 1;
             }
-            else if (check == 2)
+            else if(x == 2)
             {
-                ans.push_back(v[i][j]);
-                j--;
+                for(int i = right; i >= left; i--)
+                    ans.push_back(matrix[down][i]);
+                down = down - 1;
             }
-            else if (check == 3)
+            else if(x == 3)
             {
-                ans.push_back(v[i][j]);
-                i--;
+                for(int i = down; i >= top;i--)
+                    ans.push_back(matrix[i][left]);
+                left = left + 1;
             }
-
-            if (j == je)
-            {
-                j--;
-                is++;
-                check = 1;
-                i++;
-            }
-            else if (i == ie)
-            {
-                i--;
-                je--;
-                check = 2;
-                j--;
-            }
-            else if (j == js)
-            {
-                j++;
-                ie--;
-                check = 3;
-                i--;
-            }
-            else if (i == is)
-            {
-                i++;
-                js++;
-                check = 0;
-                j++;
-            }
+            x = (x + 1) % 4;
         }
         return ans;
     }
