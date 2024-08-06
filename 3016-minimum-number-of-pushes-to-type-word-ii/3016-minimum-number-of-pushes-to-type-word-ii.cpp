@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 196 ms, faster than 9.82% of C++ online submissions for Minimum Number of Pushes to Type Word II.
+// Memory Usage: 29 MB, less than 9.45% of C++ online submissions for Minimum Number of Pushes to Type Word II.
+    
     int minimumPushes(string word) {
         int n = word.length();
         map<char,int> mp;
