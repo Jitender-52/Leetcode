@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 10 ms, faster than 7.90% of C++ online submissions for Integer to English Words.
+// Memory Usage: 12.4 MB, less than 19.59% of C++ online submissions for Integer to English Words.
+    
     string numberToWords(int num) {
         vector<int> numbers = {
             1000000000, 1000000, 1000, 100, 90, 80, 70, 60, 50, 40, 30, 20,
