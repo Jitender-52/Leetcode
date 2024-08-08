@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 14 ms, faster than 23.17% of C++ online submissions for Spiral Matrix III.
+// Memory Usage: 13.9 MB, less than 23.17% of C++ online submissions for Spiral Matrix III.
+    
     vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
         vector<vector<int>> dir{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         vector<vector<int>> ans;
