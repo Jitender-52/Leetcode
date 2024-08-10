@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 21 ms, faster than 17.07% of C++ online submissions for Regions Cut By Slashes.
+// Memory Usage: 19.6 MB, less than 9.76% of C++ online submissions for Regions Cut By Slashes.
+    
     const vector<vector<int>> DIRECTIONS = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     void floodFill(vector<vector<int>>& expandedGrid, int row, int col)
     {
