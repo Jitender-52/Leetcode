@@ -1,3 +1,7 @@
+
+// Runtime: 382 ms, faster than 72.36% of C++ online submissions for Alternating Groups III.
+// Memory Usage: 189.1 MB, less than 58.27% of C++ online submissions for Alternating Groups III.
+
 class SegmentTree {
 public:
     SegmentTree(int n) : n(n) {
