@@ -1,5 +1,8 @@
 class Solution {
 public:
+    
+//     Runtime: 216 ms, faster than 11.26% of C++ online submissions for Minimum Number of Days to Disconnect Island.
+// Memory Usage: 20.4 MB, less than 65.93% of C++ online submissions for Minimum Number of Days to Disconnect Island.
 
     const vector<vector<int>> DIRECTIONS = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     
