@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 38 ms, faster than 6.04% of C++ online submissions for Combination Sum II.
+// Memory Usage: 24.1 MB, less than 6.67% of C++ online submissions for Combination Sum II.
+    
     void combine(int i, vector<int> &candidates, int target, vector<vector<int>> &ans, vector<int> v, int sum)
     {
         v.push_back(candidates[i]);
