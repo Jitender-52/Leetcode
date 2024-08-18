@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 101 ms, faster than 9.82% of C++ online submissions for Ugly Number II.
+// Memory Usage: 35.6 MB, less than 7.76% of C++ online submissions for Ugly Number II.
+    
     int nthUglyNumber(int n) {
         priority_queue<long long, vector<long long>, greater<long long>> pq;
         pq.push(1);
