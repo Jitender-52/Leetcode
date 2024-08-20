@@ -1,6 +1,8 @@
 class Solution {
 public:
     
+//     Runtime: 186 ms, faster than 5.38% of C++ online submissions for Stone Game II.
+// Memory Usage: 88.7 MB, less than 5.29% of C++ online submissions for Stone Game II.
     
     int rec(vector<int> &piles, int idx, int M, int noOfPiles, int turn, vector<vector<vector<int> > > &dp){
         if(idx >= noOfPiles) return 0;
