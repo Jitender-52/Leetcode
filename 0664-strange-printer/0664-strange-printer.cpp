@@ -4,22 +4,15 @@ public:
     int f(int i, int j, string &s)
     {
         if(dp[i][j] != -1)
-        {
             return dp[i][j];
-        }
-        
         int minTurns = INT_MAX;
         if(i == j)
             return 1;
         
         for(int k = i; k < j; k++)
-        {
             minTurns = min(minTurns, f(i, k, s) + f(k+1, j, s));
-        }
-        
         if(s[i] == s[j])
             minTurns--;
-        
         return dp[i][j] = minTurns;
     }
 
