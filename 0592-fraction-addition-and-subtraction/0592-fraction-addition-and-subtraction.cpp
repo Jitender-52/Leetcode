@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 3 ms, faster than 50.39% of C++ online submissions for Fraction Addition and Subtraction.
+// Memory Usage: 7.6 MB, less than 74.81% of C++ online submissions for Fraction Addition and Subtraction.
+    
     int gcd(int a, int b)
     {
         if(a == 0 || b == 0)
