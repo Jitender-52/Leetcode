@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 4 ms, faster than 34.51% of C++ online submissions for Find the Closest Palindrome.
+// Memory Usage: 9.3 MB, less than 32.16% of C++ online submissions for Find the Closest Palindrome.
+    
     string nearestPalindromic(string s) {
         int n = s.length();
         if (n == 1)
