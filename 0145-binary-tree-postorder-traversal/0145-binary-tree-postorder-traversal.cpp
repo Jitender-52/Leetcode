@@ -11,6 +11,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 4 ms, faster than 32.22% of C++ online submissions for Binary Tree Postorder Traversal.
+// Memory Usage: 10.4 MB, less than 7.15% of C++ online submissions for Binary Tree Postorder Traversal.
+    
     void postorder(TreeNode *root, vector<int> &ans){
         if(root == NULL)
             return;
