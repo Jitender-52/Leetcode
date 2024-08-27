@@ -1,35 +1,36 @@
 class Solution {
 public:
-    
-    // Try again Just copy paste
-    
-//     Runtime: 204 ms, faster than 82.18% of C++ online submissions for Path with Maximum Probability.
-// Memory Usage: 64.9 MB, less than 86.47% of C++ online submissions for Path with Maximum Probability.
-    
-    double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start, int end) {
-        vector<double> prob(n, 0);
-        vector<pair<int, double>> adj[n];
-        int m = edges.size();
-        for(int i = 0; i < m; i++) {
-            adj[edges[i][0]].push_back({ edges[i][1], succProb[i] });
-            adj[edges[i][1]].push_back({ edges[i][0], succProb[i] });
+    double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start_node, int end_node) {
+        vector<vector<vector<double>>> adj(n);
+        int count = 0;
+        for(auto i : edges)
+        {
+            adj[i[0]].push_back({double(i[1]), succProb[count]});
+            adj[i[1]].push_back({double(i[0]), succProb[count]});
+            count++;
         }
+        vector<double> prob(n, 0);
+        priority_queue<pair<int, double>> pq;
+        pq.push({start_node, 1.0});
+        prob[start_node] = 1.0;
         
-        priority_queue<pair<double, int>> q;
-        q.push({ 1.0, start });
-        prob[start] = 1;
-        while(!q.empty()) {
-            int node = q.top().second;
-            double suc = q.top().first;
-            
-            q.pop();
-            for(auto &it:adj[node]) {
-                if((suc * it.second) > prob[it.first]) {
-                    prob[it.first] = suc * it.second;
-                    q.push({ prob[it.first], it.first });
+        while(!pq.empty())
+        {
+            auto it = pq.top();
+            pq.pop();
+            int node = it.first;
+            int p = it.second;
+            for(auto i : adj[node])
+            {
+                int nnode = i[0];
+                double pro = i[1];
+                if(prob[node] * pro > prob[nnode])
+                {
+                    prob[nnode] = prob[node] * pro;
+                    pq.push({nnode, prob[nnode]});
                 }
             }
         }
-        return prob[end];
+        return prob[end_node];
     }
 };
