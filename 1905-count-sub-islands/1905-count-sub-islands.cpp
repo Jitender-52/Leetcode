@@ -1,5 +1,8 @@
 class Solution{
 public:
+    
+//     Runtime: 335 ms, faster than 27.73% of C++ online submissions for Count Sub Islands.
+// Memory Usage: 223.5 MB, less than 11.00% of C++ online submissions for Count Sub Islands.
 
     int directions[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
