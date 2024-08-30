@@ -1,6 +1,9 @@
 class Solution{
 public:
     
+//     Runtime: 1290 ms, faster than 11.59% of C++ online submissions for Modify Graph Edge Weights.
+// Memory Usage: 586.2 MB, less than 6.44% of C++ online submissions for Modify Graph Edge Weights.
+    
     const int INF = 2e9;
 
     vector<vector<int>> modifiedGraphEdges(int nodeCount, vector<vector<int>> &edges, int source, int destination, int target)
