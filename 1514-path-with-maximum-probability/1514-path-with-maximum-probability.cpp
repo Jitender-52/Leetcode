@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 777 ms, faster than 5.03% of C++ online submissions for Path with Maximum Probability.
+// Memory Usage: 199.1 MB, less than 5.30% of C++ online submissions for Path with Maximum Probability.
+    
     double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start_node, int end_node) {
         vector<vector<vector<double>>> adj(n);
         int count = 0;
