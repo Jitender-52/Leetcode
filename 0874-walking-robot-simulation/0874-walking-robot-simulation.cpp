@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 61 ms, faster than 86.74% of C++ online submissions for Walking Robot Simulation.
+// Memory Usage: 37.5 MB, less than 76.80% of C++ online submissions for Walking Robot Simulation.
+    
     int robotSim(vector<int>& commands, vector<vector<int>>& obstacles) {
         int i=0,j=0,res = 0,direction=1;
         set<pair<int,int>> st;
