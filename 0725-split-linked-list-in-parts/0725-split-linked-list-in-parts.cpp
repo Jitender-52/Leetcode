@@ -10,7 +10,6 @@
  */
 class Solution {
 public:
-    
     vector<ListNode*> splitListToParts(ListNode* head, int k) {
         vector<ListNode *> ans;
         ListNode *temp = head;
