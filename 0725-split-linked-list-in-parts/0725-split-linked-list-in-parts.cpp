@@ -10,6 +10,11 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 3 ms, faster than 89.05% of C++ online submissions for Split Linked List in Parts.
+// Memory Usage: 14.2 MB, less than 5.18% of C++ online submissions for Split Linked List in Parts.
+
+    
     vector<ListNode*> splitListToParts(ListNode* head, int k) {
         vector<ListNode *> ans;
         ListNode *temp = head;
