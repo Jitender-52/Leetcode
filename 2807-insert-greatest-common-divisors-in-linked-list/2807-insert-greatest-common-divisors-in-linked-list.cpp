@@ -10,6 +10,10 @@
  */
 class Solution {
 public:
+    
+//     Runtime: 27 ms, faster than 97.17% of C++ online submissions for Insert Greatest Common Divisors in Linked List.
+// Memory Usage: 35.5 MB, less than 82.75% of C++ online submissions for Insert Greatest Common Divisors in Linked List.
+    
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
         if(!head->next)
             return head;
