@@ -11,6 +11,9 @@
  */
 class Solution {
 public:
+   
+//     Runtime: 3 ms, faster than 98.29% of C++ online submissions for Find Bottom Left Tree Value.
+// Memory Usage: 20.2 MB, less than 76.07% of C++ online submissions for Find Bottom Left Tree Value.
     
 //     Runtime: 7 ms, faster than 79.35% of C++ online submissions for Find Bottom Left Tree Value.
 // Memory Usage: 20.3 MB, less than 63.53% of C++ online submissions for Find Bottom Left Tree Value.
