@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 59 ms, faster than 71.31% of C++ online submissions for XOR Queries of a Subarray.
+// Memory Usage: 44.8 MB, less than 9.23% of C++ online submissions for XOR Queries of a Subarray.
+    
     vector<int> xorQueries(vector<int>& arr, vector<vector<int>>& queries) {
         int n = arr.size();
         vector<int> prefix(n, 0), suffix(n, 0);
