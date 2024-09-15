@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 72 ms, faster than 56.05% of C++ online submissions for Find the Longest Substring Containing Vowels in Even Counts.
+// Memory Usage: 19 MB, less than 32.79% of C++ online submissions for Find the Longest Substring Containing Vowels in Even Counts.
+    
     int findTheLongestSubstring(string s) {
         int n = s.length();
         int mask = 0, maxLength = 0;
