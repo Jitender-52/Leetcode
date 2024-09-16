@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 17 ms, faster than 22.22% of C++ online submissions for Minimum Time Difference.
+// Memory Usage: 17.5 MB, less than 88.24% of C++ online submissions for Minimum Time Difference.
+    
     int findMinDifference(vector<string>& timePoints) {
         vector<int> minutes(timePoints.size());
         for(int i = 0; i < timePoints.size(); i++) 
