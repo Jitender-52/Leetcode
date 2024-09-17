@@ -1,6 +1,10 @@
 class Solution {
 public:
     
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Uncommon Words from Two Sentences.
+// Memory Usage: 9.1 MB, less than 28.22% of C++ online submissions for Uncommon Words from Two Sentences.
+
+    
     map<string,int>mp;
     
     void stringstreeam(string s)
