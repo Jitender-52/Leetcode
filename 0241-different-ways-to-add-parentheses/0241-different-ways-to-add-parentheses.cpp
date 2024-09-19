@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 3 ms, faster than 63.55% of C++ online submissions for Different Ways to Add Parentheses.
+// Memory Usage: 13.6 MB, less than 53.74% of C++ online submissions for Different Ways to Add Parentheses.
+    
     vector<int> diffWaysToCompute(string expression)
     {
         vector<int> ans;
