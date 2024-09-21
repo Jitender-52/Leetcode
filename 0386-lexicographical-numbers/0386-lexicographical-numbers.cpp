@@ -6,9 +6,7 @@ public:
         if(x == 0)
         {
             for(int i = 1; i <= 9; i++)
-            {
                 dfs(i, n, ans);
-            }
         }
         if(x > 0 && x <= n)
         {
