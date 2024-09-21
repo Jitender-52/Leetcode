@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 14 ms, faster than 58.57% of C++ online submissions for Lexicographical Numbers.
+// Memory Usage: 13.8 MB, less than 69.49% of C++ online submissions for Lexicographical Numbers.
+    
     void dfs(int x, int n, vector<int> &ans)
     {
         if(x == 0)
