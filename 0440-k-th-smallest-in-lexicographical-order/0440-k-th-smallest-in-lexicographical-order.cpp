@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 2 ms, faster than 53.78% of C++ online submissions for K-th Smallest in Lexicographical Order.
+// Memory Usage: 7.4 MB, less than 54.58% of C++ online submissions for K-th Smallest in Lexicographical Order.
+    
     int countSteps(int n, long prefix1, long prefix2) 
     {
         int steps = 0;
