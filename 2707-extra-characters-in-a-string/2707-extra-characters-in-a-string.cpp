@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 360 ms, faster than 13.68% of C++ online submissions for Extra Characters in a String.
+// Memory Usage: 75.1 MB, less than 65.03% of C++ online submissions for Extra Characters in a String.
+    
     int solve(int i, string s, vector<string> &dictionary, vector<int> &dp)
     {
         int n = s.length();
