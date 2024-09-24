@@ -1,4 +1,7 @@
 
+// Runtime: 427 ms, faster than 47.08% of C++ online submissions for Find the Length of the Longest Common Prefix.
+// Memory Usage: 268.4 MB, less than 6.59% of C++ online submissions for Find the Length of the Longest Common Prefix.
+
 // Solving by understanding trie from discussion part
 
 class TrieNode{
