@@ -1,6 +1,9 @@
 class Solution {
 public:
 
+//     Runtime: 26 ms, faster than 24.61% of C++ online submissions for Minimum Window Substring.
+// Memory Usage: 10.6 MB, less than 7.76% of C++ online submissions for Minimum Window Substring.
+    
      string minWindow(string s, string t) {
         if (s.empty() || t.empty()) {
             return "";
@@ -17,17 +20,15 @@ public:
         int formed = 0;
 
         unordered_map<char, int> windowCounts;
-        int ans[3] = { -1, 0, 0 };
+        int ans[3] = {-1, 0, 0};
 
         while (r < s.length()) {
             char c = s[r];
             int count = windowCounts[c];
             windowCounts[c] = count + 1;
-
             if (dictT.find(c) != dictT.end() && windowCounts[c] == dictT[c]) {
                 formed++;
             }
-
             while (l <= r && formed == required) {
                 c = s[l];
 
@@ -44,10 +45,8 @@ public:
 
                 l++;
             }
-
             r++;
         }
-
         return ans[0] == -1 ? "" : s.substr(ans[1], ans[0]);
     }
 };
