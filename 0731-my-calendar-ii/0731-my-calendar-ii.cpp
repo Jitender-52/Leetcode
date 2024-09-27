@@ -1,5 +1,9 @@
 class MyCalendarTwo {
 public:
+    
+//     Runtime: 165 ms, faster than 34.10% of C++ online submissions for My Calendar II.
+// Memory Usage: 42.6 MB, less than 71.64% of C++ online submissions for My Calendar II.
+    
     map<int, int> eventCount;
 
     MyCalendarTwo() {
