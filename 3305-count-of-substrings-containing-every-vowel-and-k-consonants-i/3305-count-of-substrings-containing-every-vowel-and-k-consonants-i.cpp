@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 157 ms, faster than 18.18% of C++ online submissions for Count of Substrings Containing Every Vowel and K Consonants I.
+// Memory Usage: 31 MB, less than 9.09% of C++ online submissions for Count of Substrings Containing Every Vowel and K Consonants I.
+    
     bool isVowel(char c)
     {
         string s = "aeiou";
@@ -24,13 +27,9 @@ public:
             {
                 s += word[i];
                 if(isVowel(word[j]))
-                {
                     st.insert(word[j]);
-                }
                 else
-                {
                     consonant++;
-                }
                 if(st.size() == 5 && consonant == k)
                     ans++;
             }
