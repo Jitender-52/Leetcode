@@ -1,6 +1,9 @@
 class CustomStack {
 public:
     
+//     Runtime: 25 ms, faster than 73.44% of C++ online submissions for Design a Stack With Increment Operation.
+// Memory Usage: 26 MB, less than 29.82% of C++ online submissions for Design a Stack With Increment Operation.
+    
     vector<int> v;
     int idx;
     
