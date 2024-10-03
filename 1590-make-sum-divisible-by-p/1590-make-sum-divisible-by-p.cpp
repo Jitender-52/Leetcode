@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 234 ms, faster than 9.51% of C++ online submissions for Make Sum Divisible by P.
+// Memory Usage: 72.4 MB, less than 35.73% of C++ online submissions for Make Sum Divisible by P.
+    
     int minSubarray(vector<int>& nums, int p) {
         int n = nums.size();
         long long sum = 0;
