@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 102 ms, faster than 5.40% of C++ online submissions for Divide Players Into Teams of Equal Skill.
+// Memory Usage: 57.1 MB, less than 16.20% of C++ online submissions for Divide Players Into Teams of Equal Skill.
+    
     long long dividePlayers(vector<int>& v) {
         int n = v.size();
         map<int,int>mp;
