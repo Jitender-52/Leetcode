@@ -1,71 +1,71 @@
 class Solution {
 public:
     
-        bool checkInclusion(string s1, string s2) {
-            int n = s1.length();
-            int m = s2.length();
-            
-            if(n > m)
-                return false;
-            
-            map<int,int> mp;
-            for(int i = 0; i < n; i++)
-            {
-                mp[s1[i]]++;
-            }
-            
-            int count = 0;
-            
-            map<int,int> mp2;
-            int i = 0;
-            for(i = 0; i < n; i++)
-            {
-                mp2[s2[i]]++;
-            }
-            
-            char c = 'a';
-            for(int i = 0; i < 26; i++)
-            {
-                if(mp[c] == mp2[c])
-                    count++;
-                c++;
-            }
-            
-            int s = 0;
-            
+    bool checkInclusion(string s1, string s2) {
+        int n = s1.length();
+        int m = s2.length();
+
+        if(n > m)
+            return false;
+
+        map<int,int> mp;
+        for(int i = 0; i < n; i++)
+        {
+            mp[s1[i]]++;
+        }
+
+        int count = 0;
+
+        map<int,int> mp2;
+        int i = 0;
+        for(i = 0; i < n; i++)
+        {
+            mp2[s2[i]]++;
+        }
+
+        char c = 'a';
+        for(int i = 0; i < 26; i++)
+        {
+            if(mp[c] == mp2[c])
+                count++;
+            c++;
+        }
+
+        int s = 0;
+
+        if(count == 26)
+            return true;
+        // cout << mp2.size() << endl;
+        for(i; i < m; i++)
+        {
+            // cout << i <<  " " << count << endl;
+
+            if(mp2[s2[i]] == mp[s2[i]])
+                count--;
+            if(mp2[s2[s]] == mp[s2[s]])
+                count--;
+
+            mp2[s2[i]]++;
+            mp2[s2[s]]--;
+
+            if(mp2[s2[i]] == mp[s2[i]])
+                count++;
+            if(mp2[s2[s]] == mp[s2[s]])
+                count++;
+
+            //  for(auto i : mp)
+            //     cout << i.second << " ";
+            // cout << endl;
+            // for(auto i : mp2)
+            //     cout << i.second << " ";
+            // cout << endl;
+
             if(count == 26)
                 return true;
-            // cout << mp2.size() << endl;
-            for(i; i < m; i++)
-            {
-                // cout << i <<  " " << count << endl;
-                
-                if(mp2[s2[i]] == mp[s2[i]])
-                    count--;
-                if(mp2[s2[s]] == mp[s2[s]])
-                    count--;
-                
-                mp2[s2[i]]++;
-                mp2[s2[s]]--;
-                
-                if(mp2[s2[i]] == mp[s2[i]])
-                    count++;
-                if(mp2[s2[s]] == mp[s2[s]])
-                    count++;
-                
-                //  for(auto i : mp)
-                //     cout << i.second << " ";
-                // cout << endl;
-                // for(auto i : mp2)
-                //     cout << i.second << " ";
-                // cout << endl;
-                
-                if(count == 26)
-                    return true;
-                s++;
-            }
-            return false;
+            s++;
         }
+        return false;
+    }
 };
     
     
