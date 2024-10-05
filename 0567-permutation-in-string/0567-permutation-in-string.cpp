@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 22 ms, faster than 23.03% of C++ online submissions for Permutation in String.
+// Memory Usage: 10.7 MB, less than 28.55% of C++ online submissions for Permutation in String.
+    
     bool checkInclusion(string s1, string s2) {
         int n = s1.length();
         int m = s2.length();
