@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Sentence Similarity III.
+// Memory Usage: 8.6 MB, less than 35.48% of C++ online submissions for Sentence Similarity III.
+    
     vector<string> extract_words(string sentence){
         sentence += " ";
         vector<string> ans;
