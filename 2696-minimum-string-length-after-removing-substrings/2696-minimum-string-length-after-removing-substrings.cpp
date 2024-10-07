@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 3 ms, faster than 89.38% of C++ online submissions for Minimum String Length After Removing Substrings.
+// Memory Usage: 11.7 MB, less than 31.24% of C++ online submissions for Minimum String Length After Removing Substrings.
+    
     int minLength(string s) {
         int n = s.length();
         stack<char> st;
