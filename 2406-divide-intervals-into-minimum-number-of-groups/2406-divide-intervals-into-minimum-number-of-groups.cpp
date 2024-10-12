@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 293 ms, faster than 55.86% of C++ online submissions for Divide Intervals Into Minimum Number of Groups.
+// Memory Usage: 92.7 MB, less than 81.98% of C++ online submissions for Divide Intervals Into Minimum Number of Groups.
+    
     static bool cmp(vector<int> &a, vector<int> &b)
     {
         if(a[0] == b[0])
