@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 209 ms, faster than 18.95% of C++ online submissions for Maximal Score After Applying K Operations.
+// Memory Usage: 79.8 MB, less than 50.62% of C++ online submissions for Maximal Score After Applying K Operations.
+    
     long long maxKelements(vector<int>& nums, int k) {
         int n = nums.size();
         long long ans = 0;
