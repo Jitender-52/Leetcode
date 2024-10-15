@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 24 ms, faster than 93.05% of C++ online submissions for Separate Black and White Balls.
+// Memory Usage: 19.1 MB, less than 9.68% of C++ online submissions for Separate Black and White Balls.
+    
     long long minimum(string s)
     {
         int n = s.length();
