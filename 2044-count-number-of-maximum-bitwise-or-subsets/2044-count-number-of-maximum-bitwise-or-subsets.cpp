@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 150 ms, faster than 11.74% of C++ online submissions for Count Number of Maximum Bitwise-OR Subsets.
+// Memory Usage: 10 MB, less than 93.24% of C++ online submissions for Count Number of Maximum Bitwise-OR Subsets.
+    
     int countMaxOrSubsets(vector<int>& nums) {
         int n = nums.size();
         int maxi = 0;
