@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 86 ms, faster than 16.04% of C++ online submissions for Find Kth Bit in Nth Binary String.
+// Memory Usage: 57.2 MB, less than 45.56% of C++ online submissions for Find Kth Bit in Nth Binary String.
+    
     char findKthBit(int n, int k) {
         string s = "0";
         for(int i = 1; i < n; i++)
