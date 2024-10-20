@@ -1,8 +1,11 @@
 class Solution {
 public:
+    
+//     Runtime: 1 ms, faster than 95.24% of C++ online submissions for Parsing A Boolean Expression.
+// Memory Usage: 9.7 MB, less than 64.32% of C++ online submissions for Parsing A Boolean Expression.
+    
     bool parseBoolExpr(string expression) {
         stack<char> st;
-
         for (char currChar : expression) 
         {
             if (currChar == ',' || currChar == '(')
@@ -21,7 +24,6 @@ public:
                     if (topValue == 'f')
                         hasFalse = true;
                 }
-
                 char op = st.top();
                 st.pop();
                 if (op == '!') 
