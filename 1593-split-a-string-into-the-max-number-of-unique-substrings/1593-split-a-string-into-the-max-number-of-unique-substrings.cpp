@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 226 ms, faster than 59.36% of C++ online submissions for Split a String Into the Max Number of Unique Substrings.
+// Memory Usage: 47.9 MB, less than 66.67% of C++ online submissions for Split a String Into the Max Number of Unique Substrings.
+    
     int backtrack(const string& s, int start, unordered_set<string>& seen) 
     {
         if (start == s.size())
