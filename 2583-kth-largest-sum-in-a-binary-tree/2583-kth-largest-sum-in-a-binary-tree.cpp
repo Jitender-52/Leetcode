@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 822 ms, faster than 9.48% of C++ online submissions for Kth Largest Sum in a Binary Tree.
+// Memory Usage: 173.5 MB, less than 5.08% of C++ online submissions for Kth Largest Sum in a Binary Tree.
+    
         vector<long long> sum;
     
         void dfs(TreeNode *root, int level)
