@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 8 ms, faster than 99.79% of C++ online submissions for Height of Binary Tree After Subtree Removal Queries.
+// Memory Usage: 183.7 MB, less than 80.62% of C++ online submissions for Height of Binary Tree After Subtree Removal Queries.
+    
     int maxHeightAfterRemoval[100001];
     int currentMaxHeight = 0;
 
