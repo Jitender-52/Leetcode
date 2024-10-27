@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 30 ms, faster than 7.41% of C++ online submissions for Count Square Submatrices with All Ones.
+// Memory Usage: 29.2 MB, less than 6.72% of C++ online submissions for Count Square Submatrices with All Ones.
+    
     int solve(int i, int j, vector<vector<int>>& grid, vector<vector<int>>& dp) 
     {
         if (i >= grid.size() || j >= grid[0].size())
