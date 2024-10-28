@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 283 ms, faster than 6.67% of C++ online submissions for Longest Square Streak in an Array.
+// Memory Usage: 136.1 MB, less than 9.65% of C++ online submissions for Longest Square Streak in an Array.
+    
     int longestSquareStreak(vector<int>& nums) {
         long long n = nums.size();
         
