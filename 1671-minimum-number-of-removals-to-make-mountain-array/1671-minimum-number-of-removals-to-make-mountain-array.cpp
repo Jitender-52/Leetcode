@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 60 ms, faster than 50.00% of C++ online submissions for Minimum Number of Removals to Make Mountain Array.
+// Memory Usage: 14.9 MB, less than 43.99% of C++ online submissions for Minimum Number of Removals to Make Mountain Array.
+    
     int minimumMountainRemovals(vector<int>& nums) {
         int N = nums.size();
 
