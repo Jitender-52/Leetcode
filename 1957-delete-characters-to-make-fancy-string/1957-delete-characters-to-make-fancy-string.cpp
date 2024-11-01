@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 32 ms, faster than 38.96% of C++ online submissions for Delete Characters to Make Fancy String.
+// Memory Usage: 42.6 MB, less than 77.67% of C++ online submissions for Delete Characters to Make Fancy String.
+    
     string makeFancyString(string s) {
         int n = s.length();
         if(n <= 2)
