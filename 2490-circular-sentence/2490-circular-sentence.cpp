@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Circular Sentence.
+// Memory Usage: 8.1 MB, less than 83.91% of C++ online submissions for Circular Sentence.
+    
     bool isCircularSentence(string s) {
         int n = s.length();
         int start = s[0];
