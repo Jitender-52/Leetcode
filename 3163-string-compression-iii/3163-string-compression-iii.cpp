@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 73 ms, faster than 87.57% of C++ online submissions for String Compression III.
+// Memory Usage: 28.7 MB, less than 23.81% of C++ online submissions for String Compression III.
+    
     string compressedString(string word) {
         int n = word.size();
         string ans = "";
