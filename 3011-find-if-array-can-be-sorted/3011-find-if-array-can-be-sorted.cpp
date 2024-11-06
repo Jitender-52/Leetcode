@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 16 ms, faster than 11.51% of C++ online submissions for Find if Array Can Be Sorted.
+// Memory Usage: 32.3 MB, less than 22.34% of C++ online submissions for Find if Array Can Be Sorted.
+    
     bool canSortArray(vector<int>& nums) {
         int n = nums.size();
         vector<pair<int,int>> v;
