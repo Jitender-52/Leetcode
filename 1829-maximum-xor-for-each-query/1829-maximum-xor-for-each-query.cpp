@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Maximum XOR for Each Query.
+// Memory Usage: 98.3 MB, less than 43.73% of C++ online submissions for Maximum XOR for Each Query.
+    
     vector<int> getMaximumXor(vector<int>& nums, int maximumBit) {
         int n = nums.size();
         vector<int> prefixXOR(n);
