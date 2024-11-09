@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Minimum Array End.
+// Memory Usage: 9.9 MB, less than 9.09% of C++ online submissions for Minimum Array End.
+    
     long long minEnd(int n, int x) {
         vector<long long> v(60, 0), v2(60, 0);
         n--;
