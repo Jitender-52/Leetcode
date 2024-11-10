@@ -1,6 +1,16 @@
 class Solution {
 public:
     
+    
+ // Already Solved in the question https://leetcode.com/problems/largest-combination-with-bitwise-and-greater-than-zero/?envType=daily-question&envId=2024-11-07  
+    
+    // Similar solution done in the above question by mistake only difference is of OR and AND ans smallest and lareges
+    
+    
+//     Runtime: 874 ms, faster than 7.69% of C++ online submissions for Shortest Subarray With OR at Least K II.
+// Memory Usage: 88.7 MB, less than 28.97% of C++ online submissions for Shortest Subarray With OR at Least K II.
+
+    
     bool hasValidSubarray(vector<int>& nums, int targetSum, int windowSize) 
     {
         int arrayLength = nums.size();
