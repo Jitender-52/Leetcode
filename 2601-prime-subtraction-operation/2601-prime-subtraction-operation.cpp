@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 36 ms, faster than 10.88% of C++ online submissions for Prime Subtraction Operation.
+// Memory Usage: 36.7 MB, less than 6.71% of C++ online submissions for Prime Subtraction Operation.
+    
     bool isPrime(int n)
     {
         for(int i = 2; i * i <= n; i++)
