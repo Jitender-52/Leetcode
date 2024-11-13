@@ -1,10 +1,12 @@
-class Solution
-{
+class Solution{
 public:
+    
+//     Runtime: 70 ms, faster than 33.33% of C++ online submissions for Count the Number of Fair Pairs.
+// Memory Usage: 61.2 MB, less than 5.96% of C++ online submissions for Count the Number of Fair Pairs.
+    
     long long countPairSum(long long v[], long long lower, long long upper, long long n)
     {
         sort(v, v + n);
-
         long long right = n - 1, count = 0;
         while (right > 0)
         {
