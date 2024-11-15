@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Shortest Subarray to be Removed to Make Array Sorted.
+// Memory Usage: 69.4 MB, less than 98.14% of C++ online submissions for Shortest Subarray to be Removed to Make Array Sorted.
+    
     int findLengthOfShortestSubarray(vector<int>& arr) {
         int right = arr.size() - 1;
         while (right > 0 && arr[right] >= arr[right - 1]) 
