@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Find the Power of K-Size Subarrays I.
+// Memory Usage: 33.1 MB, less than 55.99% of C++ online submissions for Find the Power of K-Size Subarrays I.
+    
     vector<int> resultsArray(vector<int>& nums, int k) {
         int n = nums.size();
         vector<int> ans;
