@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 237 ms, faster than 15.96% of C++ online submissions for Maximum Sum of Distinct Subarrays With Length K.
+// Memory Usage: 104.2 MB, less than 13.76% of C++ online submissions for Maximum Sum of Distinct Subarrays With Length K.
+    
     long long maximumSubarraySum(vector<int>& nums, int k) {
         int n = nums.size();
         map<int,int> mp;
