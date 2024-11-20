@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Take K of Each Character From Left and Right.
+// Memory Usage: 12.2 MB, less than 56.21% of C++ online submissions for Take K of Each Character From Left and Right.
+    
     int takeCharacters(string s, int k) {
         int n = s.length();
         int a = 0;
