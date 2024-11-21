@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 57 ms, faster than 68.04% of C++ online submissions for Count Unguarded Cells in the Grid.
+// Memory Usage: 172.3 MB, less than 62.09% of C++ online submissions for Count Unguarded Cells in the Grid.
+    
     const int UNGUARDED = 0;
     const int GUARDED = 1;
     const int GUARD = 2;
