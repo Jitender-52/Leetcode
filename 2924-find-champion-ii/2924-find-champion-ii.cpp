@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 56 ms, faster than 21.96% of C++ online submissions for Find Champion II.
+// Memory Usage: 104.9 MB, less than 19.54% of C++ online submissions for Find Champion II.
+    
     int findChampion(int n, vector<vector<int>>& edges) {
         vector<int> indegree(n+1, 0);
         for(auto i : edges)
