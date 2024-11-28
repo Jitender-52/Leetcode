@@ -1,5 +1,8 @@
 class Solution {
 public:
+    
+//     Runtime: 1056 ms, faster than 16.06% of C++ online submissions for Minimum Obstacle Removal to Reach Corner.
+// Memory Usage: 234.1 MB, less than 20.83% of C++ online submissions for Minimum Obstacle Removal to Reach Corner.
 
     vector<vector<int>> directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
