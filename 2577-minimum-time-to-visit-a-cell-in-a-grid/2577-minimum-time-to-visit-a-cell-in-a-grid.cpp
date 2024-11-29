@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 816 ms, faster than 18.02% of C++ online submissions for Minimum Time to Visit a Cell In a Grid.
+// Memory Usage: 173.1 MB, less than 16.71% of C++ online submissions for Minimum Time to Visit a Cell In a Grid.
+    
     bool isValid(vector<vector<bool>>& visited, int row, int col)
     {
         return row >= 0 && col >= 0 && row < visited.size() && col < visited[0].size() && !visited[row][col];
@@ -34,7 +37,7 @@ public:
                 int nextRow = row + d[0], nextCol = col + d[1];
                 if (!isValid(visited, nextRow, nextCol)) 
                     continue;
-
+                
                 int waitTime = ((grid[nextRow][nextCol] - time) % 2 == 0) ? 1 : 0;
                 int nextTime = max(grid[nextRow][nextCol] + waitTime, time + 1);
                 pq.push({nextTime, nextRow, nextCol});
