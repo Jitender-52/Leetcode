@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 1779 ms, faster than 21.90% of C++ online submissions for Valid Arrangement of Pairs.
+// Memory Usage: 456.6 MB, less than 18.30% of C++ online submissions for Valid Arrangement of Pairs.
+    
     vector<vector<int>> validArrangement(vector<vector<int>>& pairs) {
         unordered_map<int, deque<int>> adjacencyMatrix;
         unordered_map<int, int> inDegree, outDegree;
