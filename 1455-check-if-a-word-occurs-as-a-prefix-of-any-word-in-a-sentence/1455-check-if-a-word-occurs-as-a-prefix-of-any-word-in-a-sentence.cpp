@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 0 ms, faster than 100.00% of C++ online submissions for Check If a Word Occurs As a Prefix of Any Word in a Sentence.
+// Memory Usage: 8.2 MB, less than 6.42% of C++ online submissions for Check If a Word Occurs As a Prefix of Any Word in a Sentence.
+    
     int isPrefixOfWord(string sentence, string searchWord) {
         int n = sentence.size();
         int m = searchWord.size();
