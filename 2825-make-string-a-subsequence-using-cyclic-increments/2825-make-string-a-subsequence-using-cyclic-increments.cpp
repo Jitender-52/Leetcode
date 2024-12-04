@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 3 ms, faster than 66.85% of C++ online submissions for Make String a Subsequence Using Cyclic Increments.
+// Memory Usage: 17.1 MB, less than 7.53% of C++ online submissions for Make String a Subsequence Using Cyclic Increments.
+    
     bool canMakeSubsequence(string str1, string str2) {
         int n = str1.length(), m = str2.length();
         
