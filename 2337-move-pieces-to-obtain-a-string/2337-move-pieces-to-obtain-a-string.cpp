@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 35 ms, faster than 22.41% of C++ online submissions for Move Pieces to Obtain a String.
+// Memory Usage: 37.8 MB, less than 8.11% of C++ online submissions for Move Pieces to Obtain a String.
+    
     bool canChange(string start, string target) {
         queue<pair<char, int>> startQueue, targetQueue;
 
