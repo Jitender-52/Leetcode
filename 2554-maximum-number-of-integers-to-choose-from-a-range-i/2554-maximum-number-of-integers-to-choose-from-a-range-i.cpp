@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 448 ms, faster than 10.68% of C++ online submissions for Maximum Number of Integers to Choose From a Range I.
+// Memory Usage: 227.3 MB, less than 6.94% of C++ online submissions for Maximum Number of Integers to Choose From a Range I.
+    
     int maxCount(vector<int>& banned, int n, int maxSum) {
         int m = banned.size();
         long long sum = 0;
