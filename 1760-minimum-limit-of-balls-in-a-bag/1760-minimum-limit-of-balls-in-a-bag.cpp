@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 47 ms, faster than 29.33% of C++ online submissions for Minimum Limit of Balls in a Bag.
+// Memory Usage: 59.9 MB, less than 15.54% of C++ online submissions for Minimum Limit of Balls in a Bag.
+    
     bool isPossible(int maxBallsInBag, vector<int>& nums, int maxOperations)
     {
         int totalOperations = 0;
