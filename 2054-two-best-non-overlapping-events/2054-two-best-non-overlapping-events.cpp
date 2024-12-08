@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 146 ms, faster than 30.63% of C++ online submissions for Two Best Non-Overlapping Events.
+// Memory Usage: 155.3 MB, less than 20.98% of C++ online submissions for Two Best Non-Overlapping Events.
+    
     int findEvents(vector<vector<int>>& events, int idx, int cnt, vector<vector<int>>& dp) {
         if (cnt == 2 || idx >= events.size()) return 0;
         if (dp[idx][cnt] == -1) 
