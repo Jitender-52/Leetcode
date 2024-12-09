@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 83 ms, faster than 10.16% of C++ online submissions for Special Array II.
+// Memory Usage: 140.6 MB, less than 5.15% of C++ online submissions for Special Array II.
+    
     vector<bool> isArraySpecial(vector<int>& nums, vector<vector<int>>& queries) {
         int n = nums.size();
         
