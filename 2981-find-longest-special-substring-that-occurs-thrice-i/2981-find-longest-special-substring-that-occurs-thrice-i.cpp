@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 618 ms, faster than 5.49% of C++ online submissions for Find Longest Special Substring That Occurs Thrice I.
+// Memory Usage: 232.1 MB, less than 5.04% of C++ online submissions for Find Longest Special Substring That Occurs Thrice I.
+    
     int maximumLength(string s) {
         int n = s.length();
         // string ans = "";
