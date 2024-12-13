@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 64 ms, faster than 83.39% of C++ online submissions for Find Score of an Array After Marking All Elements.
+// Memory Usage: 108.7 MB, less than 33.33% of C++ online submissions for Find Score of an Array After Marking All Elements.
+    
     long long findScore(vector<int>& nums) {
         int n = nums.size();
 //         map<int,int> mp;
