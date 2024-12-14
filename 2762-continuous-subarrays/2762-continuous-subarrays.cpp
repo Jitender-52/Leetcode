@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+//     Runtime: 100 ms, faster than 71.86% of C++ online submissions for Continuous Subarrays.
+// Memory Usage: 112.8 MB, less than 87.68% of C++ online submissions for Continuous Subarrays.
+    
     long long continuousSubarrays(vector<int>& nums) {
         int n = nums.size();
         
