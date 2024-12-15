@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 248 ms, faster than 100.00% of C++ online submissions for Maximum Average Pass Ratio.
+// Memory Usage: 97.9 MB, less than 49.62% of C++ online submissions for Maximum Average Pass Ratio.
+    
     double maxAverageRatio(vector<vector<int>>& classes, int extraStudents) {
         auto profit = [&](double pass, double total) 
         {
