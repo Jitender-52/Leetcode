@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 4 ms, faster than 42.65% of C++ online submissions for Reverse Odd Levels of Binary Tree.
+// Memory Usage: 84.1 MB, less than 13.13% of C++ online submissions for Reverse Odd Levels of Binary Tree.
+    
     TreeNode* reverseOddLevels(TreeNode* root) {
         queue<TreeNode *> q;
         
