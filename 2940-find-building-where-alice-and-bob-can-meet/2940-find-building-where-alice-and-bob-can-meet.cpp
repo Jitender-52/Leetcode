@@ -1,5 +1,8 @@
 class Solution {
 public:
+    
+//     Runtime: 63 ms, faster than 87.26% of C++ online submissions for Find Building Where Alice and Bob Can Meet.
+// Memory Usage: 262.5 MB, less than 67.52% of C++ online submissions for Find Building Where Alice and Bob Can Meet.
 
     int search(int height, vector<pair<int, int>>& monoStack)
     {
