@@ -12,6 +12,9 @@
 class Solution {
 public:
     
+//     Runtime: 55 ms, faster than 91.50% of C++ online submissions for Minimum Number of Operations to Sort a Binary Tree by Level.
+// Memory Usage: 179.7 MB, less than 75.37% of C++ online submissions for Minimum Number of Operations to Sort a Binary Tree by Level.
+    
     vector<vector<int>> levelOrder(TreeNode* root) {
          vector<vector<int>> ans;
     vector<int> v;
