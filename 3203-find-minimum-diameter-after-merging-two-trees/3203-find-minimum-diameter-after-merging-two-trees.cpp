@@ -1,4 +1,7 @@
 
+// Runtime: 727 ms, faster than 21.18% of C++ online submissions for Find Minimum Diameter After Merging Two Trees.
+// Memory Usage: 269.5 MB, less than 100.00% of C++ online submissions for Find Minimum Diameter After Merging Two Trees.
+
 const int MAX = 1e5 + 2;
 vector<int> adj[MAX];
 vector<int> dist(MAX, 0);
