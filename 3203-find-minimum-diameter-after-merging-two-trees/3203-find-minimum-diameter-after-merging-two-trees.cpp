@@ -6,6 +6,9 @@ vector<int> dist(MAX, 0);
 class Solution {
 public:
     
+//     Runtime: 1070 ms, faster than 50.00% of C++ online submissions for Find Minimum Diameter After Merging Two Trees.
+// Memory Usage: 268.6 MB, less than 100.00% of C++ online submissions for Find Minimum Diameter After Merging Two Trees.
+    
     int dfs(int node, int parent, int d, int i)
     {
         dist[node] = max(dist[node], d);
