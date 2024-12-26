@@ -1,6 +1,9 @@
 class Solution {
 public:
     
+//     Runtime: 2 ms, faster than 90.56% of C++ online submissions for Target Sum.
+// Memory Usage: 14.9 MB, less than 47.79% of C++ online submissions for Target Sum.
+    
     int findTargetSumWays(vector<int>& nums, int target) {
         int n = nums.size();
         int sum = 0;
